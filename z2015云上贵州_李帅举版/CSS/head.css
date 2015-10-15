@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0px; padding:0px; }
+.clear{ clear:both; }
+body{ font-family: "微软雅黑"; background-color: #F1F1F1; }
+ul li{ list-style-type:none; }
+a{text-decoration:none;}
+.h20{ height:20px; }
+.h50{ height:50px; }
+#h302{height: 302px;}
+#head { background-color: #000; height: 125px; width: 100%; }
+#mav { width: 1185px; margin-right: auto; margin-left: auto; }
+#logo { width: 510px; float: left; }
+#neww{ line-height: 60px; float: right; }
+#neww ul li { line-height: 60px; float: left; padding-right: 20px; padding-left: 20px; }
+
+#neww ul li a { color: #FFF; text-decoration: none; font-size: 16px; }
+#foot { background-color: #353535; height: 280px; width: 100%; }
+#foot1 { width: 1185px; height:180px; margin-right: auto; margin-left: auto; }
+#foot1_Title h3 { color: #d5d5d5; font-size: 18px; font-weight: normal; }
+
+#foot1_logo { float: left; width: 160px; height: 200px; }
+#foot1_Title p { color: #d5d5d5; font-size: 16px; line-height: 25px; }
+#foot1_Title .mmq { font-size: 30px; color: #ff488f; line-height: 60px; }
+#foot1_Title{ width: 320px; float: left; }
+#foot_qq{ width: 250px; float: left; }
+#foot_qq .maz { background-image: url(../Images/c2.png); float: left; line-height: 71px; height: 66px; text-indent: 7em; font-size: 14px; color: #cacaca; width: 250px; }
+#foot_qq .maz1 { background-image: url(../Images/c2.png); float: left; line-height: 60px; height: 66px; text-indent: 7em; font-size: 14px; color: #cacaca; width: 250px; background-position: center 66px; }
+#foot_rvtv{ width:385px; float:left; margin-left:20px; }#foot_rvrv_img { float: left; margin-top: 10px; margin-right: 10px; }
+#foot_Tbr .mn1 { font-size: 18px; color: #d5d5d5; margin-top: 10px; }
+#foot_Tbr .mn2 { font-size: 24px; color: #d5d5d5; line-height: 40px; }
+#foot_wqbu { width: 710px; margin-right: auto; margin-left: auto; }
+#foot_wqbu p { font-size: 12px; line-height: 35px; color: #bcbcbc; text-align: center; }
+
+
+#foot_Tbr .mn3 { font-size: 16px; color: #d5d5d5; }
+#foot_Tbr .mn4 { color: #fefefe; font-size: 16px; }
+#neww11 { float: right; height: 30px; width: 320px; margin-top: 20px; }
+#iymm1 { width: 190px; float: left; background: url(../Images/c3.png) no-repeat;}
+.iymm { background: url(../Images/c3.png) right center no-repeat ; float: left; width: 125px; }
+.iymm p a { font-size: 12px; color: #7e7e7e; text-decoration: none; }
+.iymm p { width: 55px; float: left; line-height: 30px; text-align: center; margin-left: 5px; }
+.udq1 { border: none; height: 29px; width: 130px;padding: 0 10px; color: #686868; float: left;outline: none; background:transparent;}
+.buttons{width:30px;height:28px;background:transparent;border:none;outline:none;cursor:pointer;border-radius: 0 5px 5px 0;-moz-border-radius:0 5px 0 5px;-webkit-border-radius: 0 5px 5px 0}
+.buttons:hover{background: #8b8888;opacity: 0.5;-moz-opacity:0.5;-webkit-opacity:0.5;filter:alpha(opacity=50);}
+#khuj { width: 100%; margin-bottom: 50px;}
