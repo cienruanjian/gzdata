@@ -1,22 +1,55 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>第二届云上贵州大数据商业模式大赛</title>
-  <link href="__PUBLIC__/Home/Css/index.css" rel="stylesheet" type="text/css" />
- <include file="Public/header" />
+  <link href="/Public/Home/Css/index.css" rel="stylesheet" type="text/css" />
+ <!-- page common css here -->
+<link href="/Public/Home/Css/base.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background:#fff">
+<!--头部  开始-->
+<div id="head">
+  <div id="head1">
+    <div id="mav">
+          <div id="logo"><img src="/Public/Home/Images/logo.jpg" width="502" height="124" /></div>
+          <div id="neww11">
+              <div id="iymm1">
+                <input type="text" placeholder="请输入关键字搜索" / class="udq1">
+                <button type="submit" class="buttons"> </button>
+              </div>
+              <div class="iymm">
+                <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
+                <p><a href="#">登录</a></p>
+              </div>
+          </div>
+          <div id="neww">
+              <ul>
+                  <li><a href="<?php echo U('Index/index');?>">首页</a></li>
+                  <li><a href="<?php echo U('Intro/index');?>">大赛简介</a></li>
+                  <li><a href="<?php echo U('Article/index');?>">大赛资讯</a></li>
+                  <li><a href="<?php echo U('Enroll/index');?>">报名通道</a></li>
+                  <li><a href="<?php echo U('Help/index');?>">帮助中心</a></li>
+                  <li><a href="http://contest.gzdata.com.cn/" target="_blank">往届回顾 </a></li>
+              </ul>
+          </div>
+    </div>
+  <div class="clear"></div>
+</div>
+</div>
   <!--首页  焦点图-->
   <div id="wrappen">
     <div id="wrapper">
       <ul class="lanrenzhijia">
         <li class="lanrenzhijia_li show_images_1">
-          <a href="#" target="_blank"><img class="show_images_1_img" src="__PUBLIC__/Home/images/1.jpg" alt="" /></a></li>
+          <a href="#" target="_blank"><img class="show_images_1_img" src="/Public/Home/images/1.jpg" alt="" /></a></li>
             <li class="lanrenzhijia_li show_images_2">
-          <a href="#" target="_blank"><img class="show_images_2_img" src="__PUBLIC__/Home/images/4.jpg" alt="" /></a></li>
+          <a href="#" target="_blank"><img class="show_images_2_img" src="/Public/Home/images/4.jpg" alt="" /></a></li>
             <li class="lanrenzhijia_li show_images_3">
-          <a href="#" target="_blank"><img class="show_images_3_img" src="__PUBLIC__/Home/images/2.jpg" alt="" /></a></li>
+          <a href="#" target="_blank"><img class="show_images_3_img" src="/Public/Home/images/2.jpg" alt="" /></a></li>
             <li class="lanrenzhijia_li show_images_4">
-          <a href="#" target="_blank"><img class="show_images_4_img" src="__PUBLIC__/Home/images/3.jpg" alt="" /></a></li>
+          <a href="#" target="_blank"><img class="show_images_4_img" src="/Public/Home/images/3.jpg" alt="" /></a></li>
       </ul>
       <div style="clear:both;"></div>
     </div>
@@ -28,19 +61,19 @@
         <div id="fsD1" class="focus">
             <div id="D1pic1" class="fPic">
                 <div class="fcon" style="display: none;">
-                    <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/01.jpg" style="opacity: 1; "></a>
+                    <a target="_blank" href="#"><img src="/Public/Home/images/01.jpg" style="opacity: 1; "></a>
                     <span class="shadow"><a target="_blank" href="http://ln.qq.com/a/20140625/015503.htm">红三代叶明子太庙办盛典 白色羽毛装高贵动人</a></span>
                 </div>
                 <div class="fcon" style="display: none;">
-                    <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/02.jpg" style="opacity: 1; "></a>
+                    <a target="_blank" href="#"><img src="/Public/Home/images/02.jpg" style="opacity: 1; "></a>
                     <span class="shadow"><a target="_blank" href="http://ln.qq.com/a/20140625/015503.htm">佟大为登封面表情搞怪 成熟男人也是天真男孩</a></span>
                 </div>
                 <div class="fcon" style="display: none;">
-                    <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/03.jpg" style="opacity: 1; "></a>
+                    <a target="_blank" href="#"><img src="/Public/Home/images/03.jpg" style="opacity: 1; "></a>
                     <span class="shadow"><a target="_blank" href="http://ln.qq.com/a/20140625/015503.htm">21岁出柜超模巴厘自曝搞笑全裸照</a></span>
                 </div>
                 <div class="fcon" style="display: none;">
-                    <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/04.jpg" style="opacity: 1; "></a>
+                    <a target="_blank" href="#"><img src="/Public/Home/images/04.jpg" style="opacity: 1; "></a>
                     <span class="shadow"><a target="_blank" href="http://ln.qq.com/a/20140625/015503.htm">金喜善出道21年 皮肤白皙越长越“嫩”！</a></span>
                 </div>
             </div>
@@ -75,16 +108,16 @@
 <div class="h20"></div>
 <div id="Middle1">
    <div id="ddpa">
-       <div id="ddpa1"><img src="__PUBLIC__/Home/Images/m2.jpg" width="1185" height="96" /></div>
+       <div id="ddpa1"><img src="/Public/Home/Images/m2.jpg" width="1185" height="96" /></div>
      <div id="ddpa2">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/Images/m3.jpg" width="140" height="130" /></div>  
+           <div id="ddpa2_img"><img src="/Public/Home/Images/m3.jpg" width="140" height="130" /></div>  
            <div id="ddpa2_Tilte">
                <h3>大赛简介</h3>
                <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span>详细</span></p>
            </div>
      </div>
      <div id="ddpa22">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/Images/m4.jpg" width="140" height="130" /></div>  
+           <div id="ddpa2_img"><img src="/Public/Home/Images/m4.jpg" width="140" height="130" /></div>  
            <div id="ddpa2_Tilte">
                <h3>大赛简介</h3>
                <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span>详细</span></p>
@@ -92,14 +125,14 @@
      </div>
      
      <div id="ddpa2">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/Images/m5.jpg" width="140" height="130" /></div>  
+           <div id="ddpa2_img"><img src="/Public/Home/Images/m5.jpg" width="140" height="130" /></div>  
            <div id="ddpa2_Tilte">
                <h3>大赛简介</h3>
                <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span>详细</span></p>
            </div>
      </div>
      <div id="ddpa22">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/Images/m6.jpg" width="140" height="130" /></div>  
+           <div id="ddpa2_img"><img src="/Public/Home/Images/m6.jpg" width="140" height="130" /></div>  
            <div id="ddpa2_Tilte">
                <h3>大赛简介</h3>
                <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span>详细</span></p>
@@ -109,31 +142,31 @@
 </div>
 <div class="h50"></div>
 <div id="Middle2">
-    <p><a href="#"><img src="__PUBLIC__/Home/Images/m9.jpg" width="373" height="228" /></a></p>
-    <p><a href="#"><img src="__PUBLIC__/Home/Images/m7.jpg" width="371" height="228" /></a></p>
-    <p><a href="#"><img src="__PUBLIC__/Home/Images/m8.jpg" width="373" height="230" /></a></p>
+    <p><a href="#"><img src="/Public/Home/Images/m9.jpg" width="373" height="228" /></a></p>
+    <p><a href="#"><img src="/Public/Home/Images/m7.jpg" width="371" height="228" /></a></p>
+    <p><a href="#"><img src="/Public/Home/Images/m8.jpg" width="373" height="230" /></a></p>
 </div>
 <div class="h50"></div>
 <div id="Middle1" style="height:630px;">
    <div id="ddp1a">
-       <div id="ddpa1"><img src="__PUBLIC__/Home/Images/m10.jpg" width="1185" height="122" /></div>
+       <div id="ddpa1"><img src="/Public/Home/Images/m10.jpg" width="1185" height="122" /></div>
      <div id="tynm">
          <div id="tynm1">
-            <a href="#"><img src="__PUBLIC__/Home/Images/m11.jpg" width="698" height="445" /></a>
+            <a href="#"><img src="/Public/Home/Images/m11.jpg" width="698" height="445" /></a>
             <h3>“云上贵州”大数据商业模式大赛落幕 “东方祥云”项目摘取云端大奖</h3>
          </div>
       <div id="tym">
        <div id="tynm2">
-            <a href="#"><img src="__PUBLIC__/Home/Images/m11.jpg" width="240" height="210" /></a>
+            <a href="#"><img src="/Public/Home/Images/m11.jpg" width="240" height="210" /></a>
             <h3>“云上贵州”大数据商业模式大赛落幕 </h3>
          </div>
        <div id="tynm2" style="margin-top:4px;">
-            <a href="#"><img src="__PUBLIC__/Home/Images/m11.jpg" width="240" height="210" /></a>
+            <a href="#"><img src="/Public/Home/Images/m11.jpg" width="240" height="210" /></a>
             <h3>“云上贵州”大数据商业模式大赛落幕 </h3>
          </div>
       </div>
        <div id="tynm3">
-            <a href="#"><img src="__PUBLIC__/Home/Images/m11.jpg" width="240" height="210" /></a>
+            <a href="#"><img src="/Public/Home/Images/m11.jpg" width="240" height="210" /></a>
             <h3>“云上贵州”大数据商业模式大赛落幕 </h3>
          </div>
      </div>
@@ -143,7 +176,7 @@
 <div id="Middle3">
 <div class="h50"></div>
    <div id="xexk">
-   <img src="__PUBLIC__/Home/Images/m14.jpg" width="1185" height="94" />
+   <img src="/Public/Home/Images/m14.jpg" width="1185" height="94" />
 <div id="xexk1" class="xexk2">
     <h3>指导单位</h3>
     
@@ -186,55 +219,55 @@
 <div class="h50"></div>
 <div id="Middle4">
     <div id="fcrf">
-    <img src="__PUBLIC__/Home/Images/m15.jpg" width="1185" height="121" /> </div>
+    <img src="/Public/Home/Images/m15.jpg" width="1185" height="121" /> </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
-    
-    </div>
-    
-    <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
-    
-    </div>
-    <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
-    
-    </div>
-    <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
-    
-    </div>
-    <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
     <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+    
+    </div>
+    
+    <div id="fcrf1">
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+    
+    </div>
+    <div id="fcrf1">
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+    
+    </div>
+    <div id="fcrf1">
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
+    
+    </div>
+    <div id="fcrf1">
+       <p><a href="#"><img src="/Public/Home/Images/m16.jpg" width="272" height="79" /></a></p>
     
     </div>
 </div>
@@ -244,14 +277,44 @@
 </div>
 
 
-<include file="Public/footer" />
+<div id="foot">
+  <div class="h50"></div>
+  <div id="foot1">
+      <div id="foot1_logo"><img src="/Public/Home/Images/logo1.jpg" width="156" height="115" /></div>
+      <div id="foot1_Title">
+         <h3><img src="/Public/Home/Images/m17.jpg" width="36" height="36" />　大赛组委会电话</h3>
+         <p class="mmq">0851-8626792</p>
+         <p>官方邮箱：gzdata@163.com</p>
+         <p>报名地址：contest.gzdata.com.cn</p>
+      </div>
+      <div id="foot_qq">
+         <p class="maz">QQ: 3086586463</p>
+         <p class="maz1">大数据商业模式大赛</p>
+      </div>
+      <div id="foot_rvtv">
+          <div id="foot_rvrv_img"><img src="/Public/Home/Images/m18.jpg" width="114" height="113" /></div>
+          <div id="foot_Tbr">
+              <p class="mn1">大数据商业模式大赛官方微信</p>
+              <p class="mn2">扫一扫，关注我们</p>
+              <p class="mn3">及时获取大数据大赛最新信息</p>
+              <p class="mn4">微信号：gzdatacontest</p>
+          </div>
+      </div>
+  </div>
+  <div id="foot_wqbu">
+    <p>黔ICP备15088888号  Copyrights @ 2014-2016 贵州省经济信息和信息化委员会 版权所有.All Rights Reservde    技术支持：慈恩软件</p>
+  </div>
+</div>
+<!-- common js plugin here -->
+<script type="text/javascript" src="/Public/Home/Js/jquery-1.8.3.min.js"></script>
+
 <!-- page special js plugin  -->
 <script>
-  var URL = "__PUBLIC__/Home/Js/terminator2.2.min.js";
+  var URL = "/Public/Home/Js/terminator2.2.min.js";
 </script>
-<script type="text/javascript" src="__PUBLIC__/Home/Js/koala.min.1.5.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Home/Js/focus.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Home/Js/index.js"></script>
+<script type="text/javascript" src="/Public/Home/Js/koala.min.1.5.js"></script>
+<script type="text/javascript" src="/Public/Home/Js/focus.js"></script>
+<script type="text/javascript" src="/Public/Home/Js/index.js"></script>
 
 </body>
 </html>
