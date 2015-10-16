@@ -44,22 +44,22 @@
         <ul class="lanrenzhijia">
           <li class="lanrenzhijia_li show_images_1">
             <a href="baomingtongdao.html" target="_blank">
-              <img class="show_images_1_img" src="images/1.jpg" alt="" />
+              <img class="show_images_1_img" src="/Public/Home/images/1.jpg" alt="" />
             </a>
           </li>
           <li class="lanrenzhijia_li show_images_2">
             <a href="#" target="_blank">
-              <img class="show_images_2_img" src="images/4.jpg" alt="" />
+              <img class="show_images_2_img" src="/Public/Home/images/4.jpg" alt="" />
             </a>
           </li>
           <li class="lanrenzhijia_li show_images_3">
             <a href="#" target="_blank">
-              <img class="show_images_3_img" src="images/2.jpg" alt="" />
+              <img class="show_images_3_img" src="/Public/Home/images/2.jpg" alt="" />
             </a>
           </li>
           <li class="lanrenzhijia_li show_images_4">
             <a href="#" target="_blank">
-              <img class="show_images_4_img" src="images/3.jpg" alt="" />
+              <img class="show_images_4_img" src="/Public/Home/images/3.jpg" alt="" />
             </a>
           </li>
         </ul>
@@ -73,19 +73,19 @@
         <div id="fsD1" class="focus">
           <div id="D1pic1" class="fPic">
             <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="images/01.jpg" style="opacity: 1; "></a>
+              <a target="_blank" href="#"><img src="/Public/Home/images/01.jpg" style="opacity: 1; "></a>
               <span class="shadow"><a target="_blank" href="#">大数据安防-大数据安防中的三种关键技术及五大挑战 综合资讯</a></span>
             </div>
             <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="images/02.jpg" style="opacity: 1; "></a>
+              <a target="_blank" href="#"><img src="/Public/Home/images/02.jpg" style="opacity: 1; "></a>
               <span class="shadow"><a target="_blank" href="#">大数据时代对“毫不相干”的企业的四个方面的影响</a></span>
             </div>
             <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="images/03.jpg" style="opacity: 1; "></a>
+              <a target="_blank" href="#"><img src="/Public/Home/images/03.jpg" style="opacity: 1; "></a>
               <span class="shadow"><a target="_blank" href="#">英特尔拉Cloudera进中国 资源正在融合与</a></span>
             </div>
             <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="images/04.jpg" style="opacity: 1; "></a>
+              <a target="_blank" href="#"><img src="/Public/Home/images/04.jpg" style="opacity: 1; "></a>
               <span class="shadow"><a target="_blank" href="#">大数据将颠覆房地产传统模式</a></span>
             </div>
           </div>
@@ -116,27 +116,27 @@
     <div class="h20"></div>
     <div id="Middle1">
       <div id="ddpa">
-        <div id="ddpa1"><img src="Images/m2.jpg" width="1185" height="96" /></div>
+        <div id="ddpa1"><img src="/Public/Home/images/m2.jpg" width="1185" height="96" /></div>
         <div id="ddpa2">
-         <div id="ddpa2_img"><img src="Images/m3.jpg" width="140" height="130" /></div>  
+         <div id="ddpa2_img"><img src="/Public/Home/images/m3.jpg" width="140" height="130" /></div>  
          <div id="ddpa2_Tilte">
            <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
          </div>
        </div>
        <div id="ddpa22">
-         <div id="ddpa2_img"><img src="Images/m4.jpg" width="140" height="130" /></div>  
+         <div id="ddpa2_img"><img src="/Public/Home/images/m4.jpg" width="140" height="130" /></div>  
          <div id="ddpa2_Tilte">
            <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
          </div>
        </div>
        <div id="ddpa2">
-         <div id="ddpa2_img"><img src="Images/m5.jpg" width="140" height="130" /></div>  
+         <div id="ddpa2_img"><img src="/Public/Home/images/m5.jpg" width="140" height="130" /></div>  
          <div id="ddpa2_Tilte">
            <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
          </div>
        </div>
        <div id="ddpa22">
-         <div id="ddpa2_img"><img src="Images/m6.jpg" width="140" height="130" /></div>  
+         <div id="ddpa2_img"><img src="/Public/Home/images/m6.jpg" width="140" height="130" /></div>  
          <div id="ddpa2_Tilte">
            <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
          </div>
@@ -145,14 +145,14 @@
     </div>
     <div class="h50"></div>
     <div id="Middle2">
-    <p><a href="#"><img src="Images/m9.jpg" width="373" height="228" /></a></p>
-    <p><a href="baomingtongdao.html"><img src="Images/m7.jpg" width="371" height="228" /></a></p>
-    <p><a href="#"><img src="Images/m8.jpg" width="373" height="230" /></a></p>
+    <p><a href="#"><img src="/Public/Home/images/m9.jpg" width="373" height="228" /></a></p>
+    <p><a href="baomingtongdao.html"><img src="/Public/Home/images/m7.jpg" width="371" height="228" /></a></p>
+    <p><a href="#"><img src="/Public/Home/images/m8.jpg" width="373" height="230" /></a></p>
     </div>
     <div class="h50"></div>
     <div id="Middle1" style="height:630px;">
     <div id="ddp1a">
-    <div id="ddpa1"><img src="Images/m10.jpg" width="1185" height="122" /></div>
+    <div id="ddpa1"><img src="/Public/Home/images/m10.jpg" width="1185" height="122" /></div>
     <div class="modeA">
       <!--代码开始-->
       <div class="slide_screen">
