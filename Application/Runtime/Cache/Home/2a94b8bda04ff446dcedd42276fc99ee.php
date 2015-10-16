@@ -102,15 +102,12 @@
       </div>
       <div id="right_1">
         <div id="Tile1">
-          <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
           <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
         </div>
         <div id="Tile1">
-          <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
           <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
         </div>
         <div id="Tile1">
-          <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
           <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
         </div>
       </div>
@@ -279,7 +276,7 @@
     </div>
     <div id="Middle3">
     <div id="xexk">
-      <img src="/Public/Home/images/m14.jpg" width="1185" height="94" />
+      <img src="Images/m14.jpg" width="1185" height="94" />
       <div id="xexk1" class="xexk2">
         <p>中国工业和信息化部软件服务业司</p>
         <p>共青团中央学校部</p>
@@ -311,43 +308,43 @@
     <div class="h50"></div>
     <div id="Middle4">
     <div id="fcrf">
-      <img src="/Public/Home/images/m15.jpg" width="1185" height="121" />
+      <img src="Images/m15.jpg" width="1185" height="121" />
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-     <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
+     <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     </div>
     <div id="Middle5">
