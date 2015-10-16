@@ -1,0 +1,82 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<link rel="stylesheet" href="__PUBLIC__/Plugin/uploadify/uploadify.css">
+<style>
+	#table td {
+	 	 vertical-align:middle;
+	}
+</style>
+<include file="Public/nav"/>
+         <section class="main-content">
+                <div class="content-wrap bg-white" style="margin-top:1px;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <a href="javascript:;" class="btn btn-success btn-block mg-b-md">城市</a>
+                            <nav class="mg-b-lg" role="navigation">
+                                <div class="no-padding">
+                                    <ul class="nav nav-pills nav-stacked">
+                                    	<foreach name="city" item="v">
+                                    		 <li>
+	                                            <a href="{:U('Theater/index', ['cid' => $v['id']])}">{$v.name}
+													<if condition="$v['count']"><span class="badge pull-right bg-default">{$v.count}</span></if>
+												</a>
+	                                        </li>
+                                    	</foreach>
+                                    	<li>
+                                            <a href="{:U('Theater/index')}">全部
+												<span class="badge pull-right bg-warning">{$count}</span>
+											</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="col-md-10">
+                            <h3 class="no-margin pd-b">影城列表</h3>
+                            <table class="table no-border no-margin table-hover" id="table">
+                            	<thead>
+                            		<tr>
+                            			<th>封面图片</th>
+                            			<th>名称</th>
+                            			<th>城市</th>
+                            			<th>地址</th>
+                            			<th>操作</th>
+                            		</tr>
+                            	</thead>
+                               
+                                <tbody>
+                                	<foreach name="list" item="v">
+	                                    <tr>
+	                                    	<td>
+                                    			<img style="border-radius:50%;" src="__ROOT__/{$v.face40}" width="40" height="40" >
+	                                        <td>
+	                                            <span>{$v.name}</span>
+	                                        </td>
+	                                        <td>
+	                                        	{$v.city}
+	                                        </td>
+	                                        <td>
+	                                            {$v.address}
+	                                        </td>
+	                                        <td>
+	                                            <a href="{:U('Theater/edit', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                               	<a href="{:U('Theater/photo', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="影城图片"><span class="fa fa-photo text-success"></span></a>&nbsp;
+                                               	<a class="del" href="{:U('Theater/del', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+	                                        </td>
+	                                    </tr>
+                                    </foreach>
+                                   
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+    </section>
+</div>
+<include file="Public/footer"/> 
+<!-- page special js plugin here -->
+</body>
+</html>

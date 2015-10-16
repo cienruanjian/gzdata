@@ -1,0 +1,63 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<style>
+	#table  td {
+	 	 vertical-align:middle;
+	}
+</style>
+<include file="Public/nav"/>
+            <section class="main-content">
+                <div class="content-wrap">
+                	<div class="row mg-b">
+                        <div class="col-xs-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                
+                                	{$titleL1}&nbsp;&nbsp;
+                                	<a class="btn btn-success btn-xs" href="{:U('Enterprise/add')}">添加企业</a>
+                                
+                                </header>
+                                <div class="panel-body no-padding">
+                                    <div class="table-responsive">
+                                        <table id="table" class="table table-striped responsive" data-sortable="" data-sortable-initialized="true">
+                                            <thead>
+                                                <tr>
+                                                    <th>LOGO</th>
+                                                    <th>企业名称</th>
+                                                    <th>企业介绍</th>
+                                                    <th>企业连接</th>
+                                                    <th>排序</th>
+                                                    <th>操作</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            	<foreach name="enterprise" item="v">
+	                                                <tr>
+	                                                    <td><img src="__ROOT__/{$v.face245}"</td>
+	                                                    <td>{$v.name}</td>
+	                                                    <td>{$v.intro}</td>
+	                                                    <td>{$v.url}</td>
+	                                                    <td>{$v.sort}</td>
+	                                                    <td>
+	                                                    	<a href="{:U('Enterprise/edit', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                             			  	<a class="del" href="{:U('Enterprise/del', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+	                                                    </td>
+	                                                </tr>
+                                                </foreach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+<!-- page special js plugin here -->
+<include file="Public/footer"/>  
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<link rel="stylesheet" href="__PUBLIC__/Plugin/uploadify/uploadify.css">
+<style>
+	#table td {
+	 	 vertical-align:middle;
+	}
+	.uploadify-button {
+	    background-color: transparent;
+	    border: none;
+	    padding: 0;
+	}
+	.uploadify:hover .uploadify-button {
+	    background-color: transparent;
+	}
+</style>
+<include file="Public/nav"/>
+         <section class="main-content">
+                <div class="content-wrap bg-white" style="margin-top:1px;">
+                    <div class="row">
+                        <div class="portfolio-ajax" style="display: block;">
+		                    <div class="header porfolio-controls" style="z-index:1;">
+		                        <a <if condition="$pre_id">href="{:U('Theater/photo', ['id' => $theater_id, 'pid' => $pre_id])}"</if> class="prev-portfolio-item <if condition="!$pre_id">disabled</if>">
+									前一张
+								</a>
+		                        <a href="javascript:;" class="close-view" data-toggle="modal" data-target=".bs-modal-sm">
+									添加
+								</a>
+		                        <a <if condition="$next_id">href="{:U('Theater/photo', ['id' => $theater_id, 'pid' => $next_id])}"</if> class="next-portfolio-item <if condition="!$next_id">disabled</if>" >
+								下一张
+								</a>
+		                    </div>
+		                    <div class="portfolio-container">
+		                        <div class="row">
+		                            <div class="col-sm-offset-3 col-sm-7">
+		                                <div class="portfolio-content">
+		                                	<img id="photo" <if condition="$photo">src="__ROOT__/{$photo.path}"<else/>src="__PUBLIC__/Default/images/no_image_350.jpg"</if> alt="">
+										</div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+                    </div>
+                </div>
+            </section>
+    </section>
+</div>
+<!-- modal start -->
+<div class="modal fade bs-modal-sm" tabindex="-1" id="my-modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title text-center" id="myModalLabel">尺寸350*250px</h5>
+            </div>
+            <div class="modal-body">
+                <form id="payment-form" method="post">
+                    <div class="form-group">
+                         <input type="file" name="face" id="upload" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-default btn-sm" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal end -->
+<include file="Public/footer"/> 
+<!-- page special js plugin here -->
+<script type="text/javascript" src="__PUBLIC__/Plugin/uploadify/jquery.uploadify.min.js"></script>
+<script>
+  $(function() {
+	setTimeout(function() {
+		 var sid = "{:session_id()}";
+		 var theater_id = "{$theater_id}";
+		    $('#upload').uploadify({
+		      'swf'           :    "__PUBLIC__/Plugin/uploadify/uploadify.swf",
+		      'uploader'      :    "{:U('Base/uploadTheaterPhoto')}",
+		      'buttonImage'   :    "__PUBLIC__/Plugin/uploadify/browse-btn.png",
+		      'width'         :    "120",
+		      'height'        :    "30",
+		      'fileTypeDesc'  :    "Image file",
+		      'fileTypeExts'  :    "*.jpg;*.jpeg;*.gif;*.png",
+		      'formData'      :    {"session_id"  : sid, "theater_id" : theater_id},
+		      'multi'         :     false,
+		      'removeTimeout' :     1,
+		      onUploadSuccess :     function(file, data, response) {
+		        eval('var data = ' + data);
+		        if (data.status == 1) {
+		        	$('#photo').attr('src', "__ROOT__/"+data.path);
+		        	$('#my-modal').modal('hide');
+		        } else {
+		        	alert('上传失败，请重试');
+		        }
+		      }
+		    });
+	}, 10);
+  });
+</script>
+</body>
+</html>

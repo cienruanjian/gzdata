@@ -1,0 +1,167 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<link rel="stylesheet" href="__PUBLIC__/Plugin/uploadify/uploadify.css">
+<style type="text/css">
+	.uploadify-button {
+	    background-color: transparent;
+	    border: none;
+	    padding: 0;
+	}
+	.uploadify:hover .uploadify-button {
+	    background-color: transparent;
+	}
+</style>
+<include file="Public/nav"/>
+        <section class="main-content">
+            <div class="content-wrap">
+                <div class="row">
+                	<div class="col-lg-12">
+                 	<section class="panel">
+                      <header class="panel-heading">{$titleL2}</header>
+                      <div class="panel-body">
+                          <form class="form-horizontal bordered-group" role="form" action="{:U('Movie/addHandle')}" method="post">
+	                              <div class="form-group">
+	                                 <div class="form-group">
+	                                  <label for="inputEmail4" class="col-sm-2 control-label"><span class="red">* </span>上传视频</label>
+	                                  <div class="col-sm-8">
+	                                      <input type="file" name="dedio" id="upload-movie" />
+	                                      <p class="help-block no-margin">格式：flv，mp4</p>
+	                                  </div>
+                            	  </div>
+                                  <label class="col-sm-2 control-label"><span class="red">* </span>类别</label>
+                                  <div class="col-sm-8">
+                                      <select class="form-control" name="cate_id">
+                                          <foreach name="cate" item="v">
+                                          		<option value="{$v.id}">{$v.name}</option>
+                                          </foreach>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>名称</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" name="name" placeholder="电影名称" class="form-control" id="inputEmail3">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+	                              <div class="col-sm-offset-2 col-sm-8">
+	                                  <div class="checkbox">
+	                                      <label>
+	                                          <input type="checkbox" name="recommend" value="1">推荐
+	                                      </label>
+	                                  </div>
+	                              </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="inputEmail3" class="col-sm-2 control-label">封面图片</label>
+                                  <div class="col-sm-2">
+                                  	<img id="no-image" src="__PUBLIC__/Default/images/no_image.jpg" >
+                                  </div>
+                                  <div class="col-sm-8" style="margin-top:20px;">
+                                      <input type="file" name="face" id="upload" />
+                                      <p class="help-block no-margin">格式：jpg、jpeg、gif、png 尺寸：210*115/px</p>
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="inputEmail4" class="col-sm-2 control-label">排序</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="100" placeholder="排序">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label">简介</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="intro" class="form-control" rows="2"></textarea>
+                                  </div>
+                              </div> 
+                              
+                              <input type="hidden" name="face209">
+                              <input type="hidden" name="face196">
+                              <input type="hidden" name="face142">
+                              <input type="hidden" name="face96">
+                              <input type="hidden" name="face80">
+                              <input type="hidden" name="face40">
+                              <input type="hidden" name="face160">
+                              
+                              <input type="hidden" name="url">
+                              
+                              <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-6">
+                                      <button type="submit" class="btn btn-default">添加</button>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </section>
+                 </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+<include file="Public/footer"/> 
+<!-- page special js plugin here -->
+<script type="text/javascript" src="__PUBLIC__/Plugin/uploadify/jquery.uploadify.min.js"></script>
+<script>
+  $(function() {
+	    var sid = "{:session_id()}";
+	    //上传图片
+		setTimeout(function() {
+			    $('#upload').uploadify({
+			      'swf'           :    "__PUBLIC__/Plugin/uploadify/uploadify.swf",
+			      'uploader'      :    "{:U('Base/uploadMovieFace')}",
+			      'buttonImage'   :    "__PUBLIC__/Plugin/uploadify/browse-btn.png",
+			      'width'         :    "120",
+			      'height'        :    "30",
+			      'fileTypeDesc'  :    "Image file",
+			      'fileTypeExts'  :    "*.jpg;*.jpeg;*.gif;*.png",
+			      'formData'      :    {"session_id"  : sid},
+			      'multi'         :     false,
+			      'removeTimeout' :     1,
+			      onUploadSuccess :     function(file, data, response) {
+			        eval('var data = ' + data);
+			        if (data.status == 1) {
+			        	$('input[name=face209]').val(data.path.face209);
+			        	$('input[name=face196]').val(data.path.face196);
+			        	$('input[name=face142]').val(data.path.face142);
+			        	$('input[name=face96]').val(data.path.face96);
+			        	$('input[name=face80]').val(data.path.face80);
+			        	$('input[name=face40]').val(data.path.face40);
+			        	$('input[name=face160]').val(data.path.face160);
+			        	$('#no-image').attr('src', "__ROOT__/"+data.path.face209);
+			        } else {
+			        	alert(data.msg);
+			        }
+			      }
+			    });
+		}, 10);
+	    //上传视频
+		setTimeout(function() {
+		    $('#upload-movie').uploadify({
+		      'swf'           :    "__PUBLIC__/Plugin/uploadify/uploadify.swf",
+		      'uploader'      :    "{:U('Base/uploadMovie')}",
+		      'buttonImage'   :    "__PUBLIC__/Plugin/uploadify/browse-btn-file.png",
+		      'width'         :    "120",
+		      'height'        :    "30",
+		      'fileTypeDesc'  :    "Image file",
+		      'fileTypeExts'  :    "*.flv;*.mp4;",
+		      'formData'      :    {"session_id"  : sid},
+		      'multi'         :     false,
+		      'removeTimeout' :     1,
+		      onUploadSuccess :     function(file, data, response) {
+		        eval('var data = ' + data);
+		        if (data.status == 1) {
+		        	$('input[name=url]').val(data.path);
+		        } else {
+		        	alert(data.msg);
+		        }
+		      }
+		    });
+	}, 10);
+  });
+</script>
+
+</body>
+</html>

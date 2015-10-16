@@ -1,0 +1,86 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<include file="Public/nav"/>
+        <section class="main-content">
+        	<header class="header header-fixed navbar bg-default">
+                <ul class="nav navbar-nav pull-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">类别筛选<b class="mg-l-xs fa fa-angle-down"></b></a>
+                        <ul class="dropdown-menu filter" data-option-key="filter" role="menu">
+                            
+                            <li><a href="javascript:;" data-filter="*">全部</a>
+                            </li>
+                            <foreach name="cate" item="v">
+                            	<li><a href="javascript:;" data-filter=".filter-{$v.id}">{$v.name}</a>
+                            </foreach>
+                            
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="pull-right">
+                    <p class="navbar-text pull-left mg-r-xs">
+                        显示方式:
+                    </p>
+                    <div class="btn-group view-options mg-r-md" data-toggle="buttons">
+                        <label class="btn btn-primary btn-sm btn-rounded navbar-btn no-margin" data-view="grid">
+                            <input type="radio" name="options" id="option1">
+                            <i class="fa fa-th"></i>
+                        </label>
+                        <label class="btn btn-primary btn-rounded navbar-btn btn-sm  active" data-view="list">
+                            <input type="radio" name="options" id="option2">
+                            <i class="fa fa-list"></i>
+                        </label>
+                    </div>
+                </div>
+            </header>
+            <div class="content-wrap">
+                <div class="row">
+                	<!-- content start -->
+                	 <div class="switcher view-list">
+                            <div class="row feed no-margin">
+                            	<foreach name="list" item="v">
+                            		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 switch-item filter-{$v.cate_id}">
+	                                    <section class="panel <if condition="!$v['face200']">bg-warning</if>">
+	                                    	<if condition="$v['face200']">
+		                                        <div class="thumb">
+		                                            <img class="img-responsive" alt="Responsive image" src="__ROOT__/{$v.face200}">
+		                                        </div>
+	                                        </if>
+	                                        <div class="panel-body">
+	                                            <div class="switcher-content">
+	                                                <p>
+	                                                	{$v.title} &nbsp;&nbsp;&nbsp;<span class="text-default">{$v.create_time|date="Y-m-d", ###}</span>
+	                                                </p>
+	                                                <p>{$v.desc|mb_substr=###, 0, 60, 'UTF-8'}...</p>
+	                                                <p class="show small">编辑：{$v.editor}</p>
+	                                                <ul class="text-muted list-style-none" style="font-size:14px;">
+	                                                	<a href="{:U('Article/edit', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>
+	                                                	<a class="del" href="{:U('Article/del', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+	                                                </ul>
+	                                                
+	                                            </div>
+	                                        </div>
+	                                    </section>
+	                                </div>
+                            	</foreach>
+                            </div>
+                        </div>
+                	<!-- content end -->
+                	<!-- page -->
+                		<section class="panel bg-none">
+                			<div class="page">
+                				{$page}
+                			</div>
+                			<div style="clear:both;"></div>
+                       </section>
+                	<!-- page-end -->
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+<include file="Public/footer"/> 
+  
+</body>
+</html>

@@ -1,0 +1,74 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<style>
+	#table  td {
+	 	 vertical-align:middle;
+	}
+</style>
+<include file="Public/nav"/>
+            <section class="main-content">
+                <div class="content-wrap">
+                	<div class="row mg-b">
+                        <div class="col-xs-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    <a class="btn btn-xs btn-success" href="{:U('Integral/add')}">添加礼品</a>
+                                </header>
+                                <div class="panel-body no-padding">
+                                    <div class="table-responsive">
+                                        <table id="table" class="table table-striped responsive" data-sortable="" data-sortable-initialized="true">
+                                            <thead>
+                                                <tr>
+                                                   
+                                                    <th>缩略图</th>
+                                                    <th>礼品名称</th>
+                                                    <th>截至日期</th>
+                                                    <th>总数量</th>
+                                                    <th>预约数</th>
+                                                    <th>剩余</th>
+                                                    <th>操作</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            	<foreach name="list" item="v">
+	                                                <tr>
+                                                        <td>
+                                                            <img src="__ROOT__/{$v.small_thumb}" width="40" height="50">
+                                                        </td>
+                                                        <td>{$v.name}</td>
+                                                        <td>{$v.end_at|date="Y-m-d", ###}</td>
+                                                        <td>{$v.t_no}份</td>
+                                                        <td>{$v.a_no}份</td>
+                                                        <td>{$v.l_no}份</td>
+	                                                    <td>
+	                                                    	<a href="{:U('Integral/edit', ['id' => $v['id'], 'pos' => $pos])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                             			  	<a class="del" href="{:U('Integral/del', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+	                                                    </td>
+	                                                </tr>
+                                                </foreach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+
+                             <!-- page -->
+                            <section class="panel bg-none">
+                                <div class="page">
+                                    {$page}
+                                </div>
+                                <div style="clear:both;"></div>
+                           </section>
+                            <!-- page-end -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+<!-- page special js plugin here -->
+<include file="Public/footer"/>  
+</body>
+
+</html>

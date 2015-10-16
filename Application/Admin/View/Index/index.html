@@ -1,0 +1,125 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<include file="Public/nav"/>
+            <section class="main-content">
+                <div class="content-wrap">
+                    <div class="center-wrapper text-center">
+                        <div class="center-content">
+
+                            <if condition="session('role') eq 10">
+
+                            <div class="subscription col-md-6 col-md-offset-3 bg-white">
+                                <i class="fa fa-sign-in fa-2x"></i>
+                                <h5>后台管理快速入口</h5>
+                                <div class="mg-t-lg">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="pd-md">
+                                                <a href="{:U('Theater/index')}" class="pull-left mg-r-md">
+                                                    <span class="fa-stack fa-lg">
+                                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                                    <i class="fa fa-video-camera fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                                <p class="text-left">
+                                                    <span class="text-success">影城管理</span>
+                                                    <span class="center-block">影城管理入口</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pd-md">
+                                                <a href="{:U('Movie/index')}" class="pull-left mg-r-md">
+                                                    <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x text-color"></i>
+                                                        <i class="fa fa-play fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                                <div class="text-left">
+                                                    <span class="text-success">影视管理</span>
+                                                    <span class="center-block">影视管理入口</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="pd-md">
+                                                <a href="{:U('News/index')}" class="pull-left mg-r-md">
+                                                    <span class="fa-stack fa-lg">
+                                                <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                                                <i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+                                                </span>
+                                                </a>
+                                                <div class="text-left">
+                                                    <span class="text-success">新闻管理</span>
+                                                    <small class="center-block">新闻管理入口</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pd-md">
+                                                <a href="{:U('Kanwu/index')}" class="pull-left mg-r-md">
+                                                    <span class="fa-stack fa-lg">
+                                                        <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                                        <i class="fa fa-file fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                                <div class="text-left">
+                                                    <span class="text-success">刊物列表</span>
+                                                    <small class="center-block">广电报刊物管理入口</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <div class="pd-md">
+                                                <a href="{:U('Article/index')}" class="pull-left mg-r-md">
+                                                    <span class="fa-stack fa-lg">
+                                                    <i class="fa fa-circle fa-stack-2x text-danger"></i>
+                                                    <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                                <div class="text-left">
+                                                    <span class="text-success">文章管理</span>
+                                                    <small class="center-block">广电报文章管理入口</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pd-md">
+                                                <a href="{:U('Enterprise/index')}" class="pull-left mg-r-md">
+                                                    <span class="fa-stack fa-lg">
+                                                    <i class="fa fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fa fa-suitcase fa-stack-1x fa-inverse"></i>
+                                                    </span>
+                                                </a>
+                                                <div class="text-left">
+                                                    <span class="text-success">合作企业</span>
+                                                    <small class="center-block">合作企业管理入口</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-left mg-l-md">
+                                    <small>
+<i>© 星空影城 2015 All rights reserved</i>
+</small>
+                                </p>
+                            </div>
+                            <else/>
+                                <h2>欢迎使用星空影城后台管理系统~</h2>
+                            </if>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+<!-- page special js plugin here -->
+<include file="Public/footer"/>  
+</body>
+
+</html>

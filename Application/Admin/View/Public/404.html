@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="error-page no-js" lang="">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <title>页面不存在</title>
+    
+    <link rel="stylesheet" href="__PUBLIC__/Admin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/animate.min.css">
+
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/skins/palette.1.css" id="skin">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/fonts/style.1.css" id="font">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/main.css">
+
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="__PUBLIC__/Admin/vendor/modernizr.js"></script>
+</head>
+
+<body class="bg-white center-wrapper">
+
+    <div class="center-content text-center">
+        <div class="error-number">404</div>
+        <div class="mg-b-lg">页面不存在</div>
+        <p>对不起, 您访问的页面不存在或者已被删除。
+            <br>
+            <a href="{:U('Index/index')}">返回首页</a>
+        </p>
+        <ul class="mg-t-lg error-nav">
+            <li>
+                <a href="javascript:;">&copy;
+<span id="year" class="mg-r-xs"></span>慈恩软件</a>
+            </li>
+            <li>
+                <a href="javascript:;">关于</a>
+            </li>
+            <li>
+                <a href="javascript:;">帮助</a>
+            </li>
+            <li>
+                <a href="javascript:;">状态</a>
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var el = document.getElementById("year"),
+            year = (new Date().getFullYear());
+        el.innerHTML = year;
+    </script>
+</body>
+
+</html>

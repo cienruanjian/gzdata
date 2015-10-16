@@ -1,0 +1,161 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<link rel="stylesheet" href="__PUBLIC__/Plugin/uploadify/uploadify.css">
+<style type="text/css">
+	.uploadify-button {
+	    background-color: transparent;
+	    border: none;
+	    padding: 0;
+	}
+	.uploadify:hover .uploadify-button {
+	    background-color: transparent;
+	}
+</style>
+<include file="Public/nav"/>
+        <section class="main-content">
+            <div class="content-wrap">
+                <div class="row">
+                	<div class="col-lg-12">
+                 	<section class="panel">
+                      <header class="panel-heading">{$titleL2}</header>
+                      <div class="panel-body">
+                          <form class="form-horizontal bordered-group" role="form" action="{:U('Article/editHandle')}" method="post">
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label"><span class="red">* </span>文章类别</label>
+                                  <div class="col-sm-8">
+                                      <select class="form-control" name="cate_id">
+                                          <foreach name="cate" item="v">
+                                          		<option value="{$v.id}" <if condition="$v['id'] eq $data['cate_id']">selected</if>>{$v.name}</option>
+                                          </foreach>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>文章标题</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" name="title" placeholder="文章标题" value="{$data.title}" class="form-control" id="inputEmail3">
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                              	  
+                                  <label for="inputEmail3" class="col-sm-2 control-label">封面</label>
+                                  <div class="col-sm-2">
+                                  	<img id="no-image" height="230" width="200" <if condition="$data['face200']">src="__ROOT__/{$data.face200}"<else/>src="__PUBLIC__/Default/images/no_image.jpg"</if> >
+                                  </div>
+                                  <div class="col-sm-8" style="margin-top:60px;">
+                                      <input type="file" name="face" id="upload" />
+                                      <p class="help-block no-margin">格式：jpg、jpeg、gif、png 尺寸：200*230/px</p>
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label"><span class="red">* </span>描述</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="desc" class="form-control" rows="2">{$data.desc}</textarea>
+                                  </div>
+                              </div> 
+                              
+                               <div class="form-group">
+                                  <label class="col-sm-2 control-label"><span class="red">* </span>内容</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="content"  id="ue-content">{$data.content}</textarea>
+                                  </div>
+                              </div> 
+
+                              <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="hot" value="1" <if condition="$data['hot']">checked</if>>热点点文章
+                                        </label>
+                                    </div>
+                                </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="inputEmail6" class="col-sm-2 control-label">编辑</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" value="{$data.editor}" name="editor" id="inputEmail6" placeholder="编辑">
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="inputEmail4" class="col-sm-2 control-label">排序</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="{$data.sort}" placeholder="排序">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="inputEmail5" class="col-sm-2 control-label">来源</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" value="{$data.from}" name="from" id="inputEmail5" placeholder="文章来源">
+                                  </div>
+                              </div>
+                              
+                              <input type="hidden" name="face200" value="{$data.face200}">
+                              <input type="hidden" name="face368" value="{$data.face368}">
+                              <input type="hidden" name="face208" value="{$data.face208}">
+                              <input type="hidden" name="face258" value="{$data.face258}">
+                              <input type="hidden" name="face255" value="{$data.face255}">
+                              <input type="hidden" name="id" value="{$data.id}">
+                              
+                              <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-6">
+                                      <button type="submit" class="btn btn-default">保存</button>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </section>
+                 </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+<include file="Public/footer"/> 
+<!-- page special js plugin here -->
+<script type="text/javascript" src="__PUBLIC__/Plugin/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugin/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugin/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+	//实例化编辑器
+	UE.getEditor('ue-content');
+</script>
+<script>
+  $(function() {
+  setTimeout(function() {
+     var sid = "{:session_id()}";
+        $('#upload').uploadify({
+          'swf'           :    "__PUBLIC__/Plugin/uploadify/uploadify.swf",
+          'uploader'      :    "{:U('Base/uploadArticleFace')}",
+          'buttonImage'   :    "__PUBLIC__/Plugin/uploadify/browse-btn.png",
+          'width'         :    "120",
+          'height'        :    "30",
+          'fileTypeDesc'  :    "Image file",
+          'fileTypeExts'  :    "*.jpg;*.jpeg;*.gif;*.png",
+          'formData'      :    {"session_id"  : sid},
+          'multi'         :     false,
+          'removeTimeout' :     1,
+          onUploadSuccess :     function(file, data, response) {
+            eval('var data = ' + data);
+            if (data.status == 1) {
+              $('input[name=face200]').val(data.path.face200);
+              $('input[name=face368]').val(data.path.face368);
+              $('input[name=face208]').val(data.path.face208);
+              $('input[name=face258]').val(data.path.face258);
+              $('input[name=face255]').val(data.path.face255);
+              $('#no-image').attr('src', "__ROOT__/"+data.path.face200);
+            } else {
+              alert('封面上传失败');
+            }
+          }
+        });     
+  }, 10);
+  });
+</script>
+
+</body>
+</html>
