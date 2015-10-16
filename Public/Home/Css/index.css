@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-body{background-color: #fff}
+html body{background-color: #fff}
 #Middle { width: 1185px; margin-right: auto; margin-left: auto; margin-top: 20px; position:relative; }
 #h302{ height:302px; }
 #left_1 { float: left; width: 600px; height: 400px; }
