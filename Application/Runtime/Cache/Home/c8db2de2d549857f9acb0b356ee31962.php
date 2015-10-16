@@ -39,30 +39,24 @@
 </div>
 </div>
 <!--头陪  结束-->
-<div id="khuj" style="background:url(/Public/Home/Images/m19.jpg) center top no-repeat;">
+  <div id="khuj" style="background:url(/Public/Home/images/m19.jpg) center top no-repeat;">
     <div id="h302"></div>
     <div class="all">
-      <div class="all_1"> <img src="/Public/Home/Images/qzy/1.jpg" width="411" height="52" /></div>
+      <div class="all_1"> <img src="/Public/Home/images/qzy/1.jpg" width="411" height="52" /></div>
       <div class="all_2">
         <div class="all_2_l">
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">姓名：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
-            </div>
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">邮箱：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
-            </div>
-            <div class="clear"></div>
-          </div>
           <div class="all_2_l_1">
             <div class="all_2_l_1_l">手机：</div>
             <div class="all_2_l_1_r">
               <input name="" type="text" />
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="all_2_l_1">
+            <div class="all_2_l_1_l">验证码：</div>
+            <div class="all_2_l_1_r">
+              <input name="" type="text" class="yzmsrk" />
+              <input type="button" id="btn"  class="yzmsrk yzmyzm" value="免费获取验证码" />
             </div>
             <div class="clear"></div>
           </div>
@@ -83,7 +77,7 @@
           <div class="all_2_l_1">
             <div class="all_2_l_1_l"></div>
             <div class="all_2_l_1_r all_2_l_1_r_g">
-              <input  type="submit" value="注册" />
+              <input name="" type="button" id="注册" value="注册" />
             </div>
             <div class="clear"></div>
           </div>
@@ -91,18 +85,18 @@
         <div class="all_2_r">
         
         <div class="all_2_r_1">
-       	  已有帐号？<a href="<?php echo U('Login/index');?>">立即登录</a></div>
+          已有帐号？<a href="denglu.html">立即登录</a></div>
           <div class="all_2_r_1 all_2_r_1_g">
           
           组委会电话：0851-8626792
-       	</div>
-        <div class="all_2_r_2"><img src="/Public/Home/Images/qzy/2.jpg" width="350" height="291" /></div>
+        </div>
+        <div class="all_2_r_2"><img src="/Public/Home/images/qzy/2.jpg" width="350" height="291" /></div>
         </div>
         <div class="clear"></div>
       </div>
     </div>
-</div>
-<div id="foot">
+  </div>
+  <div id="foot">
   <div class="h50"></div>
   <div id="foot1">
       <div id="foot1_logo"><img src="/Public/Home/Images/logo1.jpg" width="156" height="115" /></div>
@@ -133,5 +127,24 @@
 <!-- common js plugin here -->
 <script type="text/javascript" src="/Public/Home/Js/jquery-1.8.3.min.js"></script>
 
+  <script type="text/javascript">
+      var wait=60;
+      function time(o) {
+        if (wait == 0) {
+          o.removeAttribute("disabled");
+          o.value="免费获取验证码";
+          wait = 60;
+        } else {
+          o.setAttribute("disabled", true);
+          o.value="重新发送(" + wait + ")";
+          wait--;
+          setTimeout(function() {
+            time(o)
+          },
+          1000)
+        }
+      }
+      document.getElementById("btn").onclick=function(){time(this);}
+  </script>
 </body>
 </html>
