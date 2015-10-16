@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+.red {
+	color:red;
+}
+.page a, .page .current {
+	padding:5px 10px;
+	background:#fff;
+	float:left;
+	margin-right:1px;
+	color:#428bca;
+}
+.page a:hover, .page .current {
+	background-color: #f9fafc;
+ 	border-color: 1px solid #e8ecf3;
+	font-weight:bold;
+}
+
+.page2 a, .page2 .current {
+	padding:5px 10px;
+	background:#EAEAF2;
+	float:left;
+	margin-right:1px;
+	color:#428bca;
+}
+.page2 a:hover, .page2 .current {
+	background-color: #DDE1E7;
+ 	border-color: 1px solid #e8ecf3;
+	font-weight:bold;
+}
+
