@@ -276,7 +276,7 @@
     </div>
     <div id="Middle3">
     <div id="xexk">
-      <img src="Images/m14.jpg" width="1185" height="94" />
+      <img src="/Public/Home/images/m14.jpg" width="1185" height="94" />
       <div id="xexk1" class="xexk2">
         <p>中国工业和信息化部软件服务业司</p>
         <p>共青团中央学校部</p>
@@ -308,43 +308,43 @@
     <div class="h50"></div>
     <div id="Middle4">
     <div id="fcrf">
-      <img src="Images/m15.jpg" width="1185" height="121" />
+      <img src="/Public/Home/images/m15.jpg" width="1185" height="121" />
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-      <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+      <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     <div id="fcrf1">
-     <p><a href="#"><img src="Images/m16.jpg" width="272" height="79" /></a></p>
+     <p><a href="#"><img src="/Public/Home/images/m16.jpg" width="272" height="79" /></a></p>
     </div>
     </div>
     <div id="Middle5">
