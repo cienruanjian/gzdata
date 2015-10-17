@@ -21,13 +21,13 @@ jQuery.fn.gallery = function(config) {
     var interval;
     var no_click;
     var positions = {
-        current: {zIndex: 100, top: "0px",  left: "200px" },
+        current: {zIndex: 100, top: "0px",  left: "400px" },
         left: {zIndex: 50, top: "90px", left: "0" },
-        right: {zIndex: 25,  top: "90px", left: "1230px" },
-		none: {zIndex: 0,  top: "90px", left: "200px" }
+        right: {zIndex: 25,  top: "90px", left: "1430px" },
+		none: {zIndex: 0,  top: "90px", left: "400px" }
     };
     var currentD = {width:"1184px",height:"580px" };
-    var backD = { width:"356px", height:"400px" };
+    var backD = { width:"556px", height:"400px" };
 
     var $current = {
         li: $(config.current[0]),
