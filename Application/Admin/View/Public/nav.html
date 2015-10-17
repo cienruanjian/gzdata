@@ -7,7 +7,7 @@
                 <a href="{:U('Index/index')}" class="navbar-brand text-white">
                     <i class="fa fa-stop mg-r-sm"></i>
                     <span class="heading-font">
-						星空影业<b>管理系统</b>
+						云上贵州<b>管理系统</b>
 					</span>
                 </a>
             </div>
@@ -16,13 +16,13 @@
                     <button class="btn no-border no-margin bg-none no-pd-l" type="submit">
                         <i class="fa fa-search"></i>
                     </button>
-                    <input type="text" class="form-control no-border no-padding search" placeholder="请输入电影名字">
+                    <input type="text" class="form-control no-border no-padding search" placeholder="">
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right off-right">
                 <li class="hidden-xs">
                     <a href="javascript:;">
-						欢迎您，{:session('login')}
+						欢迎您，{$_SESSION['admin']['login']}
 					</a>
                 </li>
                 <li class="notifications dropdown hidden-xs">
@@ -58,11 +58,16 @@
                         <li <eq name="Think.CONTROLLER_NAME|strtolower" value="index">class="active"</eq>>
                             <a href="{:U('Index/index')}">
                                 <i class="fa fa-coffee"></i>
-                                <span>首页</span>
+                                <span>控制台</span>
                             </a>
                         </li>
 
-                        <if condition="session('role') eq 10">
+                        <li <eq name="Think.CONTROLLER_NAME|strtolower" value="admanage">class="active"</eq>>
+                            <a href="{:U('AdManage/index')}">
+                                <i class="fa fa-desktop"></i>
+                                <span>广告位管理</span>
+                            </a>
+                        </li>
 
                         <li class="dropdown show-on-hover <eq name="Think.CONTROLLER_NAME|strtolower" value="theater">active</eq>">
                            
@@ -144,10 +149,6 @@
                             </ul>
                         </li>
 
-                        </if>
-
-                        <if condition="session('role') eq 10 || session('role') eq 20">
-
                         <li class="dropdown show-on-hover <if condition="in_array(strtolower(CONTROLLER_NAME), ['kanwu', 'article'])">active</if>">
                             <a href="javascript:;" data-toggle="dropdown">
                                 <i class="fa fa-file"></i>
@@ -177,35 +178,7 @@
                             </ul>
                         </li>
 
-                        </if>
-
-                        <if condition="session('role') eq 10">
-
-                        <li class="dropdown show-on-hover <eq name="Think.CONTROLLER_NAME|strtolower" value="admanage">active</eq>">
-                            <a href="javascript:;" data-toggle="dropdown">
-                                <i class="fa fa-desktop"></i>
-                                <span>广告位管理</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{:U('AdManage/index')}">
-                                        <span>首页广告位</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{:U('AdManage/index', ['pos' => 2])}">
-                                        <span>影视列表页广告位</span>
-                                    </a>
-                                </li>
-
-                                <!-- <li>
-                                    <a href="{:U('AdManage/index', ['pos' => 3])}">
-                                        <span>广电报广告位</span>
-                                    </a>
-                                </li> -->
-                                
-                            </ul>
-                        </li>
+                        
 
                         <li class="dropdown show-on-hover <eq name="Think.CONTROLLER_NAME|strtolower" value="integral">active</eq>">
                             <a href="javascript:;" data-toggle="dropdown">
@@ -256,16 +229,13 @@
                                 </li>
                             </ul>
                         </li>
-
-                        </if>
                     </ul>
                 </nav>
-
 
                 <footer>
                     <div class="about-app pd-md animated pulse">
                         <span>
-							<b>{:C('BACKEND_NAME')}</b>&#32;响应式布局。基于bootstrap 3开发
+							<b>{:C('BACKEND_NAME')}</b>
 						</span>
                     </div>
                     <div class="footer-toolbar pull-left">

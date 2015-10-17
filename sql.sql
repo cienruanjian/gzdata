@@ -37,3 +37,36 @@ CREATE TABLE IF NOT EXISTS `cns_admin` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `login` (`login`) COMMENT '管理员表'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- -----------------------------------------------------
+-- 初始化管理员账号
+-- -----------------------------------------------------
+# INSERT INTO cns_admin SET `login` = 'cns', `password` = md5('flzx3qc'), `status` = 1;
+
+
+-- -----------------------------------------------------
+-- Table `gzdata`.`cns_ad`广告位管理
+-- -----------------------------------------------------
+CREATE TABLE `cns_ad` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `url` varchar(255) NOT NULL DEFAULT '' COMMENT '网页地址',
+  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `desc` varchar(500) NOT NULL DEFAULT '' COMMENT '相关描述',
+  `thumb` varchar(255) NOT NULL DEFAULT '' COMMENT '广告位图片',
+  `number` tinyint(1) NOT NULL DEFAULT 0 COMMENT '广告位编号',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '1=正常，0=关闭',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8
+
+
+
+
+
+
+
+
+
+
+
+
+
