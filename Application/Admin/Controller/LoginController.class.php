@@ -24,22 +24,26 @@ class LoginController extends Controller {
         $pwd    = I('password', '', 'md5');
         if (!$login || !$pwd) $this->error('用户名和密码不能为空！');
         
-        $manger = M('Manager')->where(array('login' => $login))->field('id, login, password, status, role')->find();
-        if (!$manger || $manger['password'] != $pwd) $this->error('账号或者密码错误');
-        if (!$manger['status']) $this->error('账号已被锁定');
+        $admin = M('Admin')->where(array('login' => $login))->find();
+        if (!$admin || $admin['password'] != $pwd) $this->error('账号或者密码错误');
+        if (!$admin['status']) $this->error('账号已被锁定');
         
         //数据检测通过
         $data = array(
             'last_login_time' => $_SERVER['REQUEST_TIME'],
-            'last_login_ip'   => get_client_ip()
+            'last_login_ip'   => ip2long(get_client_ip())
         );
-        M('Manager')->where(array('id' => $manger['id']))->save($data);
+        M('Admin')->where(array('id' => $admin['id']))->save($data);
         
         //登陆状态写入到session
-        session(C('USER_AUTH_KEY'), $manger['id']);
-        session('login', $manger['login']);
-        session('role', $manger['role']);
-        
+        $session = array(
+            C('USER_AUTH_KEY') => $admin['id'],
+            'login'            => $admin['login'],
+            'last_login_time'  => $admin['last_login_time'],
+            'last_login_ip'    => $admin['last_login_ip'],
+        );
+        session('admin', $session);
+       
         //页面跳转
         if (session('url')) {
             header('location:'.session('url'));

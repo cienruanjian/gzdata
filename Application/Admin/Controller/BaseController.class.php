@@ -10,7 +10,8 @@ use Think\Controller;
 class BaseController extends Controller {
     public function _initialize () {
        //检查用户是否已登录
-        if (!session(C('USER_AUTH_KEY'))) {
+        $session = session('admin');
+        if (!$session[C('USER_AUTH_KEY')]) {
             $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             session('url', $url);
             $this->redirect('Login/index');
