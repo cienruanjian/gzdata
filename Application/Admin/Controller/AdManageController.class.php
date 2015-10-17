@@ -9,25 +9,8 @@ class AdManageController extends BaseController {
     }
     
     public function index(){
-    	$pos = I('pos',0, 'intval');
-    	$pos = $pos ? $pos : 1;
-    	switch ($pos) {
-    		case '1':
-    			$titleL2 = "首页广告位";
-    			break;
-    		case '2':
-    			$titleL2 = "影视业广告位";
-    			break;
-    		case '3':
-    			$titleL2 = "广电报广告位";
-    			break;
-    		
-    		default:
-    			$this->error('参数错误');
-    			break;
-    	}
-    	$this->titleL2 = $titleL2;
-    	$this->pos = $pos;
+        $number = I('number', 0, 'intval');
+        $number = $number ? $number : 1;
     	$this->ad = M('Ad')->where(['pos' => $pos])->order('sort asc, id desc')->select();
         $this->display();
     }

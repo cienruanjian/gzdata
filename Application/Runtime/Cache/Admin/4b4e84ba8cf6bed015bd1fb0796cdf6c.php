@@ -312,18 +312,6 @@
                                       <p class="help-block no-margin">格式：jpg、jpeg、gif、png 尺寸：<?php echo ($big_thumb); ?></p>
                                   </div>
                               </div>
-                              <?php if($pos == 1 || $pos == 2): ?><div class="form-group">
-                                    
-                                    <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>缩略图</label>
-                                    <div class="col-sm-2">
-                                      <img id="no-image-small" src="/Public/Default/images/no_image.jpg" >
-                                    </div>
-                                    <div class="col-sm-8" style="margin-top:20px;">
-                                        <input type="file" name="sface" id="uploadSmallThumb" />
-                                        <p class="help-block no-margin">格式：jpg、jpeg、gif、png 尺寸：<?php echo ($small_thumb); ?></p>
-                                    </div>
-                                </div><?php endif; ?>
-                              
                                <div class="form-group">
                                   <label for="inputEmail3" class="col-sm-2 control-label">链接地址</label>
                                   <div class="col-sm-8">
