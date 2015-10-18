@@ -58,6 +58,20 @@ CREATE TABLE `cns_ad` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8
 
+-- -----------------------------------------------------
+-- Table `gzdata`.`cns_article`文章
+-- -----------------------------------------------------
+CREATE TABLE `cns_article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `type` TINYINT(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '类别, 1=大赛简介，2=大赛咨询',
+  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  `desc` varchar(500) NOT NULL DEFAULT '' COMMENT '相关描述',
+  `thumb` varchar(255) NOT NULL DEFAULT '' COMMENT '缩略图',
+  `content` text comment '文章内容'，
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '1=正常，0=关闭',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8
+
 
 
 
