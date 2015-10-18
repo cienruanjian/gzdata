@@ -29,7 +29,7 @@
                                   </div>
                                   <div class="col-sm-8" style="margin-top:20px;">
                                       <input type="file" name="face" id="upload" />
-                                      <p class="help-block no-margin">格式：jpg、jpeg、gif、png 尺寸：{$big_thumb}</p>
+                                      <p class="help-block no-margin">图片格式：jpg、jpeg、gif、png; 参考尺寸（px）：<span style="color:red; font-size:14px;">{$size[0]} * {$size[1]}</span></p>
                                   </div>
                               </div>
                                <div class="form-group">
@@ -72,15 +72,20 @@
 <include file="Public/footer"/> 
 <!-- page special js plugin here -->
 <script type="text/javascript" src="__PUBLIC__/Plugin/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Plugin/layer/layer.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Admin/js/init_uploadify.js"></script>
-
 <script>
-
-  alert(a);
   var sid = "{:session_id()}";
   var url = "{:U('Base/uploadImage')}";
-  uploadImage(url, {}, sid, "ad");
+  var number = "{$_GET['number']}" ? "{$_GET['number']}" : 1;
+  uploadImage(url, number, sid, "ad/");
 
+  $('form').submit(function () {
+    if ($('input[name=thumb]').val() == '') {
+      layer.msg('请先上传缩略图');
+      return false;
+    }
+  })
 </script>
 
 </body>

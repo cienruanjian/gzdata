@@ -21,216 +21,21 @@ class BaseController extends Controller {
         header( " HTTP/1.0  404  Not Found" );
         $this->display( 'Public:404' );
     }
-    
+
     public function uploadImage() {
 
-        print_r($_POST['size']);
-    }
-
-
-
-
-    //新闻封面
-    public function uploadNewsFace () {
-        //缩略图尺寸
-        $thumb = array(
-            'face200' => array(200, 230),
-            'face80'  => array(80, 90)
-        );
-        $arr = $this->_upload('news/', $thumb);
-        echo json_encode($arr);
-    }
-
-    //礼品封面
-    public function uploadGiftFace () {
-        //缩略图尺寸
-        $thumb = array(
-            'small_thumb' => array(258, 203),
-        );
-        $arr = $this->_upload('gift/', $thumb);
-        echo json_encode($arr);
-    }
-
-    //文章封面
-    public function uploadArticleFace () {
-        //缩略图尺寸
-        $thumb = array(
-            'face200'  => array(200, 230),
-            'face368'  => array(368, 276),
-            'face208'  => array(208, 156),
-            'face258'  => array(258, 341),
-            'face255'  => array(255, 256)
-        );
-        $arr = $this->_upload('article/', $thumb);
-        echo json_encode($arr);
-    }
-    /**
-     * 新闻图片
-     */
-    public function uploadEnterpriseFace() {
-        $thumb = [
-            'face245' => [245, 115]
-        ];
-        $arr =$this->_upload('enterprise/', $thumb);
-        echo json_encode($arr);
-    }
-     /**
-     * 广告位大图
-     */
-    public function uploadAdBigThumb() {
-        $pos = I('pos', '', 'intval');
-        $pos = $pos ? $pos : 1;
-        switch ($pos) {
-            case '1':
-                $thumb = ['big_thumb' => [1920, 757]];
-                break;
-            case '2':
-                $thumb = ['big_thumb' => [1120, 400]];
-                break;
-             case '3':
-                $thumb = ['big_thumb' => [226, 340]];
-                break;
-            
-            default:
-                echo json_encode(['status' => 0]);
-                break;
-        }
-        $arr =$this->_upload('ad/', $thumb);
-        echo json_encode($arr);
+       $number  = I('number', 0, 'intval');
+       $sizeArr = C('AD_THUMB_SIZE');
+       $dir     = I('dir') ? I('dir') : 'ad/';
+       $thumb   = array(
+            'thumb'  => $sizeArr[$number]
+       );
+       $arr = $this->_upload($dir, $thumb);
+       echo json_encode($arr);
     }
 
     /**
-     * 上映电影封面图
-     */
-    public function uploadScreeningSmallThumb() {
-        $thumb = [
-            'small_thumb' => [186, 248]
-        ];
-        $arr =$this->_upload('screening/', $thumb);
-        echo json_encode($arr);
-    }
-
-    /**
-     * 上映电影详情图
-     */
-    public function uploadScreeningBigThumb() {
-        $thumb = [
-            'big_thumb' => [800, 480]
-        ];
-        $arr =$this->_upload('screening/', $thumb);
-        echo json_encode($arr);
-    }
-
-
-     /**
-     * 广告位小图
-     */
-    public function uploadAdSmallThumb() {
-        $pos = I('pos', '', 'intval');
-        $pos = $pos ? $pos : 1;
-        switch ($pos) {
-            case '1':
-                $thumb = ['small_thumb' => [360, 170]];
-                break;
-            case '2':
-                $thumb = ['small_thumb' => [60, 60]];
-                break;
-            
-            default:
-                echo json_encode(['status' => 0]);
-                break;
-        }
-        $arr =$this->_upload('ad/', $thumb);
-        echo json_encode($arr);
-    }
-
-     /**
-     * 活动缩略图
-     */
-    public function uploadActivitySmallThumb() {
-        $thumb = ['small_thumb' => [1084, 364]];
-        $arr =$this->_upload('activity/', $thumb);
-        echo json_encode($arr);
-    }
-     /**
-     * 活动详情图
-     */
-    public function uploadActivityBigThumb() {
-        $arr =$this->_upload('activity/');
-        echo json_encode($arr);
-    }
-
-
-    /**
-     * 影城封面
-     */
-    public function uploadTheaterFace() {
-        $thumb = [
-                'face520' => [520, 290],
-                'face40'  => [40, 40]
-        ];
-        $arr =$this->_upload('theater/', $thumb);
-        echo json_encode($arr);
-    }
-    /**
-     * 影城图片
-     */
-    public function uploadTheaterPhoto() {
-        $theater_id = I('theater_id', 0, 'intval');
-        if (!$theater_id) {
-            echo json_encode(['status' => 0]);
-            exit;
-        }
-        $thumb = [
-            'path' => [350, 250],
-        ];
-        $arr =$this->_upload('theater/', $thumb);
-        if ($arr) {
-            $data = [
-                'theater_id' => $theater_id,
-                'path'       => $arr['path']['path'],
-            ];
-            if (M('TheaterPhoto')->add($data));
-            $arr = ['status' => 1, 'path' => $data['path']];
-        }
-        echo json_encode($arr);
-    }
-    /**
-     * 上传视频图片
-     */
-    public function uploadMovieFace() {
-        $thumb = [
-                'face209' => [209, 114],
-                'face142' => [142, 81],
-                'face96'  => [96, 85],
-                'face196' => [196, 110],
-                'face80'  => [80, 45],
-                'face40'  => [40, 40],
-                'face160' => [160, 181]
-            ];
-        $arr =$this->_upload('movieFace/', $thumb);
-        echo json_encode($arr);
-    }
-     /**
-     * 上传刊物图片
-     */
-    public function uploadKanwuFace() {
-        $thumb = [
-                'face508' => [508, 760],
-                'face157' => [157, 224],
-                'face240'  => [240, 360]
-            ];
-        $arr =$this->_upload('kanwuFace/', $thumb);
-        echo json_encode($arr);
-    }
-    /**
-     * 上传电影
-     */
-    public function uploadMovie() {
-        echo json_encode($this->_uploadFile(C('UPLOAD_MOVIE_EXTS'), 'movie/'));
-    }
-    /**
-     * 上传电影
+     * 上传pdf
      */
     public function uploadPdf() {
         echo json_encode($this->_uploadFile(['pdf'], 'pdf/'));
@@ -254,13 +59,13 @@ class BaseController extends Controller {
      */
     private function _upload($path,$thumb=array(), $method = \Think\Image::IMAGE_THUMB_CENTER) {
         $obj = new \Think\Upload();// 实例化上传类
-        $obj->maxSize = C('UPLOAD_MAX_SIZE') ;// 设置附件上传大小
-        $obj->rootPath=C('UPLOAD_PATH');
+        $obj->maxSize  = C('UPLOAD_MAX_SIZE') ;// 设置附件上传大小
+        $obj->rootPath =C('UPLOAD_PATH');
         $obj->savePath =$path;
-        $obj->exts =  C('UPLOAD_IMG_EXTS');// 设置附件上传类型
+        $obj->exts     =  C('UPLOAD_IMG_EXTS');// 设置附件上传类型
         $obj->saveName = array('uniqid','');//文件名规则
-        $obj->replace = true;//存在同名文件覆盖
-        $obj->autoSub = true;//使用子目录保存
+        $obj->replace  = true;//存在同名文件覆盖
+        $obj->autoSub  = true;//使用子目录保存
         $obj->subName  = array('date','Ym');//子目录创建规则，
         $info = $obj->upload();
         if(!$info) { //上传失败

@@ -56,14 +56,14 @@
                                                 	<foreach name="ad" item="v">
     	                                                <tr>
                                                             <td>
-                                                                <img src="__ROOT__/{$v.big_thumb}" width="140" height="90">
+                                                                <img src="__ROOT__/{$v.thumb}" width="140" height="90">
                                                             </td>
                                                             <td>{$v.url}</td>
     	                                                    <td>{$v.desc}</td>
     	                                                    <td>{$v.sort}</td>
     	                                                    <td>
-    	                                                    	<a href="{:U('AdManage/edit', ['id' => $v['id'], 'pos' => $pos])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
-                                                 			  	<a class="del" href="{:U('AdManage/del', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+    	                                                    	<a href="{:U('AdManage/edit', array(number => $v['number'],'id' => $v['number']))}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                                 			  	<a class="del" href="{:U('AdManage/del', array(number => $v['number'],'id' => $v['number']))}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
     	                                                    </td>
     	                                                </tr>
                                                     </foreach>

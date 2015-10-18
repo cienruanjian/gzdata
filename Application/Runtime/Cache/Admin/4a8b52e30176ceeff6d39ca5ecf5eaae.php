@@ -334,14 +334,14 @@
                                             <tbody>
                                                 <?php if(!empty($ad)): if(is_array($ad)): foreach($ad as $key=>$v): ?><tr>
                                                             <td>
-                                                                <img src="/<?php echo ($v["big_thumb"]); ?>" width="140" height="90">
+                                                                <img src="/<?php echo ($v["thumb"]); ?>" width="140" height="90">
                                                             </td>
                                                             <td><?php echo ($v["url"]); ?></td>
     	                                                    <td><?php echo ($v["desc"]); ?></td>
     	                                                    <td><?php echo ($v["sort"]); ?></td>
     	                                                    <td>
-    	                                                    	<a href="<?php echo U('AdManage/edit', ['id' => $v['id'], 'pos' => $pos]);?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
-                                                 			  	<a class="del" href="<?php echo U('AdManage/del', ['id' => $v['id']]);?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+    	                                                    	<a href="<?php echo U('AdManage/edit', array(number => $v['number'],'id' => $v['number']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                                 			  	<a class="del" href="<?php echo U('AdManage/del', array(number => $v['number'],'id' => $v['number']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
     	                                                    </td>
     	                                                </tr><?php endforeach; endif; ?>
                                                 <?php else: ?>

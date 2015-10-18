@@ -299,45 +299,47 @@
                  	<section class="panel">
                       <header class="panel-heading"><?php echo ($titleL2); ?></header>
                       <div class="panel-body">
-                          <form class="form-horizontal bordered-group" role="form" action="<?php echo U('AdManage/addHandle');?>" method="post">
+                          <form class="form-horizontal bordered-group" role="form" action="<?php echo U('AdManage/editHandle');?>" method="post">
                               
                               <div class="form-group">
                               	  
-                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>轮播大图</label>
+                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>缩略图</label>
                                   <div class="col-sm-2">
-                                  	<img id="no-image" src="/Public/Default/images/no_image.jpg" >
+                                  	<img id="no-image" <?php if($data['thumb']): ?>src="/<?php echo ($data["thumb"]); ?>"<?php else: ?> src="/Public/Default/images/no_image.jpg"<?php endif; ?> >
                                   </div>
-                                  <div class="col-sm-8" style="margin-top:20px;">
+                                  <div class="col-sm-8" style="margin-top:15px;">
                                       <input type="file" name="face" id="upload" />
-                                      <p class="help-block no-margin">图片格式：jpg、jpeg、gif、png; 参考尺寸（px）：<span style="color:red; font-size:14px;"><?php echo ($size[0]); ?> * <?php echo ($size[1]); ?></span></p>
+                                     <p class="help-block no-margin">图片格式：jpg、jpeg、gif、png; 参考尺寸（px）：<span style="color:red; font-size:14px;"><?php echo ($size[0]); ?> * <?php echo ($size[1]); ?></span></p>
                                   </div>
                               </div>
+                              
                                <div class="form-group">
                                   <label for="inputEmail3" class="col-sm-2 control-label">链接地址</label>
                                   <div class="col-sm-8">
-                                      <input type="text" name="url" placeholder="http://" class="form-control" id="inputEmail3">
+                                      <input type="text" name="url" placeholder="http://" class="form-control" id="inputEmail3" value="<?php echo ($data["url"]); ?>">
                                   </div>
                               </div>
                               
                               <div class="form-group">
                                   <label class="col-sm-2 control-label">描述</label>
                                   <div class="col-sm-8">
-                                      <textarea name="desc" class="form-control" rows="2"></textarea>
+                                      <textarea name="desc" class="form-control" rows="2"><?php echo ($data["desc"]); ?></textarea>
                                   </div>
                               </div> 
                              
                               <div class="form-group">
                                   <label for="inputEmail4" class="col-sm-2 control-label">排序</label>
                                   <div class="col-sm-8">
-                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="100" placeholder="排序">
+                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="<?php echo ($data["sort"]); ?>" placeholder="排序">
                                   </div>
                               </div>
-                              <input type="hidden" name="thumb">
+                              <input type="hidden" name="thumb" value="<?php echo ($data["thumb"]); ?>">
                               <input type="hidden" name="number" value="<?php echo ($_GET['number']); ?>">
+                              <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
                               
                               <div class="form-group">
                                   <div class="col-sm-offset-2 col-sm-6">
-                                      <button type="submit" class="btn btn-default">添加</button>
+                                      <button type="submit" class="btn btn-default">保存</button>
                                   </div>
                               </div>
                           </form>
