@@ -290,7 +290,7 @@
 
                 <header class="header navbar bg-default">
                     <ul class="nav navbar-nav">
-                        <li <?php if($_GET['number'] == 1): ?>class="active"<?php endif; ?>>
+                        <li <?php if($_GET['number'] == 1 || !$_GET['number']): ?>class="active"<?php endif; ?>>
                             <a href="<?php echo U('AdManage/index', array('number' => 1));?>">1号广告位</a>
                         </li>
                         <li <?php if($_GET['number'] == 2): ?>class="active"<?php endif; ?>>

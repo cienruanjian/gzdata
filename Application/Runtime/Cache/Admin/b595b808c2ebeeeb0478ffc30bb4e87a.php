@@ -30,17 +30,6 @@
 
     <script src="/Public/Admin/vendor/modernizr.js"></script>
 <!-- page special css plugin here -->
-<link rel="stylesheet" href="/Public/Plugin/uploadify/uploadify.css">
-<style type="text/css">
-	.uploadify-button {
-	    background-color: transparent;
-	    border: none;
-	    padding: 0;
-	}
-	.uploadify:hover .uploadify-button {
-	    background-color: transparent;
-	}
-</style>
 </head>
 <body>
     <div class="app">
@@ -292,63 +281,20 @@
                 </footer>
 
             </aside>
-        <section class="main-content">
-            <div class="content-wrap">
-                <div class="row">
-                	<div class="col-lg-12">
-                 	<section class="panel">
-                      <header class="panel-heading"><?php echo ($titleL2); ?></header>
-                      <div class="panel-body">
-                          <form class="form-horizontal bordered-group" role="form" action="<?php echo U('AdManage/addHandle');?>" method="post">
-                              
-                              <div class="form-group">
-                              	  
-                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>轮播大图</label>
-                                  <div class="col-sm-2">
-                                  	<img id="no-image" src="/Public/Default/images/no_image.jpg" >
-                                  </div>
-                                  <div class="col-sm-8" style="margin-top:20px;">
-                                      <input type="file" name="face" id="upload" />
-                                      <p class="help-block no-margin">格式：jpg、jpeg、gif、png 尺寸：<?php echo ($big_thumb); ?></p>
-                                  </div>
-                              </div>
-                               <div class="form-group">
-                                  <label for="inputEmail3" class="col-sm-2 control-label">链接地址</label>
-                                  <div class="col-sm-8">
-                                      <input type="text" name="url" placeholder="http://" class="form-control" id="inputEmail3">
-                                  </div>
-                              </div>
-                              
-                              <div class="form-group">
-                                  <label class="col-sm-2 control-label">描述</label>
-                                  <div class="col-sm-8">
-                                      <textarea name="desc" class="form-control" rows="2"></textarea>
-                                  </div>
-                              </div> 
-                             
-                              <div class="form-group">
-                                  <label for="inputEmail4" class="col-sm-2 control-label">排序</label>
-                                  <div class="col-sm-8">
-                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="100" placeholder="排序">
-                                  </div>
-                              </div>
-                              <input type="hidden" name="thumb">
-                              <input type="hidden" name="number" value="<?php echo ($_GET['number']); ?>">
-                              
-                              <div class="form-group">
-                                  <div class="col-sm-offset-2 col-sm-6">
-                                      <button type="submit" class="btn btn-default">添加</button>
-                                  </div>
-                              </div>
-                          </form>
-                      </div>
-                  </section>
-                 </div>
+            <section class="main-content">
+                <div class="content-wrap">
+                    <div class="center-wrapper text-center">
+                        <div class="center-content">
+                            <h2>欢迎使用<?php echo C('BACKEND_NAME');?>~</h2>
+                            <h4>上次登录时间：<?php echo date('Y-m-d H:i:s', $_SESSION['admin']['last_login_time']);?></h4>
+                            <h6>上次登录IP：<?php echo long2ip($_SESSION['admin']['last_login_ip']);?></h6>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </section>
-    </section>
-</div>
+    </div>
+<!-- page special js plugin here -->
 <script src="/Public/Admin/vendor/jquery-1.11.1.min.js"></script>
 <script src="/Public/Admin/bootstrap/js/bootstrap.js"></script>
 <script src="/Public/Admin/vendor/jquery.easing.min.js"></script>
@@ -366,21 +312,7 @@
 <script src="/Public/Admin/vendor/isotope/isotope.pkgd.min.js"></script>
 <script src="/Public/Admin/js/feed.js"></script>
 
-<script src="/Public/Admin/js/common.js"></script> 
-<!-- page special js plugin here -->
-<script type="text/javascript" src="/Public/Plugin/uploadify/jquery.uploadify.min.js"></script>
-<script type="text/javascript" src="/Public/Admin/js/init_uploadify.js"></script>
-
-<script>
-
-  var a = new Array(10,20);
-  a.serializeArray();
-  alert(a);
-  var sid = "<?php echo session_id();?>";
-  var url = "<?php echo U('Base/uploadImage');?>";
-  uploadImage(url, "{'h':10}", sid, "ad");
-
-</script>
-
+<script src="/Public/Admin/js/common.js"></script>  
 </body>
+
 </html>

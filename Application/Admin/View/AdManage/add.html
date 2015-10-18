@@ -72,63 +72,15 @@
 <include file="Public/footer"/> 
 <!-- page special js plugin here -->
 <script type="text/javascript" src="__PUBLIC__/Plugin/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/init_uploadify.js"></script>
 
 <script>
-  var pos = "{$pos}";
-  $(function() {
-	setTimeout(function() {
-		 var sid = "{:session_id()}";
-		    $('#upload').uploadify({
-		      'swf'           :    "__PUBLIC__/Plugin/uploadify/uploadify.swf",
-		      'uploader'      :    "{:U('Base/uploadAdBigThumb')}",
-		      'buttonImage'   :    "__PUBLIC__/Plugin/uploadify/browse-btn.png",
-		      'width'         :    "120",
-		      'height'        :    "30",
-		      'fileTypeDesc'  :    "Image file",
-		      'fileTypeExts'  :    "*.jpg;*.jpeg;*.gif;*.png",
-		      'formData'      :    {"session_id"  : sid, "pos" : pos},
-		      'multi'         :     false,
-		      'removeTimeout' :     1,
-		      onUploadSuccess :     function(file, data, response) {
-		        eval('var data = ' + data);
-		        if (data.status == 1) {
-		        	$('input[name=big_thumb]').val(data.path.big_thumb);
-		        	$('#no-image').attr('src', "__ROOT__/"+data.path.big_thumb);
-		        } else {
-		         	alert('图片上传失败，请重试...');
-		        }
-		      }
-		    });
-	}, 10);
-  });
 
-  //小图上传
-   $(function() {
-   setTimeout(function() {
-     var sid = "{:session_id()}";
-        $('#uploadSmallThumb').uploadify({
-          'swf'           :    "__PUBLIC__/Plugin/uploadify/uploadify.swf",
-          'uploader'      :    "{:U('Base/uploadAdSmallThumb')}",
-          'buttonImage'   :    "__PUBLIC__/Plugin/uploadify/browse-btn.png",
-          'width'         :    "120",
-          'height'        :    "30",
-          'fileTypeDesc'  :    "Image file",
-          'fileTypeExts'  :    "*.jpg;*.jpeg;*.gif;*.png",
-          'formData'      :    {"session_id"  : sid, "pos" : pos},
-          'multi'         :     false,
-          'removeTimeout' :     1,
-          onUploadSuccess :     function(file, data, response) {
-            eval('var data = ' + data);
-            if (data.status == 1) {
-              $('input[name=small_thumb]').val(data.path.small_thumb);
-              $('#no-image-small').attr('src', "__ROOT__/"+data.path.small_thumb);
-            } else {
-              alert('图片上传失败，请重试...');
-            }
-          }
-        });
-  }, 10);
-  });
+  alert(a);
+  var sid = "{:session_id()}";
+  var url = "{:U('Base/uploadImage')}";
+  uploadImage(url, {}, sid, "ad");
+
 </script>
 
 </body>

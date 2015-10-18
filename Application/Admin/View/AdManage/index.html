@@ -10,7 +10,7 @@
 
                 <header class="header navbar bg-default">
                     <ul class="nav navbar-nav">
-                        <li <if condition="$_GET['number'] eq 1">class="active"</if>>
+                        <li <if condition="$_GET['number'] eq 1 || !$_GET['number']">class="active"</if>>
                             <a href="{:U('AdManage/index', array('number' => 1))}">1号广告位</a>
                         </li>
                         <li <if condition="$_GET['number'] eq 2">class="active"</if>>

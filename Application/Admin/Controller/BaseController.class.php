@@ -22,6 +22,14 @@ class BaseController extends Controller {
         $this->display( 'Public:404' );
     }
     
+    public function uploadImage() {
+
+        print_r($_POST['size']);
+    }
+
+
+
+
     //新闻封面
     public function uploadNewsFace () {
         //缩略图尺寸
