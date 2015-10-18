@@ -340,8 +340,8 @@
     	                                                    <td><?php echo ($v["desc"]); ?></td>
     	                                                    <td><?php echo ($v["sort"]); ?></td>
     	                                                    <td>
-    	                                                    	<a href="<?php echo U('AdManage/edit', array(number => $v['number'],'id' => $v['number']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
-                                                 			  	<a class="del" href="<?php echo U('AdManage/del', array(number => $v['number'],'id' => $v['number']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+    	                                                    	<a href="<?php echo U('AdManage/edit', array(number => $v['number'],'id' => $v['id']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                                 			  	<a class="del" href="<?php echo U('AdManage/del', array(number => $v['number'],'id' => $v['id']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
     	                                                    </td>
     	                                                </tr><?php endforeach; endif; ?>
                                                 <?php else: ?>

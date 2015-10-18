@@ -42,26 +42,11 @@
     <div id="wrappen">
       <div id="wrapper">
         <ul class="lanrenzhijia">
-          <li class="lanrenzhijia_li show_images_1">
-            <a href="baomingtongdao.html" target="_blank">
-              <img class="show_images_1_img" src="/Public/Home/images/1.jpg" alt="" />
-            </a>
-          </li>
-          <li class="lanrenzhijia_li show_images_2">
-            <a href="#" target="_blank">
-              <img class="show_images_2_img" src="/Public/Home/images/4.jpg" alt="" />
-            </a>
-          </li>
-          <li class="lanrenzhijia_li show_images_3">
-            <a href="#" target="_blank">
-              <img class="show_images_3_img" src="/Public/Home/images/2.jpg" alt="" />
-            </a>
-          </li>
-          <li class="lanrenzhijia_li show_images_4">
-            <a href="#" target="_blank">
-              <img class="show_images_4_img" src="/Public/Home/images/3.jpg" alt="" />
-            </a>
-          </li>
+          <?php if(is_array($ad_1)): foreach($ad_1 as $key=>$v): ?><li class="lanrenzhijia_li show_images_<?php echo ($key + 1); ?>">
+              <a <?php if($v['url']): ?>href="<?php echo ($v["url"]); ?>" target="_blank"<?php endif; ?>>
+                <img class="show_images_<?php echo ($key + 1); ?>_img" src="/<?php echo ($v["thumb"]); ?>" alt="<?php echo ($v["desc"]); ?>" />
+              </a>
+            </li><?php endforeach; endif; ?>
         </ul>
         <div style="clear:both;"></div>
       </div>
@@ -72,29 +57,16 @@
         <!-- 代码 开始 -->
         <div id="fsD1" class="focus">
           <div id="D1pic1" class="fPic">
-            <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="/Public/Home/images/01.jpg" style="opacity: 1; "></a>
-              <span class="shadow"><a target="_blank" href="#">大数据安防-大数据安防中的三种关键技术及五大挑战 综合资讯</a></span>
-            </div>
-            <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="/Public/Home/images/02.jpg" style="opacity: 1; "></a>
-              <span class="shadow"><a target="_blank" href="#">大数据时代对“毫不相干”的企业的四个方面的影响</a></span>
-            </div>
-            <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="/Public/Home/images/03.jpg" style="opacity: 1; "></a>
-              <span class="shadow"><a target="_blank" href="#">英特尔拉Cloudera进中国 资源正在融合与</a></span>
-            </div>
-            <div class="fcon" style="display: none;">
-              <a target="_blank" href="#"><img src="/Public/Home/images/04.jpg" style="opacity: 1; "></a>
-              <span class="shadow"><a target="_blank" href="#">大数据将颠覆房地产传统模式</a></span>
-            </div>
+            <?php if(is_array($ad_2)): foreach($ad_2 as $key=>$v): ?><div class="fcon" style="display: none;">
+                <a <?php if($v['url']): ?>href="<?php echo ($v["url"]); ?>" target="_blank"<?php endif; ?>>
+                  <img src="/<?php echo ($v["thumb"]); ?>" style="opacity: 1; ">
+                </a>
+                <?php if($v['desc']): ?><span class="shadow"><a <?php if($v['url']): ?>href="<?php echo ($v["url"]); ?>" target="_blank"<?php endif; ?>><?php echo ($v["desc"]); ?></a></span><?php endif; ?>
+              </div><?php endforeach; endif; ?>
           </div>
           <div class="fbg">
             <div class="D1fBt" id="D1fBt">
-              <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>1</i></a>
-              <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>2</i></a>
-              <a href="javascript:void(0)" hidefocus="true" target="_self" class="current"><i>3</i></a>
-              <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>4</i></a>
+              <?php if(is_array($ad_2)): foreach($ad_2 as $key=>$v): ?><a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i><?php echo ($key + 1); ?></i></a><?php endforeach; endif; ?>
             </div>
           </div>
         </div>
@@ -159,113 +131,54 @@
         <ul class="list">
           <li class="liA">
             <div class="window">
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="www.lanrentuku.com">&nbsp;</a>
-                </div>
-              </div>
+              <?php if(is_array($ad_3)): foreach($ad_3 as $key=>$v): ?><div class="piece">
+                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                    <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
+                  </a>
+                  <?php if($v['desc']): ?><div class="bar">
+                      <h3><?php echo ($v["desc"]); ?></h3>
+                      <span></span>
+                    </div><?php endif; ?>
+                </div><?php endforeach; endif; ?>
             </div>
           </li>
           <li class="liB">
             <div class="window">
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span> <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
+              <?php if(is_array($ad_4)): foreach($ad_4 as $key=>$v): ?><div class="piece">
+                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                    <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
+                  </a>
+                  <?php if($v['desc']): ?><div class="bar">
+                      <h3><?php echo ($v["desc"]); ?></h3>
+                      <span></span>
+                    </div><?php endif; ?>
+                </div><?php endforeach; endif; ?>
             </div>
           </li>
           <li class="liC">
             <div class="window">
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
+              <?php if(is_array($ad_5)): foreach($ad_5 as $key=>$v): ?><div class="piece">
+                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                    <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
+                  </a>
+                  <?php if($v['desc']): ?><div class="bar">
+                      <h3><?php echo ($v["desc"]); ?></h3>
+                      <span></span>
+                    </div><?php endif; ?>
+                </div><?php endforeach; endif; ?>
             </div>
           </li>
           <li class="liD">
             <div class="window">
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
-              <div class="piece">
-                <a target="_blank" href="javascript:;"><img alt="" src="/Public/Home/images/m11.jpg"></a>
-                <div class="bar">
-                  <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                  <span></span>
-                  <a target="_blank" href="javascript:;">&nbsp;</a>
-                </div>
-              </div>
+              <?php if(is_array($ad_6)): foreach($ad_6 as $key=>$v): ?><div class="piece">
+                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                    <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
+                  </a>
+                  <?php if($v['desc']): ?><div class="bar">
+                      <h3><?php echo ($v["desc"]); ?></h3>
+                      <span></span>
+                    </div><?php endif; ?>
+                </div><?php endforeach; endif; ?>
             </div>
           </li>
         </ul>

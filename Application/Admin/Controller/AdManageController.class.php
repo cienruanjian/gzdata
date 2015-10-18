@@ -29,7 +29,7 @@ class AdManageController extends BaseController {
     	$model->create();
     	if (!$model->thumb) $this->error('请上传缩略图');
     	if ($model->add()) {
-    		$this->redirect('AdManage/index?number='.$model->number);
+    		$this->redirect('AdManage/index?number='.I('number'));
     	} else {
     		$this->error('添加失败');
     	}
@@ -52,7 +52,7 @@ class AdManageController extends BaseController {
     	$model->create();
     	if (!$model->thumb) $this->error('请上传缩略图');
     	if ($model->save()) {
-    		$this->redirect('AdManage/index?number='.$model->number);
+    		$this->redirect('AdManage/index?number='.I('number'));
     	} else {
     		$this->error('修改失败');
     	}
@@ -63,7 +63,7 @@ class AdManageController extends BaseController {
         $id = I('id', 0, 'intval');
         if (!$id) $this->error('参数错误');
         if (M('Ad')->where(['id' => $id])->delete()) {
-            $this->redirect('AdManage/index?number='.$model->I('number'));
+            $this->redirect('AdManage/index?number='.I('number'));
         } else {
             $this->error('删除失败');
         }
