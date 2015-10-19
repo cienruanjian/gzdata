@@ -25,10 +25,10 @@ class BaseController extends Controller {
     public function uploadImage() {
 
        $number  = I('number', 0, 'intval');
-       $sizeArr = C('AD_THUMB_SIZE');
+       $sizeArr = C('THUMB_SIZE');
        $dir     = I('dir') ? I('dir') : 'ad/';
        $thumb   = array(
-            'thumb'  => $sizeArr[$number]
+            'thumb'  => $sizeArr[$number] ? $sizeArr[$number] : array(100, 100)
        );
        $arr = $this->_upload($dir, $thumb);
        echo json_encode($arr);

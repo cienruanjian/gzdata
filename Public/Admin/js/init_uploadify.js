@@ -1,7 +1,7 @@
 /**
  * uploadify异步图片上传
  * @param  string url    处理地址
- * @param  int    number 广告位编号
+ * @param  int    number 编号，对应配置文件尺寸
  * @param  string sid    session
  * @param  string dir    保存的目录名称
  * @return void       

@@ -51,10 +51,10 @@
         <div style="clear:both;"></div>
       </div>
     </div>
-    <!--头部  结束-->
+    <!--头部结束-->
     <div id="Middle">
       <div id="left_1">
-        <!-- 代码 开始 -->
+        <!-- 轮播图代码开始 -->
         <div id="fsD1" class="focus">
           <div id="D1pic1" class="fPic">
             <?php if(is_array($ad_2)): foreach($ad_2 as $key=>$v): ?><div class="fcon" style="display: none;">
@@ -70,49 +70,27 @@
             </div>
           </div>
         </div>
-        <!-- 代码 结束 -->
+        <!-- 轮播图代码结束 -->
       </div>
       <div id="right_1">
-        <div id="Tile1">
-          <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
-        </div>
-        <div id="Tile1">
-          <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
-        </div>
-        <div id="Tile1">
-          <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
-        </div>
+        <?php if(is_array($art)): foreach($art as $key=>$v): ?><div class="Tile1">
+            <p>　　<?php echo (mb_substr($v["desc"], 0, 180, 'utf-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">[详细]</a></span></p>
+          </div><?php endforeach; endif; ?>
       </div>
       <div class="clear"></div>
     </div>
     <div class="h20"></div>
     <div id="Middle1">
-      <div id="ddpa">
-        <div id="ddpa1"><img src="/Public/Home/images/m2.jpg" width="1185" height="96" /></div>
-        <div id="ddpa2">
-         <div id="ddpa2_img"><img src="/Public/Home/images/m3.jpg" width="140" height="130" /></div>  
-         <div id="ddpa2_Tilte">
-           <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-         </div>
-       </div>
-       <div id="ddpa22">
-         <div id="ddpa2_img"><img src="/Public/Home/images/m4.jpg" width="140" height="130" /></div>  
-         <div id="ddpa2_Tilte">
-           <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-         </div>
-       </div>
-       <div id="ddpa2">
-         <div id="ddpa2_img"><img src="/Public/Home/images/m5.jpg" width="140" height="130" /></div>  
-         <div id="ddpa2_Tilte">
-           <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-         </div>
-       </div>
-       <div id="ddpa22">
-         <div id="ddpa2_img"><img src="/Public/Home/images/m6.jpg" width="140" height="130" /></div>  
-         <div id="ddpa2_Tilte">
-           <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-         </div>
-       </div>
+      <div class="ddpa">
+        
+        <div class="ddpa1"><img src="/Public/Home/images/m2.jpg" width="1185" height="96" /></div>
+        
+        <?php if(is_array($intro)): foreach($intro as $key=>$v): ?><div <?php if($key % 2 == 0): ?>class="ddpa2"<?php else: ?>class="ddpa22"<?php endif; ?>>
+           <div class="ddpa2_img"><img src="/<?php echo ($v["thumb"]); ?>" width="140" height="130" /></div>  
+           <div class="ddpa2_Tilte">
+             <p><?php echo (mb_substr($v["desc"], 0, 100, 'UTF-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">详细</a></span></p>
+           </div>
+         </div><?php endforeach; endif; ?>
      </div>
     </div>
     <div class="h50"></div>

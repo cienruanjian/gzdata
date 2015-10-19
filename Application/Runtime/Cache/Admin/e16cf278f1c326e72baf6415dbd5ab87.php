@@ -108,7 +108,14 @@
                         <li <?php if((strtolower(CONTROLLER_NAME)) == "admanage"): ?>class="active"<?php endif; ?>>
                             <a href="<?php echo U('AdManage/index');?>">
                                 <i class="fa fa-desktop"></i>
-                                <span>广告位管理</span>
+                                <span>广告管理</span>
+                            </a>
+                        </li>
+
+                        <li <?php if((strtolower(CONTROLLER_NAME)) == "acticle"): ?>class="active"<?php endif; ?>>
+                            <a href="<?php echo U('Article/index');?>">
+                                <i class="fa fa-file"></i>
+                                <span>文章管理</span>
                             </a>
                         </li>
 
@@ -192,34 +199,7 @@
                             </ul>
                         </li>
 
-                        <li class="dropdown show-on-hover <?php if(in_array(strtolower(CONTROLLER_NAME), ['kanwu', 'article'])): ?>active<?php endif; ?>">
-                            <a href="javascript:;" data-toggle="dropdown">
-                                <i class="fa fa-file"></i>
-                                <span>广电报</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('Kanwu/add');?>">
-                                        <span>添加刊物</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Kanwu/index');?>">
-                                        <span>刊物列表</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Article/add');?>">
-                                        <span>添加文章</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Article/index');?>">
-                                        <span>文章列表</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        
 
                         
 
@@ -299,43 +279,71 @@
                  	<section class="panel">
                       <header class="panel-heading"><?php echo ($titleL2); ?></header>
                       <div class="panel-body">
-                          <form class="form-horizontal bordered-group" role="form" action="<?php echo U('AdManage/editHandle');?>" method="post">
+                          <form class="form-horizontal bordered-group" role="form" action="<?php echo U('Article/addHandle');?>" method="post">
+                              <div class="form-group">
+                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>标题</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" name="title" placeholder="文章标题" class="form-control" id="inputEmail3">
+                                  </div>
+                              </div>
                               
                               <div class="form-group">
-                              	  
-                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>缩略图</label>
+                                  <label class="col-sm-2 control-label"><span class="red">* </span>描述</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="desc" class="form-control" rows="2"></textarea>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="inputEmail3" class="col-sm-2 control-label"><span class="red">* </span>封面</label>
                                   <div class="col-sm-2">
-                                  	<img id="no-image" <?php if($data['thumb']): ?>src="/<?php echo ($data["thumb"]); ?>"<?php else: ?> src="/Public/Default/images/no_image.jpg"<?php endif; ?> >
+                                    <img id="no-image" width="200" src="/Public/Default/images/no_image.jpg" >
                                   </div>
-                                  <div class="col-sm-8" style="margin-top:15px;">
+                                  <div class="col-sm-8" style="margin-top:10px;">
                                       <input type="file" name="face" id="upload" />
-                                     <p class="help-block no-margin">图片格式：jpg、jpeg、gif、png; 参考尺寸（px）：<span style="color:red; font-size:14px;"><?php echo ($size[0]); ?> * <?php echo ($size[1]); ?></span></p>
-                                  </div>
-                              </div>
-                              
-                               <div class="form-group">
-                                  <label for="inputEmail3" class="col-sm-2 control-label">链接地址</label>
-                                  <div class="col-sm-8">
-                                      <input type="text" name="url" placeholder="http://" class="form-control" id="inputEmail3" value="<?php echo ($data["url"]); ?>">
-                                  </div>
-                              </div>
-                              
-                              <div class="form-group">
-                                  <label class="col-sm-2 control-label">描述</label>
-                                  <div class="col-sm-8">
-                                      <textarea name="desc" class="form-control" rows="2"><?php echo ($data["desc"]); ?></textarea>
+                                      <p class="help-block no-margin">图片格式：jpg、jpeg、gif、png;<br> 参考尺寸(px)：<span style="color:red; font-size:14px;"><?php echo ($size[0]); ?> * <?php echo ($size[1]); ?></span></p>
                                   </div>
                               </div> 
-                             
+                              
+                               <div class="form-group">
+                                  <label class="col-sm-2 control-label"><span class="red">* </span>内容</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="content"  id="ue-content"></textarea>
+                                  </div>
+                              </div> 
+
+                              <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="hot" checked value="1">热点文章
+                                        </label>
+                                    </div>
+                                </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <label for="inputEmail6" class="col-sm-2 control-label">编辑</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" value="admin" name="editor" id="inputEmail6" placeholder="编辑">
+                                  </div>
+                              </div>
+                              
                               <div class="form-group">
                                   <label for="inputEmail4" class="col-sm-2 control-label">排序</label>
                                   <div class="col-sm-8">
-                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="<?php echo ($data["sort"]); ?>" placeholder="排序">
+                                      <input type="text" class="form-control" name="sort" id="inputEmail4" value="100" placeholder="排序">
                                   </div>
                               </div>
-                              <input type="hidden" name="thumb" value="<?php echo ($data["thumb"]); ?>">
-                              <input type="hidden" name="number" value="<?php echo ($_GET['number']); ?>">
-                              <input type="hidden" name="id" value="<?php echo ($data["id"]); ?>">
+                              <div class="form-group">
+                                  <label for="inputEmail5" class="col-sm-2 control-label">来源</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" class="form-control" name="from" id="inputEmail5" placeholder="文章来源">
+                                  </div>
+                              </div>
+                              
+                              <input type="hidden" name="thumb">
+                              <input type="hidden" name="type" value="<?php echo ($type); ?>">
                               
                               <div class="form-group">
                                   <div class="col-sm-offset-2 col-sm-6">
@@ -372,21 +380,41 @@
 <script src="/Public/Admin/js/common.js"></script> 
 <!-- page special js plugin here -->
 <script type="text/javascript" src="/Public/Plugin/uploadify/jquery.uploadify.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Public/Plugin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/Public/Plugin/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/Public/Plugin/ueditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="/Public/Plugin/layer/layer.js"></script>
 <script type="text/javascript" src="/Public/Admin/js/init_uploadify.js"></script>
 <script>
   var sid = "<?php echo session_id();?>";
   var url = "<?php echo U('Base/uploadImage');?>";
-  var number = "<?php echo ($_GET['number']); ?>" ? "<?php echo ($_GET['number']); ?>" : 1;
-  uploadImage(url, number, sid, "ad/");
+  var number = "<?php echo ($type); ?>" ? "<?php echo ($type); ?>" : 1;
+  number = parseInt(number) + 100;
+  uploadImage(url, number, sid, "article/");
 
   $('form').submit(function () {
+    if ($('input[name=title]').val() == '') {
+      layer.msg('文章标题不能为空');
+      return false;
+    }
+    if ($('textarea[name=desc]').val() == '') {
+      layer.msg('文章描述不能为空');
+      return false;
+    }
     if ($('input[name=thumb]').val() == '') {
       layer.msg('请先上传缩略图');
+      return false;
+    }
+    if ($('textarea[name=content]').val() == '') {
+      layer.msg('文章内容不能为空');
       return false;
     }
   })
 </script>
 
+<script type="text/javascript">
+	//实例化编辑器
+	UE.getEditor('ue-content');
+</script>
 </body>
 </html>

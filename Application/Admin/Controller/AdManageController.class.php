@@ -18,7 +18,7 @@ class AdManageController extends BaseController {
     //添加广告位
     public function add() {
     	$number  = I('number',0, 'intval') ? I('number',0, 'intval') : 1;
-    	$sizeArr = C('AD_THUMB_SIZE');
+    	$sizeArr = C('THUMB_SIZE');
         $this->size = $sizeArr[$number]; //广告缩略图尺寸
         $this->display();
     }
@@ -38,7 +38,7 @@ class AdManageController extends BaseController {
     public function edit() {
         $this->titleL2 = "编辑广告位";
         $number  = I('number',0, 'intval') ? I('number',0, 'intval') : 1;
-    	$sizeArr = C('AD_THUMB_SIZE');
+    	$sizeArr = C('THUMB_SIZE');
         $this->size = $sizeArr[$number]; //广告缩略图尺寸
     	$id = I('id', 0, 'intval');
     	if (!$id) $this->error('参数错误');

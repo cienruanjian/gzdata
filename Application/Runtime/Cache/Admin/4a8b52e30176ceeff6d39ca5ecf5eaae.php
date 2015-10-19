@@ -102,7 +102,14 @@
                         <li <?php if((strtolower(CONTROLLER_NAME)) == "admanage"): ?>class="active"<?php endif; ?>>
                             <a href="<?php echo U('AdManage/index');?>">
                                 <i class="fa fa-desktop"></i>
-                                <span>广告位管理</span>
+                                <span>广告管理</span>
+                            </a>
+                        </li>
+
+                        <li <?php if((strtolower(CONTROLLER_NAME)) == "acticle"): ?>class="active"<?php endif; ?>>
+                            <a href="<?php echo U('Article/index');?>">
+                                <i class="fa fa-file"></i>
+                                <span>文章管理</span>
                             </a>
                         </li>
 
@@ -186,34 +193,7 @@
                             </ul>
                         </li>
 
-                        <li class="dropdown show-on-hover <?php if(in_array(strtolower(CONTROLLER_NAME), ['kanwu', 'article'])): ?>active<?php endif; ?>">
-                            <a href="javascript:;" data-toggle="dropdown">
-                                <i class="fa fa-file"></i>
-                                <span>广电报</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('Kanwu/add');?>">
-                                        <span>添加刊物</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Kanwu/index');?>">
-                                        <span>刊物列表</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Article/add');?>">
-                                        <span>添加文章</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Article/index');?>">
-                                        <span>文章列表</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        
 
                         
 
