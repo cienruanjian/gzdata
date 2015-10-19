@@ -6,318 +6,237 @@
     <link href="__PUBLIC__/Home/Css/index.css" rel="stylesheet" type="text/css" />
     <include file="Public/header" />
     <div style="background-color:#fff">
-      <!--首页  焦点图-->
-      <div id="wrappen">
-        <div id="wrapper">
-          <ul class="lanrenzhijia">
-            <li class="lanrenzhijia_li show_images_1">
-              <a href="baomingtongdao.html" target="_blank">
-                <img class="show_images_1_img" src="__PUBLIC__/Home/images/1.jpg" alt="" />
+    <!--首页  焦点图-->
+    <div id="wrappen">
+      <div id="wrapper">
+        <ul class="lanrenzhijia">
+          <foreach name="ad_1" item="v">
+            <li class="lanrenzhijia_li show_images_{$key + 1}">
+              <a <if condition="$v['url']">href="{$v.url}" target="_blank" </if>>
+                <img class="show_images_{$key + 1}_img" src="__ROOT__/{$v.thumb}" alt="{$v.desc}" />
               </a>
             </li>
-            <li class="lanrenzhijia_li show_images_2">
-              <a href="#" target="_blank">
-                <img class="show_images_2_img" src="__PUBLIC__/Home/images/4.jpg" alt="" />
-              </a>
-            </li>
-            <li class="lanrenzhijia_li show_images_3">
-              <a href="#" target="_blank">
-                <img class="show_images_3_img" src="__PUBLIC__/Home/images/2.jpg" alt="" />
-              </a>
-            </li>
-            <li class="lanrenzhijia_li show_images_4">
-              <a href="#" target="_blank">
-                <img class="show_images_4_img" src="__PUBLIC__/Home/images/3.jpg" alt="" />
-              </a>
-            </li>
-          </ul>
-          <div style="clear:both;"></div>
-        </div>
+          </foreach>
+        </ul>
+        <div style="clear:both;"></div>
       </div>
-      <!--头部  结束-->
-      <div id="Middle">
-        <div id="left_1">
-          <!-- 代码 开始 -->
-          <div id="fsD1" class="focus">
-            <div id="D1pic1" class="fPic">
+    </div>
+    <!--头部结束-->
+    <div id="Middle">
+      <div id="left_1">
+        <!-- 轮播图代码开始 -->
+        <div id="fsD1" class="focus">
+          <div id="D1pic1" class="fPic">
+            <foreach name="ad_2" item="v">
               <div class="fcon" style="display: none;">
-                <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/01.jpg" style="opacity: 1; "></a>
-                <span class="shadow"><a target="_blank" href="#">大数据安防-大数据安防中的三种关键技术及五大挑战 综合资讯</a></span>
+                <a <if condition="$v['url']">href="{$v.url}" target="_blank" </if>>
+                  <img src="__ROOT__/{$v.thumb}" style="opacity: 1; ">
+                </a>
+                <if condition="$v['desc']">
+                  <span class="shadow"><a <if condition="$v['url']">href="{$v.url}" target="_blank" </if>>{$v.desc}</a></span>
+                </if>
               </div>
-              <div class="fcon" style="display: none;">
-                <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/02.jpg" style="opacity: 1; "></a>
-                <span class="shadow"><a target="_blank" href="#">大数据时代对“毫不相干”的企业的四个方面的影响</a></span>
-              </div>
-              <div class="fcon" style="display: none;">
-                <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/03.jpg" style="opacity: 1; "></a>
-                <span class="shadow"><a target="_blank" href="#">英特尔拉Cloudera进中国 资源正在融合与</a></span>
-              </div>
-              <div class="fcon" style="display: none;">
-                <a target="_blank" href="#"><img src="__PUBLIC__/Home/images/04.jpg" style="opacity: 1; "></a>
-                <span class="shadow"><a target="_blank" href="#">大数据将颠覆房地产传统模式</a></span>
-              </div>
-            </div>
-            <div class="fbg">
-              <div class="D1fBt" id="D1fBt">
-                <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>1</i></a>
-                <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>2</i></a>
-                <a href="javascript:void(0)" hidefocus="true" target="_self" class="current"><i>3</i></a>
-                <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>4</i></a>
-              </div>
+            </foreach>
+          </div>
+          <div class="fbg">
+            <div class="D1fBt" id="D1fBt">
+              <foreach name="ad_2" item="v">
+                <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>{$key + 1}</i></a>
+              </foreach>
             </div>
           </div>
-          <!-- 代码 结束 -->
         </div>
-        <div id="right_1">
-          <div id="Tile1">
-            <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
+        <!-- 轮播图代码结束 -->
+      </div>
+      <div id="right_1">
+        <foreach name="art" item="v">
+          <div class="Tile1">
+            <p>　　{$v.desc|mb_substr=###, 0, 180, 'utf-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">[详细]</a></span></p>
           </div>
-          <div id="Tile1">
-            <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
-          </div>
-          <div id="Tile1">
-            <p>　　以“云上贵州　数‘踞’中国”为主题的2015中国“云上贵州”大数据商业模式大赛9月14日在贵阳启动。大赛将通过对全世界大数据商业模式的征集、评选与深度挖掘,引进优秀“大数据项目”<span><a href="#">[详细]</a></span></p>
-          </div>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div class="h20"></div>
-      <div id="Middle1">
-        <div id="ddpa">
-          <div id="ddpa1"><img src="__PUBLIC__/Home/images/m2.jpg" width="1185" height="96" /></div>
-          <div id="ddpa2">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/images/m3.jpg" width="140" height="130" /></div>  
-           <div id="ddpa2_Tilte">
-             <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-           </div>
-         </div>
-         <div id="ddpa22">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/images/m4.jpg" width="140" height="130" /></div>  
-           <div id="ddpa2_Tilte">
-             <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-           </div>
-         </div>
-         <div id="ddpa2">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/images/m5.jpg" width="140" height="130" /></div>  
-           <div id="ddpa2_Tilte">
-             <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-           </div>
-         </div>
-         <div id="ddpa22">
-           <div id="ddpa2_img"><img src="__PUBLIC__/Home/images/m6.jpg" width="140" height="130" /></div>  
-           <div id="ddpa2_Tilte">
-             <p>贵州在大数据产业基础构建期，举办2015“云上贵州”大数据商业模式大赛，是圆满完成塑造“云上贵州”现代形象、吸引相关产业在黔落地的重要举措。通过举办大赛，将贵州发展大数据产业的规划传播出去...　　　　　<span><a href="#">详细</a></span></p>
-           </div>
-         </div>
-       </div>
-      </div>
-      <div class="h50"></div>
-      <div id="Middle2">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m9.jpg" width="373" height="228" /></a></p>
-      <p><a href="baomingtongdao.html"><img src="__PUBLIC__/Home/images/m7.jpg" width="371" height="228" /></a></p>
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m8.jpg" width="373" height="230" /></a></p>
-      </div>
-      <div class="h50"></div>
-      <div id="Middle1" style="height:630px;">
-      <div id="ddp1a">
-      <div id="ddpa1"><img src="__PUBLIC__/Home/images/m10.jpg" width="1185" height="122" /></div>
-      <div class="modeA">
-        <!--代码开始-->
-        <div class="slide_screen">
-          <ul class="list">
-            <li class="liA">
-              <div class="window">
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="www.lanrentuku.com">&nbsp;</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="liB">
-              <div class="window">
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span> <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="liC">
-              <div class="window">
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="liD">
-              <div class="window">
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-                <div class="piece">
-                  <a target="_blank" href="javascript:;"><img alt="" src="__PUBLIC__/Home/images/m11.jpg"></a>
-                  <div class="bar">
-                    <h3>第二届中国“云上贵州”大数据商业模式大赛启动</h3>
-                    <span></span>
-                    <a target="_blank" href="javascript:;">&nbsp;</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!--代码结束-->
-      </div>
-      </div>
-      </div>
-      <div id="Middle3">
-      <div id="xexk">
-        <img src="__PUBLIC__/Home/images/m14.jpg" width="1185" height="94" />
-        <div id="xexk1" class="xexk2">
-          <p>中国工业和信息化部软件服务业司</p>
-          <p>共青团中央学校部</p>
-          <p>中国电子企业协会</p>
-        </div>
-        <div id="xexk1" class="xexk3">
-          <p>清华大学</p>
-          <p>贵阳市人民政府</p>
-          <p>贵安新区管委会</p>
-          <p>贵州省经济和信息化委员会</p>
-        </div>
-        <div id="xexk1">
-          <p>阿里巴巴集团</p>
-          <p>百度公司</p>
-          <p>腾讯公司</p>
-          <p>新浪公司</p>
-          <p>赛伯乐投资公司</p>
-        </div>
-        <div id="xexk1">
-          <p>中软国际公司</p>
-          <p>中关村青年联合会</p>
-        </div>
-        <div id="xexk1" class="xexk4">
-          <p>中软国际公司</p>
-        </div>
+        </foreach>
       </div>
       <div class="clear"></div>
+    </div>
+    <div class="h20"></div>
+    <div id="Middle1">
+      <div class="ddpa">
+        
+        <div class="ddpa1"><img src="__PUBLIC__/Home/images/m2.jpg" width="1185" height="96" /></div>
+        
+        <foreach name="intro" item="v">
+          <div <if condition="$key % 2 eq 0">class="ddpa2"<else/>class="ddpa22"</if>>
+           <div class="ddpa2_img"><img src="__ROOT__/{$v.thumb}" width="140" height="130" /></div>  
+           <div class="ddpa2_Tilte">
+             <p>{$v.desc|mb_substr=###, 0, 100, 'UTF-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">详细</a></span></p>
+           </div>
+         </div>
+       </foreach>
+     </div>
+    </div>
+    <div class="h50"></div>
+    <div id="Middle2">
+    <p><a href="#"><img src="__PUBLIC__/Home/images/m9.jpg" width="373" height="228" /></a></p>
+    <p><a href="baomingtongdao.html"><img src="__PUBLIC__/Home/images/m7.jpg" width="371" height="228" /></a></p>
+    <p><a href="#"><img src="__PUBLIC__/Home/images/m8.jpg" width="373" height="230" /></a></p>
+    </div>
+    <div class="h50"></div>
+    <div id="Middle1" style="height:630px;">
+    <div id="ddp1a">
+    <div id="ddpa1"><img src="__PUBLIC__/Home/images/m10.jpg" width="1185" height="122" /></div>
+    <div class="modeA">
+      <!--代码开始-->
+      <div class="slide_screen">
+        <ul class="list">
+          <li class="liA">
+            <div class="window">
+              <foreach name="ad_3" item="v">
+                <div class="piece">
+                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                    <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
+                  </a>
+                  <if condition="$v['desc']">
+                    <div class="bar">
+                      <h3>{$v.desc}</h3>
+                      <span></span>
+                    </div>
+                  </if>
+                </div>
+              </foreach>
+            </div>
+          </li>
+          <li class="liB">
+            <div class="window">
+              <foreach name="ad_4" item="v">
+                <div class="piece">
+                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                    <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
+                  </a>
+                  <if condition="$v['desc']">
+                    <div class="bar">
+                      <h3>{$v.desc}</h3>
+                      <span></span>
+                    </div>
+                  </if>
+                </div>
+              </foreach>
+            </div>
+          </li>
+          <li class="liC">
+            <div class="window">
+              <foreach name="ad_5" item="v">
+                <div class="piece">
+                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                    <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
+                  </a>
+                  <if condition="$v['desc']">
+                    <div class="bar">
+                      <h3>{$v.desc}</h3>
+                      <span></span>
+                    </div>
+                  </if>
+                </div>
+              </foreach>
+            </div>
+          </li>
+          <li class="liD">
+            <div class="window">
+              <foreach name="ad_6" item="v">
+                <div class="piece">
+                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                    <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
+                  </a>
+                  <if condition="$v['desc']">
+                    <div class="bar">
+                      <h3>{$v.desc}</h3>
+                      <span></span>
+                    </div>
+                  </if>
+                </div>
+              </foreach>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="h50"></div>
-      <div id="Middle4">
-      <div id="fcrf">
-        <img src="__PUBLIC__/Home/images/m15.jpg" width="1185" height="121" />
+      <!--代码结束-->
+    </div>
+    </div>
+    </div>
+    <div id="Middle3">
+    <div id="xexk">
+      <img src="__PUBLIC__/Home/images/m14.jpg" width="1185" height="94" />
+      <div id="xexk1" class="xexk2">
+        <p>中国工业和信息化部软件服务业司</p>
+        <p>共青团中央学校部</p>
+        <p>中国电子企业协会</p>
       </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <div id="xexk1" class="xexk3">
+        <p>清华大学</p>
+        <p>贵阳市人民政府</p>
+        <p>贵安新区管委会</p>
+        <p>贵州省经济和信息化委员会</p>
       </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <div id="xexk1">
+        <p>阿里巴巴集团</p>
+        <p>百度公司</p>
+        <p>腾讯公司</p>
+        <p>新浪公司</p>
+        <p>赛伯乐投资公司</p>
       </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <div id="xexk1">
+        <p>中软国际公司</p>
+        <p>中关村青年联合会</p>
       </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+      <div id="xexk1" class="xexk4">
+        <p>中软国际公司</p>
       </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-        <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      <div id="fcrf1">
-       <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-      </div>
-      </div>
-      <div id="Middle5">
-        <p>友情链接：友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  </p>
-      </div>
+    </div>
+    <div class="clear"></div>
+    </div>
+    <div class="h50"></div>
+    <div id="Middle4">
+    <div id="fcrf">
+      <img src="__PUBLIC__/Home/images/m15.jpg" width="1185" height="121" />
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    <div id="fcrf1">
+     <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
+    </div>
+    </div>
+    <div id="Middle5">
+      <p>友情链接：友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  </p>
+    </div>
     </div>
 
     <include file="Public/footer" />
