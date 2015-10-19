@@ -32,7 +32,7 @@
 .ddpa { width: 1185px; margin-right: auto; margin-left: auto; }
 
 .ddp1a { width: 1200px; margin-right: auto; margin-left: auto; }
-
+#ddpa1{margin: 0 auto;width: 1185px}
 
 .ddpa22 { float: right; width: 520px; height: 180px; }
 .ddpa22_img { width: 150px; float: left; margin-top: 15px; }
@@ -68,9 +68,8 @@ div#xexk1.xexk4{width: 130px;}
 .yge { color: #c8c8c8; }
 /*TAB菜单*/
 #outer{ position: relative; }
-.current{ color: #fff; background: #db284f; }
 #outer .lab{ line-height: 30px; padding: 2px 0 0; }
-#tab{ position: absolute; top: 1px; width: 300px; height: 30px; margin-left: 215px; border-bottom: 1px solid #db284f; }
+#tab{ position: absolute; top: 1px; width: 300px; height: 30px; margin-left: 280px; }
 #outer ul#tab li{ line-height: 30px; float: left; width: 88px; height: 30px; text-align: center; }
 .tabinp { height: 18px; float: left; padding-top: 9px; cursor: pointer; text-align: center; }
 /*.radioclass { opacity: 0; cursor: pointer; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); }
