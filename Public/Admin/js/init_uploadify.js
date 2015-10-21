@@ -16,7 +16,7 @@ function uploadImage(url, number, sid, dir) {
 			'height'        :    "30",
 			'fileTypeDesc'  :    "Image file",
 			'fileTypeExts'  :    "*.jpg;*.jpeg;*.gif;*.png",
-			'formData'      :    {"number" : number, sid, "dir" : dir},
+			'formData'      :    {"number" : number, "session_id" : sid, "dir" : dir},
 			'multi'         :     false,
 			'removeTimeout' :     1,
 			onUploadSuccess :     function(file, data, response) {

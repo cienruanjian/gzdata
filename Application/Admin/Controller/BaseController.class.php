@@ -8,7 +8,7 @@ use Think\Controller;
  *        
  */
 class BaseController extends Controller {
-    public function _initialize () {
+     public function _initialize () {
        //检查用户是否已登录
         $session = session('admin');
         if (!$session[C('USER_AUTH_KEY')]) {
