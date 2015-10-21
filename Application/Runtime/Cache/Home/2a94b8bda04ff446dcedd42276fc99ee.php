@@ -38,7 +38,6 @@
   <div class="clear"></div>
 </div>
 </div>
-    <div style="background-color:#fff">
     <!--首页  焦点图-->
     <div id="wrappen">
       <div id="wrapper">
@@ -241,7 +240,6 @@
     </div>
     <div id="Middle5">
       <p>友情链接：友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  </p>
-    </div>
     </div>
 
     <div id="foot">
