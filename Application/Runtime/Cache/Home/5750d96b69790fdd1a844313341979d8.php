@@ -21,7 +21,7 @@
               </div>
               <div class="iymm">
                 <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
-                <p><a href="#">登录</a></p>
+                <p><a href="<?php echo U('Login/index');?>">登录</a></p>
               </div>
           </div>
           <div id="neww">
