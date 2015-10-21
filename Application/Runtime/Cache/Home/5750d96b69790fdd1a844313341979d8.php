@@ -405,14 +405,14 @@
                           <button type="button" class="ipt-u u-ipt">选择正面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="/Public/HomeImages/m21.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m21.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div class="ipt">
                           <button type="button" class="ipt-u u-ipt">选择反面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="/Public/HomeImages/m22.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m22.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                       </div>
@@ -422,19 +422,19 @@
                           <button type="button" class="ipt-u u-ipt">选择正面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="/Public/HomeImages/m23.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m23.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div class="ipt">
                           <button type="button" class="ipt-u u-ipt">选择反面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="/Public/HomeImages/m23.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m23.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div id="fiwg">
                           <div id="fiwg1">
-                            <p>示例</p> <i><img src="/Public/HomeImages/m24.jpg" /></i>
+                            <p>示例</p> <i><img src="/Public/Home/Images/m24.jpg" /></i>
                           </div>
                           <div id="fiwg2">
                             <p>
