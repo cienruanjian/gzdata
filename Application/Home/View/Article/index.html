@@ -21,7 +21,9 @@
         <foreach name="list" item="v">
           <div class="all_2_2">
             <div class="all_2_2_l">
-              <img src="__ROOT__/{$v.thumb}" width="230" height="136" />
+              <a href="{:U('Article/detail', array('id' => $v['id']))}">
+                <img src="__ROOT__/{$v.thumb}" width="230" height="136" />
+              </a>
             </div>
             <div class="all_2_2_r">
               <div class="all_2_2_r_1">{$v.title}</div>
@@ -29,11 +31,11 @@
                 发布时间：
                 <span>{$v.create_at|date="Y-m-d", ###}</span>
               </div>
-              <div class="all_2_2_r_3" style="overflow:hidden">
+              <div class="all_2_2_r_3">
                 {$v.desc}
               </div>
               <div class="all_2_2_r_4">
-                <a href="{:U('Article/detail', array('id' => $v['id']))}">查看更多&gt;&gt;</a>
+                <a href="{:U('Article/detail', array('id' => $v['id']))}">查看原文&gt;&gt;</a>
               </div>
             </div>
             <div class="clear"></div>
@@ -41,8 +43,9 @@
         </foreach>
 
         <div class="all_2_3">
-          <a href="#">下一页</a>
-          <a href="#">上一页</a>
+          <!-- <a href="#">下一页</a>
+          <a href="#">上一页</a> -->
+          {$page}
         </div>
       </div>
     </div>

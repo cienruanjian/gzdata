@@ -51,7 +51,8 @@
       <div id="right_1">
         <foreach name="art" item="v">
           <div class="Tile1">
-            <p>　　{$v.desc|mb_substr=###, 0, 180, 'utf-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">[详细]</a></span></p>
+            <h3>{$v.title}</h3>
+            <p>{$v.desc|mb_substr=###, 0, 180, 'utf-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">[详细]</a></span></p>
           </div>
         </foreach>
       </div>
@@ -67,6 +68,7 @@
           <div <if condition="$key % 2 eq 0">class="ddpa2"<else/>class="ddpa22"</if>>
            <div class="ddpa2_img"><img src="__ROOT__/{$v.thumb}" width="140" height="130" /></div>  
            <div class="ddpa2_Tilte">
+              <h3>{$v.title}</h3>
              <p>{$v.desc|mb_substr=###, 0, 100, 'UTF-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">详细</a></span></p>
            </div>
          </div>

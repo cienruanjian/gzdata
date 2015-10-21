@@ -2,8 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>文章正文</title>
+<title><?php echo ($article["title"]); ?> - 大赛咨询</title>
 <link href="/Public/Home/css/index.css" rel="stylesheet" type="text/css" />
+<style>
+  .bdsharebuttonbox{
+    float:right;
+    margin-top: 10px;
+  }
+  .bdsharebuttonbox a {
+    color:#666;
+  }
+</style>
 <!-- page common css here -->
 <link href="/Public/Home/Css/base.css" rel="stylesheet" type="text/css" />
 </head>
@@ -39,11 +48,10 @@
 </div>
 </div>
 
-
 <div id="khuj" style="background:url(/Public/Home/images/zu.jpg) center top no-repeat;">
   <div id="h302"></div>
   <div id="rbqk">
-       <h3>大赛咨询</h3>
+       <h3></h3>
      <p>  NEWS <img src="/Public/Home/images/m20.jpg" width="16" height="22" /></p>
     </div>
     
@@ -51,29 +59,21 @@
   <div class="h20"></div>
       <div id="ghyy">
         <div id="ghyy1">
-          <h3>标题标题标题标题标题标题标题</h3>
-          <p>发布时间：2015/04/23　11:30:43　浏览：369次</p>
-              <p class="gy"><img src="/Public/Home/images/m26.jpg" width="428" height="24" /></p>
-            <p></p>
+          <h3><?php echo ($article["title"]); ?></h3>
+          <p>发布时间：<?php echo (date("Y-m-d H:i:s", $article["create_at"])); ?>　浏览：<?php echo ($article["click"]); ?>次</p>
+          
+          <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a></div>
+
+          <p></p>
         </div>
       </div>
       <div class="h50"></div>
       <div class="clear"></div>
       <div id="ghyy2">
-          文字文字文字文字文字文字文字文字
-      <img src="/Public/Home/images/m27.jpg" width="996" height="528" />
-
-          文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
-          文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
-          文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
-          文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
-          文字文字文字文字文字文字文字文字
-      <div class="h50"></div>
+          <?php echo ($article["content"]); ?>
       </div>
- <div class="clear"></div>  
+  <div class="clear"></div>  
   </div>  
-    
-    
   <div class="clear"></div> 
 </div>
 <div id="foot">
@@ -107,5 +107,6 @@
 <!-- common js plugin here -->
 <script type="text/javascript" src="/Public/Home/Js/jquery-1.8.3.min.js"></script>
 
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","sqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","sqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 </body>
 </html>

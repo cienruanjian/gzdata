@@ -75,7 +75,8 @@
       </div>
       <div id="right_1">
         <?php if(is_array($art)): foreach($art as $key=>$v): ?><div class="Tile1">
-            <p>　　<?php echo (mb_substr($v["desc"], 0, 180, 'utf-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">[详细]</a></span></p>
+            <h3><?php echo ($v["title"]); ?></h3>
+            <p><?php echo (mb_substr($v["desc"], 0, 180, 'utf-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">[详细]</a></span></p>
           </div><?php endforeach; endif; ?>
       </div>
       <div class="clear"></div>
@@ -89,6 +90,7 @@
         <?php if(is_array($intro)): foreach($intro as $key=>$v): ?><div <?php if($key % 2 == 0): ?>class="ddpa2"<?php else: ?>class="ddpa22"<?php endif; ?>>
            <div class="ddpa2_img"><img src="/<?php echo ($v["thumb"]); ?>" width="140" height="130" /></div>  
            <div class="ddpa2_Tilte">
+              <h3><?php echo ($v["title"]); ?></h3>
              <p><?php echo (mb_substr($v["desc"], 0, 100, 'UTF-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">详细</a></span></p>
            </div>
          </div><?php endforeach; endif; ?>

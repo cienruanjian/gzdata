@@ -53,7 +53,9 @@
         </div>
         <?php if(is_array($list)): foreach($list as $key=>$v): ?><div class="all_2_2">
             <div class="all_2_2_l">
-              <img src="/<?php echo ($v["thumb"]); ?>" width="230" height="136" />
+              <a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">
+                <img src="/<?php echo ($v["thumb"]); ?>" width="230" height="136" />
+              </a>
             </div>
             <div class="all_2_2_r">
               <div class="all_2_2_r_1"><?php echo ($v["title"]); ?></div>
@@ -61,19 +63,20 @@
                 发布时间：
                 <span><?php echo (date("Y-m-d", $v["create_at"])); ?></span>
               </div>
-              <div class="all_2_2_r_3" style="overflow:hidden">
+              <div class="all_2_2_r_3">
                 <?php echo ($v["desc"]); ?>
               </div>
               <div class="all_2_2_r_4">
-                <a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">查看更多&gt;&gt;</a>
+                <a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">查看原文&gt;&gt;</a>
               </div>
             </div>
             <div class="clear"></div>
           </div><?php endforeach; endif; ?>
 
         <div class="all_2_3">
-          <a href="#">下一页</a>
-          <a href="#">上一页</a>
+          <!-- <a href="#">下一页</a>
+          <a href="#">上一页</a> -->
+          <?php echo ($page); ?>
         </div>
       </div>
     </div>

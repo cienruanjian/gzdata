@@ -14,11 +14,14 @@ class ArticleController extends BaseController {
         $list  = $model->where($map)->order('sort asc, id desc')->limit($Page->firstRow.','.$Page->listRows)->field('id, title, desc, create_at, thumb')->select();
         $this->assign('list',$list);
         $this->assign('page',$show);
-        $this->list = $list;
         $this->display();
     }
 
     public function detail() {
-    	$this->display();
-    }
+		$id = I('id', 0, 'intval');
+		$id = $id ? $id : 1;
+		M('Article')->where(['id' => $id])->setInc('click', 1);
+		$this->article = M('Article')->where(['id' => $id])->find();
+		$this->display();
+	}
 }
