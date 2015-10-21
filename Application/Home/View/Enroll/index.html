@@ -22,7 +22,7 @@
       <div id="outer">
         <label class="lab" style="margin-left:60px;">团队性质</label>
         <ul id="tab" >
-          <li class="current" style="margin-left:20px">
+          <li class="current" style="margin-left:20px;width:80px">
             <span class="tabinp tabinpu">
              <input id="single" type="radio" name="tabinp" class="radioclass" checked="checked" />
             </span>
@@ -114,8 +114,14 @@
                             <input type="radio" name="number" id="number1" />
                             <label for="number1">1~20人</label>
                           </div>
-                          <div class="win150"><input type="radio" name="number" id="number2" /><label for="number2">20~200人</label></div>
-                          <div class="win150"><input type="radio" name="number" id="number3" /><label for="number3">200人以上</label></div>
+                          <div class="win150" style="width: 120px;">
+                            <input type="radio" name="number" id="number2" />
+                            <label for="number2">20~200人</label>
+                          </div>
+                          <div class="win150">
+                            <input type="radio" name="number" id="number3" />
+                            <label for="number3">200人以上</label>
+                          </div>
                         </div>
                       </div>
                       <div class="formitm formitms">
@@ -311,16 +317,31 @@
                       <div class="formitm formitms">
                         <label class="lab"><span class="xinghao">*&nbsp;</span>项目团队人数</label>
                         <div class="ipt iptlef">
-                          <div class="win150"><input type="radio" name="xianmutdrs" />1~5人</div>
-                          <div class="win150"><input type="radio" name="xianmutdrs" />6~10人</div>
-                          <div class="win150"><input type="radio" name="xianmutdrs" />10人以上</div>
+                          <div class="win150 wid100">
+                            <input type="radio" name="xianmutdrs" id="xianmutdrs1" />
+                            <label for="xianmutdrs1">1~5人</label>
+                          </div>
+                          <div class="win150">
+                            <input type="radio" name="xianmutdrs" id="xianmutdrs2" />
+                            <label for="xianmutdrs2">6~10人</label>
+                          </div>
+                          <div class="win150">
+                            <input type="radio" name="xianmutdrs" id="xianmutdrs3" />
+                            <label for="xianmutdrs3">10人以上</label>
+                          </div>
                         </div>
                       </div>
                       <div class="formitm formitms">
                         <label class="lab"><span class="xinghao">*&nbsp;</span>近期是否成立公司</label>
                         <div class="ipt iptlef">
-                          <div class="win150"><input type="radio" name="xianmutdrs" />是</div>
-                          <div class="win150"><input type="radio" name="xianmutdrs" />否</div>
+                          <div class="win150 wid100">
+                            <input type="radio" name="xianmutdrs" id="YES" />
+                            <label for="YES">是</label>
+                          </div>
+                          <div class="win150 wid100">
+                            <input type="radio" name="xianmutdrs" id="NO" />
+                            <label for="NO">否</label>
+                          </div>
                         </div>
                       </div>
                       <div class="formitm formitms">
