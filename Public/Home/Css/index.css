@@ -7,8 +7,8 @@
 #left_1 .ool h3 { font-weight: normal; color: #FFF; text-indent: 1em; font-size: 18px; line-height: 35px; }
 #left_1 .ool p { color: #FFF; text-indent: 1em; font-size: 12px; line-height: 25px; }
 #right_1 { float: right; width: 570px; height: 400px; }
-#Tile1 h3 { color: #2e2e2e; font-weight: normal; text-align: center; font-size: 18px; line-height: 50px; }
-#Tile1 p span { color: #f72778; }
+.Tile1 h3 { color: #2e2e2e; font-weight: normal; text-align: center; font-size: 18px; line-height: 50px; }
+.Tile1 p span { color: #f72778; }
 #Middle1 { background-color: #f6f6f6; width: 100%; height: 530px; }
 
 #Middle2 { width: 1230px; height:230px; margin-right: auto; margin-left: auto; }
@@ -18,11 +18,11 @@
 
 
 .Tile1 { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #d4d4d4; height: 128px; overflow: hidden; }
-.Tile1 p { color: #757575; font-size: 12px; line-height: 25px; padding-top: 15px;}
+.Tile1 p { color: #757575; font-size: 12px; line-height: 25px;}
 .ddpa2 { float: left; width: 520px; height: 180px; }
-.ddpa2_img { width: 150px; float: left; }
+.ddpa2_img { width: 150px; float: left; margin-top: 15px;}
 .ddpa2_Tilte h3 { font-size: 18px; color: #f72778; font-weight: normal; line-height: 50px; }
-.ddpa2_Tilte p { color: #777777; font-size: 14px; line-height: 25px; }
+.ddpa2_Tilte p { color: #777777; font-size: 14px; line-height: 25px;}
 .ddpa2_Tilte p span { color: #f72778; }
 
 
@@ -82,11 +82,11 @@ div#xexk1.xexk4{width: 130px;}
 .hei88{height: 88px}
 .hei63{height: 63px}
 .m-form .ipt .iptfile{float: left;width: 170px}
-.ipt .win150{float: left;width: 150px}
+.ipt .win150{float: left;width: 120px; padding-left: 2px;}
 .win200{float: left;width: 200px}
 .win200 select { height: 32px; width: 160px; border: 1px solid #e7e7eb;}
-.iptlef{margin-left: 25px}
-.ipt .win150 input{margin-right: 20px}
+.iptlef{margin-left: 0px}
+.ipt .win150 input{margin-right: 10px}
 .marlef60{margin-left: 60px}
 /* 简易表单 */
 .m-form legend{ font-size: 14px; font-weight: bold; }
