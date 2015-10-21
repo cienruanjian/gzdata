@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>云上贵州-登录</title>
+  <title>大赛咨询 - 云上贵州</title>
   <link href="__PUBLIC__/Home/css/zixun.css" rel="stylesheet" type="text/css" />
   <include file="Public/header" />
   
@@ -18,101 +18,27 @@
           <div class="all_2_1_r">您现在的位置：首页>大赛资讯</div>
           <div class="clear"></div>
         </div>
-        <div class="all_2_2">
-          <div class="all_2_2_l">
-            <img src="__PUBLIC__/Home/images/qzy/5.jpg" width="230" height="136" />
+        <foreach name="list" item="v">
+          <div class="all_2_2">
+            <div class="all_2_2_l">
+              <img src="__ROOT__/{$v.thumb}" width="230" height="136" />
+            </div>
+            <div class="all_2_2_r">
+              <div class="all_2_2_r_1">{$v.title}</div>
+              <div class="all_2_2_r_2">
+                发布时间：
+                <span>{$v.create_at|date="Y-m-d", ###}</span>
+              </div>
+              <div class="all_2_2_r_3" style="overflow:hidden">
+                {$v.desc}
+              </div>
+              <div class="all_2_2_r_4">
+                <a href="{:U('Article/detail', array('id' => $v['id']))}">查看更多&gt;&gt;</a>
+              </div>
+            </div>
+            <div class="clear"></div>
           </div>
-          <div class="all_2_2_r">
-            <div class="all_2_2_r_1">"云上贵州"大数据商业模式大赛落幕"东方祥云"项目摘取云端大奖</div>
-            <div class="all_2_2_r_2">
-              发布时间：
-              <span>2015-04-24</span>
-            </div>
-            <div class="all_2_2_r_3">
-              4月11日，2014中国"云上贵州"大数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛
-            </div>
-            <div class="all_2_2_r_4">
-              <a href="{:U('Article/detail', array('id' => 3))}">查看更多&gt;&gt;</a>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div>
-        <div class="all_2_2">
-          <div class="all_2_2_l">
-            <img src="__PUBLIC__/Home/images/qzy/5.jpg" width="230" height="136" />
-          </div>
-          <div class="all_2_2_r">
-            <div class="all_2_2_r_1">"云上贵州"大数据商业模式大赛落幕"东方祥云"项目摘取云端大奖</div>
-            <div class="all_2_2_r_2">
-              发布时间：
-              <span>2015-04-24</span>
-            </div>
-            <div class="all_2_2_r_3">
-              4月11日，2014中国"云上贵州"大数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛
-            </div>
-            <div class="all_2_2_r_4">
-              <a href="#">查看更多&gt;&gt;</a>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div>
-        <div class="all_2_2">
-          <div class="all_2_2_l">
-            <img src="__PUBLIC__/Home/images/qzy/5.jpg" width="230" height="136" />
-          </div>
-          <div class="all_2_2_r">
-            <div class="all_2_2_r_1">"云上贵州"大数据商业模式大赛落幕"东方祥云"项目摘取云端大奖</div>
-            <div class="all_2_2_r_2">
-              发布时间：
-              <span>2015-04-24</span>
-            </div>
-            <div class="all_2_2_r_3">
-              4月11日，2014中国"云上贵州"大数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛
-            </div>
-            <div class="all_2_2_r_4">
-              <a href="#">查看更多&gt;&gt;</a>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div>
-        <div class="all_2_2">
-          <div class="all_2_2_l">
-            <img src="__PUBLIC__/Home/images/qzy/5.jpg" width="230" height="136" />
-          </div>
-          <div class="all_2_2_r">
-            <div class="all_2_2_r_1">"云上贵州"大数据商业模式大赛落幕"东方祥云"项目摘取云端大奖</div>
-            <div class="all_2_2_r_2">
-              发布时间：
-              <span>2015-04-24</span>
-            </div>
-            <div class="all_2_2_r_3">
-              4月11日，2014中国"云上贵州"大数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛
-            </div>
-            <div class="all_2_2_r_4">
-              <a href="#">查看更多&gt;&gt;</a>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div>
-        <div class="all_2_2">
-          <div class="all_2_2_l">
-            <img src="__PUBLIC__/Home/images/qzy/5.jpg" width="230" height="136" />
-          </div>
-          <div class="all_2_2_r">
-            <div class="all_2_2_r_1">"云上贵州"大数据商业模式大赛落幕"东方祥云"项目摘取云端大奖</div>
-            <div class="all_2_2_r_2">
-              发布时间：
-              <span>2015-04-24</span>
-            </div>
-            <div class="all_2_2_r_3">
-              4月11日，2014中国"云上贵州"大数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛数据商业模式大赛总决赛
-            </div>
-            <div class="all_2_2_r_4">
-              <a href="#">查看更多&gt;&gt;</a>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div>
+        </foreach>
 
         <div class="all_2_3">
           <a href="#">下一页</a>

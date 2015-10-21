@@ -1,0 +1,263 @@
+[ 2015-10-21T16:30:20+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+
+[ 2015-10-21T16:30:20+08:00 ] 127.0.0.1 /Admin/Login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000059s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000103s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000257s ]
+
+[ 2015-10-21T16:30:23+08:00 ] 127.0.0.1 /Admin/Login/handle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `cns_admin` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cns_admin` WHERE `login` = 'cns' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004993s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005024s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000111s ]
+
+[ 2015-10-21T16:30:31+08:00 ] 127.0.0.1 /Admin/Login/handle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `cns_admin` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cns_admin` WHERE `login` = 'cns' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `cns_admin` SET `last_login_time`='1445416230',`last_login_ip`='2130706433' WHERE `id` = 1 [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2015-10-21T16:30:31+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009803s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000110s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2015-10-21T16:30:33+08:00 ] 127.0.0.1 /Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006925s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000335s ]
+
+[ 2015-10-21T16:30:37+08:00 ] 127.0.0.1 /Admin/AdManage/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `cns_ad` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `cns_ad` WHERE `number` = 1 ORDER BY sort asc, id desc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 273 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 273 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 276 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 279 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 282 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 285 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 288 行.
+NOTIC: [8] Undefined index: number /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 299 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 323 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 324 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 323 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 324 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 323 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 324 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 323 行.
+NOTIC: [8] Use of undefined constant number - assumed 'number' /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/4a8b52e30176ceeff6d39ca5ecf5eaae.php 第 324 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000473s ]
+
+[ 2015-10-21T16:30:40+08:00 ] 127.0.0.1 /Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `cns_article` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_article` WHERE `status` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0027s ]
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+SQL: SELECT `id`,`title`,`type`,`desc`,`create_at`,`thumb` FROM `cns_article` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc, id desc  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+NOTIC: [8] Undefined index: type /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 276 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010671s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010704s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000388s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000420s ]
+
+[ 2015-10-21T16:30:45+08:00 ] 127.0.0.1 /Admin/Article/index/type/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `cns_article` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_article` WHERE `status` = 1 AND `type` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+SQL: SELECT `id`,`title`,`type`,`desc`,`create_at`,`thumb` FROM `cns_article` WHERE `status` = 1 AND `type` = 2 ORDER BY sort asc, id desc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012589s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2015-10-21T16:32:40+08:00 ] 127.0.0.1 /Admin/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000246s ]
+SQL: SHOW COLUMNS FROM `cns_article` [ RunTime:0.0092s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_article` WHERE `status` = 1 AND `type` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/ThinkPHP/Library/Think/Page.class.php 第 84 行.
+SQL: SELECT `id`,`title`,`type`,`desc`,`create_at`,`thumb` FROM `cns_article` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc, id desc  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+NOTIC: [8] Undefined index: type /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 276 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+NOTIC: [8] Undefined index: cate_id /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/7a4184ffe8f804b12b2e7f8851dd8f7d.php 第 299 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009073s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2015-10-21T16:32:42+08:00 ] 127.0.0.1 /Admin/Article/edit/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+SQL: SHOW COLUMNS FROM `cns_article` [ RunTime:0.0099s ]
+SQL: SELECT * FROM `cns_article` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009595s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001029s ]
+
+[ 2015-10-21T16:32:45+08:00 ] 127.0.0.1 /Admin/Article/edit/id/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000439s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000343s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011380s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+

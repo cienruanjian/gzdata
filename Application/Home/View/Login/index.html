@@ -11,35 +11,38 @@
     <div class="all">
       <div class="all_1"> <img src="__PUBLIC__/Home/images/qzy/1.jpg" width="411" height="52" /></div>
       <div class="all_2">
-        <div class="all_2_l">
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">手机：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
+        <form action="{:U('Login/handle')}">
+          <div class="all_2_l">
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l">手机：</div>
+              <div class="all_2_l_1_r">
+                <input name="phone" type="text" />
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1" style="margin-top:50px">
-            <div class="all_2_l_1_l">密码：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
-              <a href="#" style="float:right;color:#8c8c8c;font-size:16px">忘记密码？</a>
-            </div>
+            <div class="all_2_l_1" style="margin-top:50px">
+              <div class="all_2_l_1_l">密码：</div>
+              <div class="all_2_l_1_r">
+                <input name="password" type="password" />
+                <a href="#" style="float:right;color:#8c8c8c;font-size:16px">忘记密码？</a>
+              </div>
 
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l"></div>
-            <div class="all_2_l_1_r all_2_l_1_r_g">
-              <input name="" type="button" id="" value="登录" />
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l"></div>
+              <div class="all_2_l_1_r all_2_l_1_r_g">
+                <input type="hidden" name="back" value="{$back}" />
+                <input type="submit" value="登录" />
+              </div>
+              <div class="clear"></div>
+            </div>
           </div>
-        </div>
+        </form>
         <div class="all_2_r">
 
         <div class="all_2_r_1">
-          没有帐号？<a href="zhuce.html">立即注册</a></div>
+          没有帐号？<a href="{:U('Regist/index')}">立即注册</a></div>
           <div class="all_2_r_1 all_2_r_1_g">
 
           组委会电话：0851-8626792
@@ -51,5 +54,37 @@
     </div>
   </div>
   <include file="Public/footer" />
+  <script src="__PUBLIC__/Plugin/layer/layer.js"></script>
+  <script>
+    //登陆
+    $('form').submit(function() {
+      var _this = $(this);
+      if (!$.trim($('input[name=phone]').val())) {
+        layer.msg('请输入电话号码');
+        return false;
+      }
+      if (!$.trim($('input[name=password]').val())) {
+        layer.msg('请输入密码');
+        return false;
+      }
+      $.ajax({
+          url  : _this.attr('action'),
+          data : _this.serialize(),
+          type : "post",
+          dataType : "json",
+          beforeSend : function(){layer.load(1);},
+          success : function(data) {
+            layer.closeAll();
+            var data = eval(data);
+            if (data.status) {
+              window.location.href = data.jumpUrl;
+            } else {
+              layer.msg(data.msg);
+            }
+          }
+      });
+      return false;
+    });
+  </script>
 </body>
 </html>
