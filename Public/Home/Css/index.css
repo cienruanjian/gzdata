@@ -68,11 +68,11 @@ div#xexk1.xexk4{width: 130px;}
 .yge { color: #c8c8c8; }
 /*TAB菜单*/
 #outer{ position: relative; }
-.current{ color: #fff; background: #db284f; }
+/*.current{ color: #fff; background: #db284f; }*/
 #outer .lab{ line-height: 30px; padding: 2px 0 0; }
-#tab{ position: absolute; top: 1px; width: 300px; height: 30px; margin-left: 215px; border-bottom: 1px solid #db284f; }
-#outer ul#tab li{ line-height: 30px; float: left; width: 88px; height: 30px; text-align: center; }
-.tabinp { height: 18px; float: left; padding-top: 9px; cursor: pointer; text-align: center; }
+#tab{ position: absolute; top: 1px; width: 300px; height: 30px; margin-left: 255px;/* border-bottom: 1px solid #db284f;*/ }
+#outer ul#tab li{ line-height: 30px; float: left; width: 110px; height: 30px; text-align: left; }
+.tabinp { height: 18px; float: left; padding-top: 9px; cursor: pointer; text-align: center; margin-right:10px;}
 /*.radioclass { opacity: 0; cursor: pointer; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); }
 .tabinpu { background-position: 0 0; }*/
 .h20{height: 20px}
