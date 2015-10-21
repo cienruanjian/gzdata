@@ -55,8 +55,8 @@
       <div id="outer">
         <label class="lab">团队性质</label>
         <ul id="tab" >
-          <li class="current" style="text-align:left;margin-left:20px"><span class="tabinp tabinpu" style="margin-right:16px;"><input type="radio" name="tabinp" id="" class="radioclass" checked="checked" /></span>企业</li>
-          <li><span class="tabinp tabinpu"><input type="radio" name="tabinp" id="" class="radioclass" /></span>个人/团体</li>
+          <li class="current" style="text-align:left;margin-left:20px"><span class="tabinp tabinpu" style="margin-right:16px;"><input id="single" type="radio" name="tabinp" id="" class="radioclass" checked="checked" /></span><label for="single">企业</label></li>
+          <li><span class="tabinp tabinpu"><input id="group" type="radio" name="tabinp" id="" class="radioclass" /></span><label for="group">个人/团体</label></li>
         </ul>
         <div class="clear"></div>
         <div id="content">
@@ -131,10 +131,14 @@
                       </div>
                       <div class="formitm formitms">
                         <label class="lab"><span class="xinghao">*&nbsp;</span>企业规模</label>
+                       
                         <div class="ipt iptlef">
-                          <div class="win150"><input type="radio" name="xianmutdrs" />1~20人</div>
-                          <div class="win150"><input type="radio" name="xianmutdrs" />20~200人</div>
-                          <div class="win150"><input type="radio" name="xianmutdrs" />200人以上</div>
+                          <div class="win150"> 
+                            <input type="radio" name="number" id="number1" />
+                            <label for="number1">1~20人</label>
+                          </div>
+                          <div class="win150"><input type="radio" name="number" id="number2" /><label for="number2">20~200人</label></div>
+                          <div class="win150"><input type="radio" name="number" id="number3" /><label for="number3">200人以上</label></div>
                         </div>
                       </div>
                       <div class="formitm formitms">
@@ -202,14 +206,14 @@
                           <button type="button" class="ipt-u u-ipt">选择正面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m21.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m21.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div class="ipt">
                           <button type="button" class="ipt-u u-ipt">选择反面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m22.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m22.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                       </div>
@@ -219,19 +223,19 @@
                           <button type="button" class="ipt-u u-ipt">选择正面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m23.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m23.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div class="ipt">
                           <button type="button" class="ipt-u u-ipt">选择反面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m23.jpg" alt="" class="fileImg" />
+                            <img src="/Public/Home/Images/m23.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div id="fiwg">
                           <div id="fiwg1">
-                            <p>示例</p> <i><img src="Images/m24.jpg" /></i>
+                            <p>示例</p> <i><img src="/Public/Home/Images/m24.jpg" /></i>
                           </div>
                           <div id="fiwg2">
                             <p>
@@ -401,14 +405,14 @@
                           <button type="button" class="ipt-u u-ipt">选择正面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m21.jpg" alt="" class="fileImg" />
+                            <img src="/Public/HomeImages/m21.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div class="ipt">
                           <button type="button" class="ipt-u u-ipt">选择反面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m22.jpg" alt="" class="fileImg" />
+                            <img src="/Public/HomeImages/m22.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                       </div>
@@ -418,19 +422,19 @@
                           <button type="button" class="ipt-u u-ipt">选择正面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m23.jpg" alt="" class="fileImg" />
+                            <img src="/Public/HomeImages/m23.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div class="ipt">
                           <button type="button" class="ipt-u u-ipt">选择反面</button>
                           <input type="file" class="file" />
                           <div id="fileImg">
-                            <img src="Images/m23.jpg" alt="" class="fileImg" />
+                            <img src="/Public/HomeImages/m23.jpg" alt="" class="fileImg" />
                           </div>
                         </div>
                         <div id="fiwg">
                           <div id="fiwg1">
-                            <p>示例</p> <i><img src="Images/m24.jpg" /></i>
+                            <p>示例</p> <i><img src="/Public/HomeImages/m24.jpg" /></i>
                           </div>
                           <div id="fiwg2">
                             <p>

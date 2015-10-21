@@ -81,11 +81,11 @@ div#xexk1.xexk4{width: 130px;}
 .hei88{height: 88px}
 .hei63{height: 63px}
 .m-form .ipt .iptfile{float: left;width: 170px}
-.ipt .win150{float: left;width: 150px}
+.ipt .win150{float: left;width: 120px; padding-left: 2px;}
 .win200{float: left;width: 200px}
 .win200 select { height: 32px; width: 160px; border: 1px solid #e7e7eb;}
-.iptlef{margin-left: 25px}
-.ipt .win150 input{margin-right: 20px}
+.iptlef{margin-left: 0px}
+.ipt .win150 input{margin-right: 10px}
 .marlef60{margin-left: 60px}
 /* 简易表单 */
 .m-form legend{ font-size: 14px; font-weight: bold; }
