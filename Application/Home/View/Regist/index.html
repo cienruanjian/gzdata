@@ -11,44 +11,46 @@
     <div class="all">
       <div class="all_1"> <img src="__PUBLIC__/Home/images/qzy/1.jpg" width="411" height="52" /></div>
       <div class="all_2">
-        <div class="all_2_l">
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">手机：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
+        <form action="{:U('Regist/handle')}">
+          <div class="all_2_l">
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l">手机：</div>
+              <div class="all_2_l_1_r">
+                <input name="phone" type="number" />
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">验证码：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" class="yzmsrk" />
-              <input type="button" id="btn"  class="yzmsrk yzmyzm" value="免费获取验证码" />
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l">验证码：</div>
+              <div class="all_2_l_1_r">
+                <input name="verify" type="text" class="yzmsrk" />
+                <input type="button" id="btn"  class="yzmsrk yzmyzm" value="免费获取验证码" />
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">密码：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l">密码：</div>
+              <div class="all_2_l_1_r">
+                <input name="password" type="password" />
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l">确认密码：</div>
-            <div class="all_2_l_1_r">
-              <input name="" type="text" />
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l">确认密码：</div>
+              <div class="all_2_l_1_r">
+                <input name="repassword" type="password" />
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-          </div>
-          <div class="all_2_l_1">
-            <div class="all_2_l_1_l"></div>
-            <div class="all_2_l_1_r all_2_l_1_r_g">
-              <input name="" type="button" id="注册" value="注册" />
+            <div class="all_2_l_1">
+              <div class="all_2_l_1_l"></div>
+              <div class="all_2_l_1_r all_2_l_1_r_g">
+                <input type="submit" value="注册" />
+              </div>
+              <div class="clear"></div>
             </div>
-            <div class="clear"></div>
           </div>
-        </div>
+        </form>
         <div class="all_2_r">
         
         <div class="all_2_r_1">
@@ -64,24 +66,63 @@
     </div>
   </div>
   <include file="Public/footer" />
+  <script src="__PUBLIC__/Plugin/layer/layer.js"></script>
+  <script src="__PUBLIC__/Home/Js/unit.js"></script>
   <script type="text/javascript">
-      var wait=60;
-      function time(o) {
-        if (wait == 0) {
-          o.removeAttribute("disabled");
-          o.value="免费获取验证码";
-          wait = 60;
-        } else {
-          o.setAttribute("disabled", true);
-          o.value="重新发送(" + wait + ")";
-          wait--;
-          setTimeout(function() {
-            time(o)
-          },
-          1000)
-        }
+    document.getElementById("btn").onclick=function(){
+      var phone = $('input[name=phone]').val();
+      if (!$.trim(phone))  {
+        layer.msg('请输入电话号码');
+        return false;
       }
-      document.getElementById("btn").onclick=function(){time(this);}
+      time(this);  //倒计时
+      $.post("{:U('Regist/verify')}", {"phone" : phone}, function(data) {
+        if (data == "提交成功") {
+          layer.msg("验证码已发送，请注意查收");
+        } else {
+          clearInterval(_interval);
+          $('#btn').val('免费获取验证码').attr('disabled', false);
+          layer.msg(data);
+        }
+      }, 'html');  
+    }
+    //注册
+    $('form').submit(function() {
+      var _this = $(this);
+      if (!$.trim($('input[name=phone]').val())) {
+        layer.msg('请输入电话号码');
+        return false;
+      }
+      if (!$.trim($('input[name=verify]').val())) {
+        layer.msg('请输入验证码');
+        return false;
+      }
+      if (!$.trim($('input[name=password]').val())) {
+        layer.msg('请输入密码');
+        return false;
+      }
+      if ($.trim($('input[name=password]').val()) != $.trim($('input[name=repassword]').val())) {
+        layer.msg('两次密码输入不一致');
+        return false;
+      }
+      $.ajax({
+          url  : _this.attr('action'),
+          data : _this.serialize(),
+          type : "post",
+          dataType : "json",
+          beforeSend : function(){layer.load(1);},
+          success : function(data) {
+            layer.closeAll();
+            var data = eval(data);
+            if (data.status) {
+              window.location.href = data.jumpUrl;
+            } else {
+              layer.msg(data.msg);
+            }
+          }
+      });
+      return false;
+    });
   </script>
 </body>
 </html>
