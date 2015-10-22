@@ -76,7 +76,14 @@
                             </a>
                         </li>
 
-                        <li class="dropdown show-on-hover <eq name="Think.CONTROLLER_NAME|strtolower" value="theater">active</eq>">
+                        <li <eq name="Think.CONTROLLER_NAME|strtolower" value="question">class="active"</eq>>
+                            <a href="{:U('Question/index')}">
+                                <i class="fa fa-question"></i>
+                                <span>帮助中心</span>
+                            </a>
+                        </li>
+
+                       <!--  <li class="dropdown show-on-hover <eq name="Think.CONTROLLER_NAME|strtolower" value="theater">active</eq>">
                            
                             <a href="javascript:;">
                                 <i class="fa fa-video-camera"></i>
@@ -208,7 +215,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
 

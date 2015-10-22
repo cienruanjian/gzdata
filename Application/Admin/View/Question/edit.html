@@ -1,0 +1,65 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<link rel="stylesheet" href="__PUBLIC__/Plugin/uploadify/uploadify.css">
+<style type="text/css">
+	.uploadify-button {
+	    background-color: transparent;
+	    border: none;
+	    padding: 0;
+	}
+	.uploadify:hover .uploadify-button {
+	    background-color: transparent;
+	}
+</style>
+<include file="Public/nav"/>
+        <section class="main-content">
+            <div class="content-wrap">
+                <div class="row">
+                	<div class="col-lg-12">
+                 	<section class="panel">
+                      <header class="panel-heading">{$titleL2}</header>
+                      <div class="panel-body">
+                          <form class="form-horizontal bordered-group" role="form" action="{:U('Question/editHandle')}" method="post">
+
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label">问题</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="question" class="form-control" rows="2">{$data.question}</textarea>
+                                  </div>
+                              </div> 
+
+                              <div class="form-group">
+                                  <label class="col-sm-2 control-label">答案</label>
+                                  <div class="col-sm-8">
+                                      <textarea name="answer" class="form-control" rows="2">{$data.answer}</textarea>
+                                  </div>
+                              </div> 
+
+                              <div class="form-group">
+                                  <label for="inputEmail3" class="col-sm-2 control-label">排序</label>
+                                  <div class="col-sm-8">
+                                      <input type="text" name="sort" value="{$data.sort}" class="form-control" id="inputEmail3">
+                                  </div>
+                              </div>
+                              
+                              <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-6">
+                                  	  <input type="hidden" name="id" value="{$data.id}">
+                                      <button type="submit" class="btn btn-success">保存</button>
+                                      <button type="button" class="btn btn-default" onclick="history.go(-1)">返回</button>
+                                  </div>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </section>
+                 </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+<include file="Public/footer"/> 
+<!-- page special js plugin here -->
+</body>
+</html>

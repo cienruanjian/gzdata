@@ -78,6 +78,17 @@ CREATE TABLE `cns_article` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
+-- -----------------------------------------------------
+-- Table `gzdata`.`cns_question`问题
+-- -----------------------------------------------------
+CREATE TABLE `cns_question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `question` text COMMENT '问题',
+  `answer` text COMMENT '答案',
+  `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
 
 
 
