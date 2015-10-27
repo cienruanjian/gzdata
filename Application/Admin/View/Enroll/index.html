@@ -1,0 +1,113 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<include file="Public/nav"/>
+        <section class="main-content">
+                <div class="content-wrap">
+                    <div class="row">
+                    	<div class="col-lg-12">
+                    		<section>
+                                <ul id="myTab2" class="nav nav-tabs">
+                                    <li <if condition="$_GET['n'] eq 1 or $_GET['n'] eq ''">class="active"</if>>
+                                        <a href="{:U('Enroll/index?n=1')}" >企业</a>
+                                    </li>
+                                    <li <if condition="$_GET['n'] eq 2">class="active"</if>>
+                                        <a href="{:U('Enroll/index?n=2')}" >个人/团体</a>
+                                    </li>
+                                </ul>
+                                <section class="panel">
+                                    <div class="panel-body">
+                                        <div id="myTabContent2" class="tab-content">
+                                          <!-- content -->
+                                            <div class="tab-pane active">
+                                                 <!-- content -->
+                                                 <section class="panel">
+												    <div class="panel-body  no-padding">
+												        <table class="table table-bordered table-hover no-margin">
+												            <thead>
+												                <tr>
+												                    <th>项目编号</th>
+												                    <th>项目名称</th>
+												                    <th>报名时间</th>
+												                    <th>项目负责人</th>
+												                    <th>负责人电话</th>	
+												                    <th>状态</th>
+												                    <th>操作</th>
+												                </tr>
+												            </thead>
+												            <tbody>
+												            	<notempty name="lists">
+												            	<foreach name="lists" item="v">
+												                    <tr>
+												                        <td>{$v.number}</td>
+												                        <td>{$v.name}</td>
+												                        <td>{$v.create_at|date="Y-m-d", ###}</td>
+												                        <td>{$v.duty_name}</td>
+												                        <td>{$v.duty_phone}</td>
+												                        <td>
+												                        	<eq name="v.status" value="0">
+												                        		<a href="{:U('Enroll/check', ['id' => $v['id'], 'set' => 1, 'p' => $_GET['p']])}" class="btn btn-danger btn-xs">未审核</a>
+												                        	</eq>
+																			<eq name="v.status" value="1">
+																				<a href="{:U('Enroll/check', ['id' => $v['id'], 'set' => 0, 'p' => $_GET['p']])}" class="btn btn-success btn-xs">已审核</a>
+																			</eq>
+												                        </td>
+												                        <td>
+												                        	<a class="detail" href="javascript:;" show-url="{:U('Enroll/detail', array('id' => $v['id']))}" data-toggle="tooltip" data-placement="top" title="" data-original-title="查看详细信息"><i class="fa fa-eye"></i></a>
+												                        	&nbsp;
+												                        	<a  href="{:U('Excel/index', array('id' => $v['id'], 'n' => $v['team_nature']))}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="导出到excel"><i class="fa fa-file"></i></a>
+
+												                        	<!-- <a href="{:U('Enroll/edit', array('id' => $v['id']))}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><i class="fa fa-edit"></i></a>
+												                        	&nbsp; -->
+												                        </td>
+												                    </tr>
+												                </foreach>
+												                <else/>
+												                	<tr><td colspan="7" align="center" ><br><h4 style="color:#999;">暂时没有内容~</h4></td></tr>
+												                </notempty>
+												            </tbody>
+												        </table>
+												    </div>
+												    <div class="panel-footer no-border no-padding">
+												    	<div class="page" style="padding-top:5px;">
+												    		{$page}
+												    	</div>
+												    	<div style="clear:both"></div>
+												    	<notempty name="lists">
+													    	<div style="text-align:right; margin-top:10px;">
+												            	<a class="btn btn-success btn-sm" href="{:U('Excel/index', ['n' => $_GET['n']])}"><i class="fa fa-cloud-download"></i> 导出到EXCEL</a>
+													    	</div>
+												    	</notempty>
+												    </div>
+												</section>
+                                            </div>
+                                            <!-- contentend -->
+                                        </div>
+                                    </div>
+                                </section>
+                            </section>
+	                    </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+<!-- page special js plugin here -->
+<include file="Public/footer"/>  
+<script src="__PUBLIC__/Plugin/layer/layer.js"></script>
+<script>
+$('.detail').click(function() {
+	var url = $(this).attr('show-url');
+	layer.open({
+        type: 2,
+        title: '报名详细信息',
+        shadeClose: true,
+        shade: false,
+        maxmin: true, //开启最大化最小化按钮
+        area: ['80%', '90%'],
+        content: url
+    });
+});
+</script>
+</body>
+
+</html>

@@ -18,4 +18,6 @@ return array(
 	'DEFAULT_MODULE'        => 'Home', 
 	'URL_MODEL'             => '2',   
 	'URL_HTML_SUFFIX'       =>  '',  // URL伪静态后缀设置
+
+	'UPLOAD_PATH'         => 'Upload/',
 );

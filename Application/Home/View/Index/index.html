@@ -164,80 +164,38 @@
     </div>
     </div>
     <div id="Middle3">
-    <div id="xexk">
-      <img src="__PUBLIC__/Home/images/m14.jpg" width="1185" height="94" />
-      <div id="xexk1" class="xexk2">
-        <p>中国工业和信息化部软件服务业司</p>
-        <p>共青团中央学校部</p>
-        <p>中国电子企业协会</p>
+      <div id="xexk">
+        <img src="__PUBLIC__/Home/images/m14.jpg" width="1185" height="94" />
+        
+        <div id="xexk1">
+          <foreach name="link_organization" item="v">
+            <p>{$v.name}</p>
+          </foreach>
+        </div>
       </div>
-      <div id="xexk1" class="xexk3">
-        <p>清华大学</p>
-        <p>贵阳市人民政府</p>
-        <p>贵安新区管委会</p>
-        <p>贵州省经济和信息化委员会</p>
-      </div>
-      <div id="xexk1">
-        <p>阿里巴巴集团</p>
-        <p>百度公司</p>
-        <p>腾讯公司</p>
-        <p>新浪公司</p>
-        <p>赛伯乐投资公司</p>
-      </div>
-      <div id="xexk1">
-        <p>中软国际公司</p>
-        <p>中关村青年联合会</p>
-      </div>
-      <div id="xexk1" class="xexk4">
-        <p>中软国际公司</p>
-      </div>
-    </div>
-    <div class="clear"></div>
+
+      <div class="clear"></div>
     </div>
     <div class="h50"></div>
     <div id="Middle4">
-    <div id="fcrf">
-      <img src="__PUBLIC__/Home/images/m15.jpg" width="1185" height="121" />
+      <div id="fcrf">
+        <img src="__PUBLIC__/Home/images/m15.jpg" width="1185" height="121" />
+      </div>
+      <foreach name="link_support" item="v">
+        <div class="fcrf1">
+          <p><a href="{$v.url|default='javascript:;'}"><img src="__ROOT__/{$v.thumb}" width="272" height="79" /></a></p>
+        </div>
+      </foreach>
+      <div class="clear"></div>
     </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-      <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    <div id="fcrf1">
-     <p><a href="#"><img src="__PUBLIC__/Home/images/m16.jpg" width="272" height="79" /></a></p>
-    </div>
-    </div>
+     <div class="clear"></div>
     <div id="Middle5">
-      <p>友情链接：友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  友情链接 友情链接  </p>
+      <div>
+        友情连接：
+        <foreach name="link_friend" item="v">
+          <a target="_blank" href="{$v.url|default='javascript:;'}">{$v.name}</a>
+        </foreach>
+      </div>
     </div>
     </div>
 

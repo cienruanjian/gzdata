@@ -1,0 +1,84 @@
+<include file="Public/header"/>
+<!-- page special css plugin here -->
+<style>
+	#table  td {
+	 	 vertical-align:middle;
+	} 
+</style>
+<include file="Public/nav"/>
+            <section class="main-content">
+                <header class="header navbar bg-default">
+                    <ul class="nav navbar-nav">
+                        <li <if condition="$_GET['type'] eq 1 || !$_GET['type']">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 1))}">大赛组织</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 2">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 2))}">媒体支持</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 3">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 3))}">友情连接</a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="content-wrap">
+                	<div class="row mg-b">
+                        <div class="col-xs-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                
+                                	{$titleL1}&nbsp;&nbsp;
+                                	<a class="btn btn-success btn-xs" href="{:U('Link/add', ['type' => $_GET['type']])}">添加</a>
+                                
+                                </header>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table id="table" class="table table-bordered table-hover" data-sortable="" data-sortable-initialized="true">
+                                            <thead>
+                                                <tr>
+                                                    <th>名称</th>
+                                                    <th>LOGO</th>
+                                                    <th>连接</th>
+                                                    <th>排序</th>
+                                                    <th>操作</th>
+                                                    
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <notempty name="lists">
+                                            	<foreach name="lists" item="v">
+	                                                <tr>
+	                                                    <td>{$v.name}</td>
+                                                        <td>
+                                                            <if condition="$v['thumb']">
+                                                                <img src="__ROOT__/{$v.thumb}">
+                                                            <else/>
+                                                                无
+                                                            </if>
+                                                        </td>
+	                                                    <td>{$v.url}</td>
+	                                                    <td>{$v.sort}</td>
+	                                                    <td>
+	                                                    	<a href="{:U('Link/edit', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><span class="fa fa-edit text-success"></span></a>&nbsp;
+                                             			  	<a class="del" href="{:U('Link/del', ['id' => $v['id']])}" data-toggle="tooltip" data-placement="top" title="" data-original-title="删除"><span class="fa fa-trash-o text-success"></span></a>
+	                                                    </td>
+	                                                </tr>
+                                                </foreach>
+                                                <else/>
+                                                    <tr><td colspan="5" align="center" ><br><h4 style="color:#999;">暂时没有内容~</h4></td></tr>
+                                                </notempty>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+<!-- page special js plugin here -->
+<include file="Public/footer"/>  
+</body>
+
+</html>

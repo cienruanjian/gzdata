@@ -1,0 +1,525 @@
+[ 2015-10-27T00:02:26+08:00 ] 127.0.0.1 /Admin/Enroll/index/n/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0015s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_match` WHERE `team_nature` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 1 LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 339 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015619s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015648s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000644s ]
+
+[ 2015-10-27T00:02:29+08:00 ] 127.0.0.1 /Admin/Excel/index/n/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000268s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 1  [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0026s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+
+[ 2015-10-27T00:03:06+08:00 ] 127.0.0.1 /Admin/Enroll/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_match` WHERE `team_nature` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2 LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 339 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017720s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017765s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000863s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000935s ]
+
+[ 2015-10-27T00:03:08+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001120s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0018s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+
+[ 2015-10-27T00:03:28+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0017s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+
+[ 2015-10-27T00:04:41+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001111s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0048s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+
+[ 2015-10-27T00:05:29+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0014s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+
+[ 2015-10-27T00:07:11+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000446s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0010s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/Drawing.php 第 111 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 352 行.
+NOTIC: [2] Division by zero /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Worksheet/BaseDrawing.php 第 324 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 303 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 303 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 303 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+NOTIC: [8] getimagesize(): Read error! /Users/yuwei/www/gzdata/Application/Common/Util/PHPExcel/Writer/Excel5.php 第 477 行.
+
+[ 2015-10-27T00:09:02+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0012s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 290 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 290 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 290 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 302 行.
+
+[ 2015-10-27T00:17:11+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+
+[ 2015-10-27T00:17:31+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0009s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 292 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 304 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 292 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 304 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 292 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 304 行.
+
+[ 2015-10-27T00:23:13+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0012s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 296 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 308 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 296 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 308 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 296 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 308 行.
+
+[ 2015-10-27T00:28:06+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+
+[ 2015-10-27T00:28:21+08:00 ] 127.0.0.1 /Admin/Enroll/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_match` WHERE `team_nature` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2 LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 339 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016972s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017046s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000902s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2015-10-27T00:28:26+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0016s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2015-10-27T00:28:43+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0014s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+
+[ 2015-10-27T00:30:00+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0013s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+
+[ 2015-10-27T00:32:11+08:00 ] 127.0.0.1 /Admin/Enroll/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000726s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_match` WHERE `team_nature` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2 LIMIT 0,15   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 339 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018135s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+
+[ 2015-10-27T00:32:11+08:00 ] 127.0.0.1 /Admin/Enroll/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000260s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cns_match` WHERE `team_nature` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2 LIMIT 0,15   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 339 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+NOTIC: [8] Undefined index: p /Users/yuwei/www/gzdata/Application/Runtime/Cache/Admin/490bd565645c820b78e1c38e71b2c87e.php 第 338 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013299s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000552s ]
+
+[ 2015-10-27T00:32:14+08:00 ] 127.0.0.1 /Admin/Excel/index/n/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `cns_match` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `cns_match` WHERE `team_nature` = 2  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `cns_type` [ RunTime:0.0011s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `cns_type` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 297 行.
+NOTIC: [8] Undefined index: creat_at /Users/yuwei/www/gzdata/Application/Admin/Controller/ExcelController.class.php 第 309 行.
+

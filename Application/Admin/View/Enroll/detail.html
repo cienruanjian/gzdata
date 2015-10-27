@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>详细信息</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/bootstrap/css/bootstrap.min.css">
+</head>
+<style>
+	#table, .title {
+		width:90%;
+		margin: 0 auto;
+	}
+	#table tr td {
+		vertical-align: middle;
+	}
+	.title {
+		color: #999;
+		text-align: right;
+		margin-top: 20px;
+	}
+	#table {
+		margin-bottom: 30px;
+	}
+</style>
+<body>
+	<div class="title">
+		报名时间：{$data.create_at|date="Y-m-d H:i:s", ###}
+	</div>
+	<table class="table table-bordered table-hover" id="table">
+		<tr>
+			<td align="right" width="20%">参赛编号</td>
+			<td>{$data.number}</td>
+		</tr>
+		<tr>
+			<td align="right">团队性质</td>
+			<td><eq name="data['team_nature']" value="1">企业<else/>个人/团体</eq></td>
+		</tr>
+		<tr>
+			<td align="right">项目名称</td>
+			<td>{$data.name}</td>
+		</tr>
+		<tr>
+			<td align="right">项目类型</td>
+			<td>{$data.type}</td>
+		</tr>
+		<tr>
+			<td align="right">项目简介</td>
+			<td>{$data.desc}</td>
+		</tr>
+		<tr>
+			<td align="right">商业计划书</td>
+			<td><a href="#">点击下载</a></td>
+		</tr>
+		<tr>
+			<td align="right">项目创意背景</td>
+			<td>{$data.background}</td>
+		</tr>
+		<tr>
+			<td align="right">项目当前进展</td>
+			<td>{$data.progress}</td>
+		</tr>
+		<tr>
+			<td align="right">项目盈利模式</td>
+			<td>{$data.profit_model}</td>
+		</tr>
+		<tr>
+			<td align="right">项目竞争优势</td>
+			<td>{$data.advantage}</td>
+		</tr>
+		<tr>
+			<td align="right">年均盈利（元）</td>
+			<td>{$data.income}</td>
+		</tr>
+		<tr>
+			<td align="right"><if condition="$data['team_nature'] eq 1">企业名称<else/>近期是否打算成立公司</if></td>
+			<td>{$data.enterprise_name}</td>
+		</tr>
+		<tr>
+			<td align="right">规模</td>
+			<td>{$data.scale}</td>
+		</tr>
+		<if condition="$data['team_nature'] eq 1">
+			<tr>
+				<td align="right">营业执照编号</td>
+				<td>{$data.business_license_number}</td>
+			</tr>
+			<tr>
+				<td align="right">营业执照扫描件</td>
+				<td><img src="__ROOT__/{$data.business_license_scan}" alt="" width="100"></td>
+			</tr>
+		</if>
+		<tr>
+			<td align="right">地址</td>
+			<td>{$data.address}</td>
+		</tr>
+		<tr>
+			<td align="right">项目负责人姓名</td>
+			<td>{$data.duty_name}</td>
+		</tr>
+		<tr>
+			<td align="right">项目负责人手机号</td>
+			<td>{$data.duty_phone}</td>
+		</tr>
+		<tr>
+			<td align="right">项目负责人邮箱</td>
+			<td>{$data.duty_email}</td>
+		</tr>
+		<tr>
+			<td align="right">项目负责人身份证号</td>
+			<td>{$data.duty_id}</td>
+		</tr>
+		<tr>
+			<td align="right">项目负责人身份证照片</td>
+			<td>
+				<img src="__ROOT__/{$data.duty_id_frontal_photo}"  width="100" alt="">
+				<img src="__ROOT__/{$data.duty_id_back_photo}"  width="100" alt="">
+			</td>
+		</tr>
+		<tr>
+			<td align="right">负责人手持身份证照片</td>
+			<td>
+				<if condition="$data['duty_handheld_id_frontal_photo']">
+					<img src="__ROOT__/{$data.duty_handheld_id_frontal_photo}"  width="100" alt="">
+				</if>
+				<if condition="$data['duty_handheld_id_back_photo']">
+					<img src="__ROOT__/{$data.duty_handheld_id_back_photo}"   width="100" alt="">
+				</if>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">紧急联系人姓名</td>
+			<td>{$data.emergency_contact}</td>
+		</tr>
+		<tr>
+			<td align="right">紧急联系人电话</td>
+			<td>{$data.emergency_contact_phone}</td>
+		</tr>
+		<tr>
+			<td align="right">创建时间</td>
+			<td>{$data.create_at|date="Y-m-d", ###}</td>
+		</tr>
+		<tr>
+			<td align="right">当前状态</td>
+			<td>
+				<eq name="data['status']" value="1">
+					已审核
+				<else/>
+					未审核
+				</eq>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<a href="{:U('Excel/index', ['id' => $data['id'], 'n' => $data['team_nature']])}" class="btn btn-success">导出到EXCEL</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -12,6 +12,10 @@ class IndexController extends BaseController {
         //文章
         $this->intro = $this->_getArticle(1, 4);
         $this->art   = $this->_getArticle(2, 3);
+        //大赛组织
+        $this->link_organization = $this->_getLink(1, 25);
+        $this->link_support = $this->_getLink(2, 12);
+        $this->link_friend = $this->_getLink(3, 20);
         $this->display();
     }
 
@@ -36,6 +40,15 @@ class IndexController extends BaseController {
         return M('Article')->where(array('type' => $type))->limit($limit)->order('hot desc, sort asc')->field('id, title, desc, thumb')->select();
     }
 
+    /**
+     * 获取友情连接
+     * @param  integer $type  [description]
+     * @param  integer $limit [description]
+     * @return [type]         [description]
+     */
+    private function _getLink($type = 1, $limit = 12) {
+        return M('Link')->where(array('type' => $type))->limit($limit)->order('sort')->select();
+    }
 
 
 }

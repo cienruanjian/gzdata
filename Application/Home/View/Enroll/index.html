@@ -4,6 +4,31 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>报名通道</title>
   <link href="__PUBLIC__/Home/Css/index.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="__PUBLIC__/Plugin/uploadify/uploadify.css">
+  <style type="text/css">
+    .uploadify-button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 4px;
+        background: #fff;
+        color: #5d5d5d;
+        font-family: "微软雅黑";
+        border:1px solid #e7e7eb;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .uploadify:hover .uploadify-button {
+        background-color: transparent;
+        background: #ddd;
+    }
+    .uploadify-queue{
+      position: absolute;
+      z-index: 99999;
+      width: 600px;
+      min-height: 30px;
+    }
+    </style>
   <include file="Public/header"/>
 
   <div id="khuj" style="background:url(__PUBLIC__/Home/Images/m19.jpg) center top no-repeat;">
@@ -17,479 +42,472 @@
     </div>
 
     <div id="lfbw">
-      <div class="cansaibh"><span style="margin-left:15px">参赛编号：0001</span></div>
-      <div class="h20"></div>
-      <div id="outer">
-        <label class="lab" style="margin-left:60px;">团队性质</label>
-        <ul id="tab" >
-          <li class="current" style="margin-left:20px;width:80px">
-            <span class="tabinp tabinpu">
-             <input id="single" type="radio" name="tabinp" class="radioclass" checked="checked" />
-            </span>
-            <label for="single">企业</label>
-          </li>
-          <li>
-            <span class="tabinp tabinpu">
-              <input id="group" type="radio" name="tabinp" class="radioclass" />
-            </span>
-            <label for="group">个人/团体</label>
-          </li>
-        </ul>
-        <div class="clear"></div>
-        <div id="content">
-          <ul style="display:block;">
+      <form  action="{:U('Enroll/handle')}" method="post">
+        <div class="cansaibh"><span style="margin-left:15px">参赛编号：{$number}</span></div>
+        <input type="hidden" name="number" value="{$number}" />
+        <div class="h20"></div>
+        <div id="outer">
+          <label class="lab" style="margin-left:60px;">团队性质</label>
+          <ul id="tab" >
+            
+            <li class="current" style="margin-left:20px;width:80px">
+              <span class="tabinp tabinpu">
+               <input id="single" type="radio" name="team_nature" class="radioclass" checked="checked" show-data="enterprise-only" hide-data="personal-only" value="1" />
+              </span>
+              <label for="single">企业</label>
+            </li>
+            
             <li>
-              <div class="m-form">
-                <form name="" action="#" method="get">
-                  <fieldset style="border: 0;">
-                    <div class="marlef60">
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目名称</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                          <p>请填写参赛项目的主题名称</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目简介 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei88"></textarea>
-                          <p>300字以内</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>商业计划书</label>
-                        <div class="ipt" style="vertical-align: top;">
-                          <button type="button" class="ipt-u u-ipt">下载模板</button>
-                          <input type="file" class="file" />
-                        </div>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">上传</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <p>支持word,ppt,pdf格式</p>
+              <span class="tabinp tabinpu">
+                <input id="group" type="radio" name="team_nature" class="radioclass" show-data="personal-only" hide-data="enterprise-only" value="2" />
+              </span>
+              <label for="group">个人/团体</label>
+            </li>
+          </ul>
+          <div class="clear"></div>
+          <div id="content">
+            <ul style="display:block;">
+              <li>
+                <div class="m-form">
+                 
+                    <fieldset style="border: 0;">
+                      <div class="marlef60">
+
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目名称</label>
+                          <div class="ipt">
+                            <input type="text" class="u-ipt required"  name="name" value="" />
+                            <p>请填写参赛项目的主题名称</p>
                           </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目创意背景 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
+
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目类型</label>
+                          <div class="ipt">
+                            <select name="type" class="u-ipt required">
+                              <option value="">请选择项目类型</option>
+                              <foreach name="type" item="v">
+                                <option value="{$v.id}">{$v.name}</option>
+                              </foreach>
+                            </select>
+                            <p>请填写参赛项目的主题名称</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目当前进展 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
+
+                        <div class="formitm formitmsc">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目简介 </label>
+                          <div class="ipt word-count">
+                            <textarea  class="wid828 hei88 required" name="desc"></textarea>
+                            <p>300字以内</p>
+                            <span class="wordwrap"><var class="word">300</var>/300</span>
+
+                          </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目盈利模式 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
+
+                        <div class="formitm formitms">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>商业计划书</label>
+                          <div class="ipt" style="vertical-align: top;">
+                            <button type="button" class="ipt-u u-ipt">下载模板</button>
+                          </div>
+                          <div class="ipt">
+                            <input class="file" type="file" class="ipt-u u-ipt" id="upload_business_plan"/>
+                            <input type="hidden" class="required" name="business_plan" error="请上传商业计划书" />
+                            <div id="fileImg">
+                              <p id="upload-plan-tip">支持word,ppt,pdf格式</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目竞争优势 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
+                        <div class="formitm formitms">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目创意背景 </label>
+                          <div class="ipt word-count">
+                            <textarea  class="wid828 hei63 required" name="background"></textarea>
+                            <span class="wordwrap"><var class="word">100</var>/100</span>
+                            <p>100字以内</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>企业名称 </label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                          <p>请填写公司名称</p>
+                        <div class="formitm formitms">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目当前进展 </label>
+                          <div class="ipt word-count">
+                            <textarea  class="wid828 hei63 required" name="progress"></textarea>
+                            <span class="wordwrap"><var class="word">100</var>/100</span>
+                            <p>100字以内</p>
+                          </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>企业规模</label>
+                        <div class="formitm formitms">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目盈利模式 </label>
+                          <div class="ipt word-count">
+                            <textarea  class="wid828 hei63 required" name="profit_model"></textarea>
+                            <span class="wordwrap"><var class="word">100</var>/100</span>
+                            <p>100字以内</p>
+                          </div>
+                        </div>
+                        <div class="formitm formitms">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目竞争优势 </label>
+                          <div class="ipt word-count">
+                            <textarea  class="wid828 hei63 required" name="advantage"></textarea>
+                            <span class="wordwrap"><var class="word">100</var>/100</span>
+                            <p>100字以内</p>
+                          </div>
+                        </div>
+                        <div class="formitm formitms">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>年均盈利（元）</label>
+                          <div class="ipt">
+                            <input type="number" name="income" class="u-ipt required"/>
+                          </div>
+                        </div>
                        
-                        <div class="ipt iptlef">
-                          <div class="win150"> 
-                            <input type="radio" name="number" id="number1" />
-                            <label for="number1">1~20人</label>
+                        <div class="enterprise-only">
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>企业名称 </label>
+                            <div class="ipt">
+                              <input type="text" class="u-ipt required" name="enterprise_name" />
+                              <p>请填写公司名称</p>
+                            </div>
                           </div>
-                          <div class="win150" style="width: 120px;">
-                            <input type="radio" name="number" id="number2" />
-                            <label for="number2">20~200人</label>
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>企业规模</label>
+                            <div class="ipt iptlef">
+                              <div class="win150"> 
+                                <input type="radio" value="1~20人" name="scale" id="number1" checked />
+                                <label for="number1">1~20人</label>
+                              </div>
+                              <div class="win150" value="20~200人" style="width: 120px;">
+                                <input type="radio" name="scale" id="number2" />
+                                <label for="number2">20~200人</label>
+                              </div>
+                              <div class="win150">
+                                <input type="radio" value="200人以上" name="scale" id="number3" />
+                                <label for="number3">200人以上</label>
+                              </div>
+                            </div>
                           </div>
-                          <div class="win150">
-                            <input type="radio" name="number" id="number3" />
-                            <label for="number3">200人以上</label>
+                          
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>营业执照编号</label>
+                            <div class="ipt">
+                              <input type="text" class="u-ipt license length" length="15" name="business_license_number"/>
+                              <p>请输入15位营业执照编号</p>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>年均盈利</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>营业执照编号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                          <p>请输入15位置营业执照编号</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>营业执照注册地址</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                          <p>请填写营业执照注册地址</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>营业执照扫描件</label>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择文件</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m25.jpg" alt="" class="fileImg" />
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>营业执照注册地址</label>
+                            <div class="ipt">
+                              <input type="text" name="address" class="u-ipt required"/>
+                              <p>请填写营业执照注册地址</p>
+                            </div>
                           </div>
-                        </div>
-                        <div id="fiwg3">
-                          <p>
-                            以左图方式双手持身份证，以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证
-                          </p>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人姓名</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人手机号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人邮箱</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人身份证号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人身份证照片</label>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择正面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m21.jpg" alt="" class="fileImg" />
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>营业执照扫描件</label>
+                            <div class="ipt">
+                                <input class="file required" type="file" id="upload_business_license_scan"/> 
+                                <input type="hidden" class="required" name="business_license_scan" error="请上传营业执照扫描件" />
+                              <div id="fileImg">
+                                <img src="__PUBLIC__/Home/Images/m25.jpg" alt="" class="fileImg" />
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择反面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m22.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab">负责人手持身份证照片</label>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择正面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m23.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择反面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m23.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                        <div id="fiwg">
-                          <div id="fiwg1">
-                            <p>示例</p> <i><img src="__PUBLIC__/Home/Images/m24.jpg" /></i>
-                          </div>
-                          <div id="fiwg2">
+                         <!--  <div id="fiwg3">
                             <p>
                               以左图方式双手持身份证，以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证
                             </p>
+                          </div> -->
+                        </div>
+
+                        <div class="personal-only" style="display:none">
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>项目团队人数</label>
+                            <div class="ipt iptlef">
+                              <div class="win150 wid100">
+                                <input type="radio" name="xianmutdrs" value="1~5人" id="xianmutdrs1" checked disabled="disabled" />
+                                <label for="xianmutdrs1">1~5人</label>
+                              </div>
+                              <div class="win150">
+                                <input type="radio" name="xianmutdrs" value="6~10人" id="xianmutdrs2" disabled="disabled" />
+                                <label for="xianmutdrs2">6~10人</label>
+                              </div>
+                              <div class="win150">
+                                <input type="radio" name="xianmutdrs" value="10人以上" id="xianmutdrs3" disabled="disabled" />
+                                <label for="xianmutdrs3">10人以上</label>
+                              </div>
+                            </div>
                           </div>
-                          <div class="clear"></div>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>紧急联系人姓名</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>紧急联系人手机号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="borbot2">
-                      <label>"<span class="xinghao">*</span>"为必填项目;不带"<span class="xinghao">*</span>"项目为非必填项目,进入复赛后须补充完整</label>
-                    </div>
-                    <div align="center">
-                      <input name="" type="button" value="确定无误，提交" / class="wgog1">
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
-            </li>
-          </ul>
-          <ul style="display:none;">
-            <li>
-              <div class="m-form">
-                <form name="" action="#" method="get">
-                  <fieldset style="border: 0;">
-                    <div class="marlef60">
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目名称</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                          <p>请填写参赛项目的主题名称</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目简介 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei88"></textarea>
-                          <p>300字以内</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>商业计划书</label>
-                        <div class="ipt" style="vertical-align: top;">
-                          <button type="button" class="ipt-u u-ipt">下载模板</button>
-                          <input type="file" class="file" />
-                        </div>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">上传</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <p>支持word,ppt,pdf格式</p>
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>近期是否成立公司</label>
+                            <div class="ipt iptlef">
+                              <div class="win150 wid100">
+                                <input type="radio" name="enterprise_name" value="是" checked id="YES" disabled="disabled" />
+                                <label for="YES">是</label>
+                              </div>
+                              <div class="win150 wid100">
+                                <input type="radio" name="enterprise_name" value="否" id="NO" disabled="disabled" />
+                                <label for="NO">否</label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="formitm formitms">
+                            <label class="lab"><span class="xinghao">*&nbsp;</span>项目所在地</label>
+                            <div class="ipt iptlef" style="margin-left:0">
+                              <div class="win200">
+                                <select name="location_p" id="location_p" disabled="disabled">
+                                </select>
+                              </div>
+                              <div class="win200">
+                                <select name="location_c" id="location_c" disabled="disabled">
+                                </select>
+                              </div>
+                              <div class="win200">
+                                <select name="location_a" id="location_a" disabled="disabled">
+                                </select>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目创意背景 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目当前进展 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目盈利模式 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目竞争优势 </label>
-                        <div class="ipt">
-                          <textarea  class="wid828 hei63"></textarea>
-                          <p>100字以内</p>
-                        </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目团队人数</label>
-                        <div class="ipt iptlef">
-                          <div class="win150 wid100">
-                            <input type="radio" name="xianmutdrs" id="xianmutdrs1" />
-                            <label for="xianmutdrs1">1~5人</label>
-                          </div>
-                          <div class="win150">
-                            <input type="radio" name="xianmutdrs" id="xianmutdrs2" />
-                            <label for="xianmutdrs2">6~10人</label>
-                          </div>
-                          <div class="win150">
-                            <input type="radio" name="xianmutdrs" id="xianmutdrs3" />
-                            <label for="xianmutdrs3">10人以上</label>
+
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人姓名</label>
+                          <div class="ipt">
+                            <input type="text" name="duty_name" class="u-ipt required"/>
                           </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>近期是否成立公司</label>
-                        <div class="ipt iptlef">
-                          <div class="win150 wid100">
-                            <input type="radio" name="xianmutdrs" id="YES" />
-                            <label for="YES">是</label>
-                          </div>
-                          <div class="win150 wid100">
-                            <input type="radio" name="xianmutdrs" id="NO" />
-                            <label for="NO">否</label>
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人手机号</label>
+                          <div class="ipt">
+                            <input type="number" name="duty_phone" class="u-ipt required phone"/>
                           </div>
                         </div>
-                      </div>
-                      <div class="formitm formitms">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目所在地</label>
-                        <div class="ipt iptlef" style="margin-left:0">
-                          <div class="win200">
-                            <select>
-                              <option value="volvo" selected="selected">请选择省市</option>
-                              <option value="saab">贵州省</option>
-                              <option value="fiat">云南省</option>
-                              <option value="audi">广西省</option>
-                            </select>
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人邮箱</label>
+                          <div class="ipt">
+                            <input type="text" name="duty_email" class="u-ipt required email"/>
                           </div>
-                          <div class="win200">
-                            <select>
-                              <option value="volvo" selected="selected">请选择城市</option>
-                              <option value="saab">贵阳市</option>
-                              <option value="fiat">遵义市</option>
-                              <option value="audi">凯里市</option>
-                            </select>
+                        </div>
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人身份证号</label>
+                          <div class="ipt">
+                            <input type="text" name="duty_id" class="u-ipt required ID"/>
                           </div>
-                          <div class="win200">
-                            <select>
-                              <option value="volvo" selected="selected">请选择区域</option>
-                              <option value="saab">云岩区</option>
-                              <option value="fiat">南明区</option>
-                              <option value="audi">花溪区</option>
-                            </select>
+                        </div>
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人身份证照片</label>
+                          <div class="ipt">
+                            <input class="file" id="upload_duty_id_frontal_photo" type="file" />
+                            <input type="hidden" class="required" name="duty_id_frontal_photo" error="请上传正面身份证照" />
+                            <div id="fileImg">
+                              <img src="__PUBLIC__/Home/Images/m21.jpg" alt="" class="fileImg" />
+                            </div>
+                          </div>
+                          <div class="ipt" style="margin-left:80px;">
+                            <input class="file" type="file" id="upload_duty_id_back_photo" />
+                            <input type="hidden" class="required" name="duty_id_back_photo" error="请上传背面身份证照" />
+                            <div id="fileImg">
+                              <img src="__PUBLIC__/Home/Images/m22.jpg" alt="" class="fileImg" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="formitm">
+                          <label class="lab">负责人手持身份证照片</label>
+                          <div class="ipt">
+                            <input class="file" type="file" id="upload_duty_handheld_id_frontal_photo" />
+                            <input type="hidden" class="" name="duty_handheld_id_frontal_photo" error="请上传手持正面身份证照" />
+                            <div id="fileImg">
+                              <img src="__PUBLIC__/Home/Images/m23.jpg" alt="" class="fileImg" />
+                            </div>
+                          </div>
+                          <div class="ipt" style="margin-left:80px;">
+                            <input class="file" type="file" id="upload_duty_handheld_id_back_photo"/>
+                            <input type="hidden" class="" name="duty_handheld_id_back_photo" error="请上传手持反面身份证照" />
+                            <div id="fileImg">
+                              <img src="__PUBLIC__/Home/Images/m23.jpg" alt="" class="fileImg" />
+                            </div>
+                          </div>
+                          <div id="fiwg">
+                            <div id="fiwg1">
+                              <p>示例</p> <i><img src="__PUBLIC__/Home/Images/m24.jpg" /></i>
+                            </div>
+                            <div id="fiwg2">
+                              <p>
+                                以左图方式双手持身份证，以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证
+                              </p>
+                            </div>
+                            <div class="clear"></div>
+                          </div>
+                        </div>
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>紧急联系人姓名</label>
+                          <div class="ipt">
+                            <input type="text" name="emergency_contact" class="u-ipt required"/>
+                          </div>
+                        </div>
+                        <div class="formitm">
+                          <label class="lab"><span class="xinghao">*&nbsp;</span>紧急联系人手机号</label>
+                          <div class="ipt">
+                            <input type="number" name="emergency_contact_phone" class="u-ipt required phone"/>
                           </div>
                         </div>
                       </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人姓名</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
+                      <div id="borbot2">
+                        <label>"<span class="xinghao">*</span>"为必填项目;不带"<span class="xinghao">*</span>"项目为非必填项目,进入复赛后须补充完整</label>
                       </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人手机号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
+                     
+                      <div align="center">
+                        <input type="submit" value="确定无误，提交" class="wgog1">
                       </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人邮箱</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人身份证号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>项目负责人身份证照片</label>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择正面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m21.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择反面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m22.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab">负责人手持身份证照片</label>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择正面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m23.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                        <div class="ipt">
-                          <button type="button" class="ipt-u u-ipt">选择反面</button>
-                          <input type="file" class="file" />
-                          <div id="fileImg">
-                            <img src="__PUBLIC__/Home/Images/m23.jpg" alt="" class="fileImg" />
-                          </div>
-                        </div>
-                        <div id="fiwg">
-                          <div id="fiwg1">
-                            <p>示例</p> <i><img src="__PUBLIC__/Home/Images/m24.jpg" /></i>
-                          </div>
-                          <div id="fiwg2">
-                            <p>
-                              以左图方式双手持身份证，以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证以左图方式双手持身份证
-                            </p>
-                          </div>
-                          <div class="clear"></div>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>紧急联系人姓名</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                      <div class="formitm">
-                        <label class="lab"><span class="xinghao">*&nbsp;</span>紧急联系人手机号</label>
-                        <div class="ipt">
-                          <input type="text" class="u-ipt"/>
-                        </div>
-                      </div>
-                    </div>
-                    <div id="borbot2">
-                      <label>"<span class="xinghao">*</span>"为必填项目;不带"<span class="xinghao">*</span>"项目为非必填项目,进入复赛后须补充完整</label>
-                    </div>
-                    <div align="center">
-                      <input name="" type="button" value="确定无误，提交" / class="wgog1">
-                    </div>
-                  </fieldset>
-                </form>
-              </div>
-            </li>
-          </ul>
+                    </fieldset>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <div class="clear"></div>
   </div>
-
-  <include file="Public/footer"/>
   <script>
-          $(function(){
-            window.onload = function()
-            {
-              var $li = $('#tab li');
-              var $ul = $('#content ul');
-              $li.click(function(){
-                var $this = $(this);
-                var $t = $this.index();
-                $li.removeClass();
-                $this.addClass('current');
-                $ul.css('display','none');
-                $ul.eq($t).css('display','block');
-              })
+    //图片上传
+    var sid = "{:session_id()}";
+    var url = "{:U('Base/upload')}";
+  </script>
+  <include file="Public/footer"/>
+  <script src="__PUBLIC__/Plugin/layer/layer.js"></script>
+  <script src="__PUBLIC__/Home/Js/city.js"></script>
+  <script type="text/javascript" src="__PUBLIC__/Plugin/uploadify/jquery.uploadify.min.js"></script>
+  <script src="__PUBLIC__/Home/Js/upload.js"></script>
+  <script>
+  
+      $(function(){
+        //字数限制
+        $('.word-count').each(function() {
+          var textArea = $(this).find('textarea'),
+              word = $(this).find('.word');
+              setTextareaNum(textArea,word);
+        });
+        //切换
+        $('ul#tab li input').click(function() {
+          $('.'+$(this).attr('show-data')).show().find('input, select, textarea').each(function() {
+            $(this).attr('disabled', false);
+          });
+          $('.'+$(this).attr('hide-data')).hide().find('input, select, textarea').each(function() {
+            $(this).attr('disabled', 'disabled');
+          });
+        });
+        
+        $('form').submit(function () {
+          var lock = 0;
+          //数据检测 必填项验证
+          $('.required').each(function() {
+            var value = $.trim($(this).val());
+            if (value == '') {
+              var _this = $(this);
+              if ($(this).attr('type') == 'hidden') {
+                var id = '#upload_'+_this.attr('name');
+                _this = $(id);
+                $('html,body').animate({scrollTop: _this.offset().top - 100}, 500);
+              };
+              var text = $(this).attr('error') ? $(this).attr('error') : '此项为必填项，请按要求填写';
+              $(this).focus();
+              layer.tips(text, _this, {
+                tips: [3, '#FF5151'],
+                time: 4000
+              });
+              lock = 1;
+              return false;
             }
           });
-      </script>
+
+           if (lock) return false;
+
+          //电话号码验证
+          $('.phone').each(function() {
+            var obj = $.trim($(this).val());
+            var reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
+            if (!reg.test(obj) && obj != '') {
+              layer.tips('请输入正确的手机号码~', $(this), {
+                tips: [3, '#FF5151'],
+                time: 4000
+              });
+              $(this).focus();
+              lock = 1;
+              return false;
+            };
+          });
+
+          if (lock) return false;
+
+          //身份证验证
+          $('.ID').each(function() {
+            var obj = $.trim($(this).val());
+            var reg = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;
+            if (!reg.test(obj) && obj != '') {
+              layer.tips('请输入正确的身份证号~', $(this), {
+                tips: [3, '#FF5151'],
+                time: 4000
+              });
+              $(this).focus();
+              lock = 1;
+              return false;
+            };
+          });
+
+          if (lock) return false;
+
+          //license
+          $('.license').each(function() {
+            var obj = $.trim($(this).val());
+            var reg = /\d{15}/;
+            if (!reg.test(obj) && obj != '') {
+              layer.tips('营业执照编号格式不正确~', $(this), {
+                tips: [3, '#FF5151'],
+                time: 4000
+              });
+              $(this).focus();
+              lock = 1;
+              return false;
+            };
+          });
+
+          if (lock) return false;
+
+          //邮箱验证
+          $('.email').each(function() {
+            var obj = $.trim($(this).val());
+            var reg = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/;
+            if (!reg.test(obj) && obj != '') {
+              layer.tips('邮箱格式不正确~', $(this), {
+                tips: [3, '#FF5151'],
+                time: 4000
+              });
+              $(this).focus();
+              lock = 1;
+              return false;
+            };
+          });
+
+          if (lock) return false;
+
+          $.ajax({
+            url        :    "{:U('Enroll/handle')}",
+            type       :    "post",
+            data       :    $('form').serialize(),
+            dataType   :    'json',
+            beforeSend :    function(){layer.load(1)},
+            success    :    function(data) {
+              layer.closeAll();
+              var data = eval(data);
+              if (data.status) {
+                layer.msg(data.msg, function() {
+                  window.location.href = data.jumpUrl;
+                });
+              } else {
+                layer.msg(data.msg);
+              }
+            } 
+          });
+          return false;
+        });
+        //地址
+        new PCAS('location_p', 'location_c', 'location_a', '贵州省', '贵阳市', '南明区');
+      }); 
+  </script>
 </body>
 </html>

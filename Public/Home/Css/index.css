@@ -41,21 +41,19 @@
 .ddpa22_Tilte p span { color: #f72778; }
 
 
-#Middle3 { width: 100%; height: 380px; }
+#Middle3 { width: 100%;  }
 #xexk { width: 1185px; margin-right: auto; margin-left: auto; }
-#xexk1 { float: left; width: 235px; border-left-width: 1px; border-left-style: solid; border-left-color: #f72778; margin-top: 20px; }
-div#xexk1.xexk2{ width: 300px;}
-div#xexk1.xexk3{ width: 265px;}
-div#xexk1.xexk4{width: 130px;}
-#xexk1 p { text-indent: 1em; color: #525252; font-size: 14px; line-height: 30px; }
+#xexk1 { margin-top: 20px; }
+#xexk1 p {border-left: 1px solid #f72778; text-indent: 1em; width: 236px; float: left; display: block; color: #525252; font-size: 14px; line-height: 30px; }
 #xexk1 h3 { font-size: 18px; text-indent: 1em; color: #f72778; font-weight: normal; line-height: 33px; }
-#Middle4 { background-color: #f6f6f6; width: 100%; height: 500px; }
+#Middle4 { background-color: #f6f6f6; width: 100%; padding-bottom: 40px; }
 #fcrf { width: 1185px; margin-right: auto; margin-left: auto; }
-#fcrf1 p a img { height: 80px; width: 270px; border: 1px solid #eeeeee; }
-#fcrf1 p { margin-bottom: 20px; margin-left: 35px; float: left; width: 270px; }
-#fcrf1 { width: 1255px; margin-right: auto; margin-left: auto; }
+.fcrf1 p a img { height: 80px; width: 270px; border: 1px solid #eeeeee; }
+.fcrf1 p { margin-bottom: 20px; margin-left: 35px; float: left; width: 270px; }
+.fcrf1 { width: 1255px; margin-right: auto; margin-left: auto; }
 #Middle5 { background-color: #424242; font-size: 12px; line-height: 35px; color: #bcbcbc; }
-#Middle5 p { width: 1185px; margin-right: auto; margin-left: auto; }
+#Middle5 div { width: 1185px; margin-right: auto; margin-left: auto; }
+#Middle5 div a {color: #fff; margin-right: 10px;}
 #rbqk h3 { font-size: 24px; color: #000000; font-weight: normal; line-height: 100px; float: left; }
 #rbqk { width: 1185px; margin-right: auto; margin-left: auto; }
 #rbqk p { font-size: 24px; color: #cb2d6a; line-height: 100px; }
@@ -96,7 +94,7 @@ div#xexk1.xexk4{width: 130px;}
 .m-form .formitm-1{ padding-left: 100px; }
 .m-form .lab,
 #outer .lab{ float: left; width: 180px; margin-right: 35px; text-align: right; }
-.m-form .ipt{ position: relative; overflow: hidden; }
+.m-form .ipt{  }
 .m-form .ipt *{ vertical-align: middle; }
 .m-form .ipt a,
 .m-form .ipt a:hover{ text-decoration: none; color: #3891eb; }
@@ -105,12 +103,13 @@ div#xexk1.xexk4{width: 130px;}
 .m-form .ipt p{ line-height: 30px; height: 30px; color: #a0a0a0; }
 .m-form .tip{ padding-top: 10px; }
 .m-form .tip input{ margin: 0 5px 3px 0; }
-.m-form .u-ipt{ width: 298px; height: 30px; border: 1px solid #e7e7eb; }
-.m-form .ipt-u{ overflow: visible; width: 110px; margin-right: 30px; padding: 0 10px; color: #5d5d5d; border-radius: 2px; background: #fff; }
+.m-form .u-ipt{ width: 298px; height: 30px; border: 1px solid #e7e7eb; padding: 0 5px;}
+.m-form .ipt-u{ overflow: visible; width: 120px; margin-right: 30px; padding: 0 10px; color: #5d5d5d; border-radius: 2px; background: #fff; }
 /* 定制文件上传按钮  */
-.ipt{ position: relative; display: inline-block; overflow: hidden; *display: inline; *zoom: 1; }
+.ipt{ display: inline-block;  *display: inline; *zoom: 1; }
 .ipt button{ font-size: 14px; overflow: visible; height: 32px; padding: 0 10px; color: #666; border: 1px solid #ccc; background: #ddd; }
-.ipt .file{ font-size: 100px; position: absolute; top: 0; right: -1px; cursor: pointer; opacity: 0; filter: alpha(opacity=0); }
+/*.ipt input.file{ width:180px;  }*/
+/*.ipt .file{ font-size: 100px; position: absolute; top: 0; right: -1px; cursor: pointer; opacity: 0; filter: alpha(opacity=0); }*/
 .ipt:hover button{ color: #333; border-color: #efefef; background: #efeeee; }
 #fileImg .fileImg{ width: 110px; height: 75px; margin: 15px 0 0 0; }
 .m-form #borbot2{ width: 1115px; padding-bottom: 10px; border-bottom: 1px solid #a3a3a3; margin: 50px auto 30px}
@@ -129,7 +128,6 @@ div#xexk1.xexk4{width: 130px;}
 #ghyy2{ width: 90%; margin-right: auto; margin-left: auto; }
 #ghyy2{ font-size: 14px; line-height: 30px; color: #333; }
 
-
 #ghyy1 { width: 100%; }
 #khny { width: 90%; margin-right: auto; margin-left: auto; }
 #khny_Title h3 { font-size: 18px; color: #565555; font-weight: normal; background-image: url(../Images/m28.jpg); background-repeat: no-repeat; line-height: 50px; background-position: left; text-indent: 1em; float: left; }
@@ -143,9 +141,6 @@ div#xexk1.xexk4{width: 130px;}
 #khny3 h3 { background-color: #b7b6b6; height: 50px; width: 50px; border-radius:30px; color: #FFF; line-height: 50px; text-align: center; font-size: 30px; float: left; }
 #khny3 p { font-size: 18px; color: #6a6a6a; background-color: #b7b6b6; width: 960px; line-height: 40px; float: left; margin-left: 20px; margin-top: 5px; padding-right: 10px; padding-left: 10px; }
 #h100 { float: left; width: 100%; margin-top: 100px; }
-
-
-
 
 /*顶部焦点图*/
 #wrappen{width: 100%;height: 580px;background: #F1F1F1;overflow: hidden;}
@@ -163,10 +158,6 @@ div#xexk1.xexk4{width: 130px;}
 .btn { width:101px; height:25px; margin:auto; position:relative; padding-top:350px; z-index:999; }
 .btn a { width:17px; height:15px; overflow:none; display:block; background:url(../images/btn.jpg) no-repeat; cursor:pointer; float:left; }
 .btn a.active { background-position:-17px 0; }
-
-
-
-
 
 /*中部焦点图*/
 .focus{ position:relative; width:580px; height:385px; background-color: #000; float: left;}
@@ -194,12 +185,6 @@ filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorst
 .focus .next{top: 50%;margin-top: -37px; right: 0;  background-position:-40px -74px;  cursor:pointer;}
 .focus .prev:hover{  background-position:0 0; }
 .focus .next:hover{  background-position:-40px 0;}
-
-
-
-
-
-
 
 /*底部焦点图*/
 .modeA{ margin:0 auto;zoom:1}
@@ -232,6 +217,11 @@ _background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enab
 .libtn{width:240px;text-align:center;margin:10px auto 0}
 .libtn li{width:45px;height:11px;border:1px solid #989898;margin:0 4px;float: none;display:inline-block;*display:inline;zoom:1;overflow:hidden;cursor:pointer}
 .libtn li.selected{background:#989898}
+
+.word-count {position: relative;}
+.word-count .wordwrap{ position:absolute; right: 10px; bottom: 26px; color: #ccc; font-size: 14px;} 
+.word-count .word{ padding: 0 4px;}
+.word-count textarea {resize:none;}
 
 
 
