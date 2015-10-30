@@ -10,7 +10,7 @@ class MyController extends BaseController  {
     private $mid; //用户id
     public function _initialize() {
         parent::_initialize();
-        $this->mid = session(C('USER_AUTH_KEY'));
+        $this->mid = $_SESSION['admin'][C('USER_AUTH_KEY')];
         $this->titleL1 = "修改密码";
     }
     /**
@@ -18,7 +18,7 @@ class MyController extends BaseController  {
      */
     public function index () {
         $this->titleL2 = "修改密码";
-        $manger  = M('Manager')->where(array('id' => $this->mid))->field('id, login')->find();
+        $manger  = M('Admin')->where(array('id' => $this->mid))->field('id, login')->find();
         if (!$manger) $this->error('账号不存在');
         $this->manger = $manger;
         $this->display();
@@ -37,7 +37,7 @@ class MyController extends BaseController  {
            $this->error('数据不能为空');
         if ($pwd != $repwd) 
             $this->error('对不起，两次输入的密码不一致，请重试！');
-       $model     = M('Manager');
+       $model     = M('Admin');
        $password  = $model->where($map)->getField('password');
        if (md5($opwd) != $password) 
            $this->error('旧密码输入错误，请重试');

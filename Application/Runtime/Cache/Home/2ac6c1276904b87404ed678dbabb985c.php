@@ -3,7 +3,11 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>大赛咨询 - 云上贵州</title>
-  <link href="/Public/Home/css/zixun.css" rel="stylesheet" type="text/css" />
+  <link href="/Public/Home/Css/zixun.css" rel="stylesheet" type="text/css" />
+  <style>
+    .sub-title {float:left; line-height:82px; margin-left: 30px;}
+    .sub-title a {color: #575656; font-size: 14px; margin-right: 20px;}
+  </style>
   <!-- page common css here -->
 <link href="/Public/Home/Css/base.css" rel="stylesheet" type="text/css" />
 </head>
@@ -14,15 +18,20 @@
   <div id="head1">
     <div id="mav">
           <div id="logo"><img src="/Public/Home/Images/logo.jpg" width="502" height="124" /></div>
+         
           <div id="neww11">
               <div id="iymm1">
                 <input type="text" placeholder="请输入关键字搜索" / class="udq1">
                 <button type="submit" class="buttons"> </button>
               </div>
-              <div class="iymm">
+              <?php if(!$_SESSION['home'][C('USER_AUTH_KEY')]): ?><div class="iymm">
                 <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
                 <p><a href="<?php echo U('Login/index', ['ctl' => CONTROLLER_NAME, 'act' => ACTION_NAME]);?>">登录</a></p>
               </div>
+              <?php else: ?>
+               <div class="iymm" style="background:none">
+                <p style="width:100%; color: #7e7e7e; font-size: 12px;"><?php echo ($_SESSION['home']['phone']); ?><a href="<?php echo U('Login/logout');?>"> [退出]</a></p>
+              </div><?php endif; ?>
           </div>
           <div id="neww">
               <ul>
@@ -39,15 +48,22 @@
 </div>
 </div>
   
-  <div id="khuj" style="background:url(/Public/Home/images/zu.jpg) center top no-repeat;">
+  <div id="khuj" style="background:url(/Public/Home/Images/zu.jpg) center top no-repeat;">
     <div id="h302"></div>
     <div class="all">
-      <div class="all_1">
-        <img src="/Public/Home/images/qzy/3.jpg" width="208" height="52" />
+      
+      <div class="all_1" style="float:left">
+        <img src="/Public/Home/Images/qzy/3.jpg" width="208" height="52" />
       </div>
+    
+      <div class="sub-title">
+          <a href="<?php echo U('Article/index', ['type' => 2]);?>">大赛咨询</a>
+          <a href="<?php echo U('Article/index', ['type' => 3]);?>">大数据新闻</a>
+      </div>
+      <div class="clear"></div>
       <div class="all_2">
         <div class="all_2_1">
-          <div class="all_2_1_l">大赛资讯</div>
+          <div class="all_2_1_l" style="width:100px;"><?php if($_GET['type'] == 3): ?>大数据新闻<?php else: ?>大赛资讯<?php endif; ?></div>
           <div class="all_2_1_r">您现在的位置：首页>大赛资讯</div>
           <div class="clear"></div>
         </div>
@@ -74,8 +90,6 @@
           </div><?php endforeach; endif; ?>
 
         <div class="all_2_3">
-          <!-- <a href="#">下一页</a>
-          <a href="#">上一页</a> -->
           <?php echo ($page); ?>
         </div>
       </div>

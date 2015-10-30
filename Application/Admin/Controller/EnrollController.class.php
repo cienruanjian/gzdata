@@ -38,7 +38,7 @@ class EnrollController extends BaseController {
    		$set = I('set', 0, 'intval');
    		$set = $set ? $set : 0;
    		M('Match')->where(['id' => $id])->setField('status', $set);
-   		$this->redirect('Enroll/index?p='.I('p'));
+   		$this->redirect('Enroll/index?n='.I('n').'&p='.I('p'));
    	}
     
     //详细信息

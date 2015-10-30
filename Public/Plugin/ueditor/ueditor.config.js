@@ -79,7 +79,7 @@
         //,videoFieldName:"upfile"                    //附件提交的表单名，若此处修改，需要在后台对应文件修改对应参数
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
-        /*,toolbars:[
+        ,toolbars:[
             ['fullscreen', 'source', '|', 'undo', 'redo', '|',
                 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
                 'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
@@ -91,8 +91,8 @@
                 'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
                 'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
                 'print', 'preview', 'searchreplace', 'help', 'drafts']
-        ]*/
-        ,toolbars: [
+        ]
+        /*,toolbars: [
             [
                 'source', //源代码
                 'undo', //撤销
@@ -107,6 +107,7 @@
                  'insertimage', //多图上传
                 'link', //超链接
                 'spechars', //特殊字符
+                'removeformat',//清楚格式
                 'searchreplace', //查询替换
                 'justifyleft', //居左对齐
                 'justifyright', //居右对齐
@@ -115,7 +116,7 @@
                 'attachment', //附件
                 'insertvideo'
             ]
-        ]
+        ]*/
 
 
 
@@ -154,7 +155,7 @@
         //,initialContent:'欢迎使用ueditor!'    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
         //,initialFrameWidth:1000  //初始化编辑器宽度,默认1000
-        ,initialFrameHeight:320  //初始化编辑器高度,默认320
+        ,initialFrameHeight:400  //初始化编辑器高度,默认320
 
         //,autoClearinitialContent:true //是否自动清除编辑器初始内容，注意：如果focus属性设置为true,这个也为真，那么编辑器一上来就会触发导致初始化的内容看不到了
 
@@ -348,7 +349,7 @@
 
         //autoHeightEnabled
         // 是否自动长高,默认true
-        //,autoHeightEnabled:true
+        ,autoHeightEnabled:false
 
         //scaleEnabled
         //是否可以拉伸长高,默认true(当开启时，自动长高失效)

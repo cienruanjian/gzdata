@@ -10,10 +10,14 @@ class IndexController extends BaseController {
         $this->ad_5 = $this->_getAd(5, 3);
         $this->ad_6 = $this->_getAd(6, 3);
         //文章
-        $this->intro = $this->_getArticle(1, 4);
-        $this->art   = $this->_getArticle(2, 3);
+        $this->intro = $this->_getArticle(array(1), 4);
+        $this->art   = $this->_getArticle(array(2, 3), 3);
         //大赛组织
-        $this->link_organization = $this->_getLink(1, 25);
+        $this->link_4 = $this->_getLink(4, 25);
+        $this->link_5 = $this->_getLink(5, 25);
+        $this->link_6 = $this->_getLink(6, 25);
+        $this->link_7 = $this->_getLink(7, 25);
+        $this->link_8 = $this->_getLink(8, 25);
         $this->link_support = $this->_getLink(2, 12);
         $this->link_friend = $this->_getLink(3, 20);
         $this->display();
@@ -36,8 +40,8 @@ class IndexController extends BaseController {
      * @param  [type]  $limit [description]
      * @return [type]         [description]
      */
-    private function _getArticle($type = 1, $limit) {
-        return M('Article')->where(array('type' => $type))->limit($limit)->order('hot desc, sort asc')->field('id, title, desc, thumb')->select();
+    private function _getArticle($type, $limit) {
+        return M('Article')->where(array('type' => array('in', $type)))->limit($limit)->order('hot desc, sort asc')->field('id, title, desc, thumb')->select();
     }
 
     /**

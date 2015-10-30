@@ -7,15 +7,14 @@
 #left_1 .ool h3 { font-weight: normal; color: #FFF; text-indent: 1em; font-size: 18px; line-height: 35px; }
 #left_1 .ool p { color: #FFF; text-indent: 1em; font-size: 12px; line-height: 25px; }
 #right_1 { float: right; width: 570px; height: 400px; }
-.Tile1 h3 { color: #2e2e2e; font-weight: normal; text-align: center; font-size: 18px; line-height: 50px; }
+.Tile1 h3 { color: #2e2e2e; font-weight: normal; text-align: center; font-size: 18px; line-height:50px; }
+.Tile1 h3 a { color: #2e2e2e; }
+.Tile1 h3 a:hover { color: #ff0b1b; }
 .Tile1 p span { color: #f72778; }
 #Middle1 { background-color: #f6f6f6; width: 100%; height: 530px; }
 
 #Middle2 { width: 1230px; height:230px; margin-right: auto; margin-left: auto; }
 #Middle2 p { float: left; margin-left: 30px; }
-
-
-
 
 .Tile1 { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #d4d4d4; height: 128px; overflow: hidden; }
 .Tile1 p { color: #757575; font-size: 12px; line-height: 25px;}
@@ -25,27 +24,22 @@
 .ddpa2_Tilte p { color: #777777; font-size: 14px; line-height: 25px;}
 .ddpa2_Tilte p span { color: #f72778; }
 
-
-
-
-
 .ddpa { width: 1185px; margin-right: auto; margin-left: auto; }
-
 .ddp1a { width: 1200px; margin-right: auto; margin-left: auto; }
-
-
 .ddpa22 { float: right; width: 520px; height: 180px; }
 .ddpa22_img { width: 150px; float: left; margin-top: 15px; }
 .ddpa22_Tilte h3 { font-size: 18px; color: #f72778; font-weight: normal; line-height: 50px; }
 .ddpa22_Tilte p { color: #777777; font-size: 14px; line-height: 25px; }
 .ddpa22_Tilte p span { color: #f72778; }
 
-
 #Middle3 { width: 100%;  }
 #xexk { width: 1185px; margin-right: auto; margin-left: auto; }
-#xexk1 { margin-top: 20px; }
-#xexk1 p {border-left: 1px solid #f72778; text-indent: 1em; width: 236px; float: left; display: block; color: #525252; font-size: 14px; line-height: 30px; }
-#xexk1 h3 { font-size: 18px; text-indent: 1em; color: #f72778; font-weight: normal; line-height: 33px; }
+.xexk1 { float: left; width: 235px; border-left-width: 1px; border-left-style: solid; border-left-color: #f72778; margin-top: 20px; }
+div.xexk1.xexk2{ width: 300px;}
+div.xexk1.xexk3{ width: 265px;}
+div.xexk1.xexk4{width: 130px;}
+.xexk1 p { text-indent: 1em; color: #525252; font-size: 14px; line-height: 30px; }
+.xexk1 h3 { font-size: 18px; text-indent: 1em; color: #f72778; font-weight: normal; line-height: 33px; }
 #Middle4 { background-color: #f6f6f6; width: 100%; padding-bottom: 40px; }
 #fcrf { width: 1185px; margin-right: auto; margin-left: auto; }
 .fcrf1 p a img { height: 80px; width: 270px; border: 1px solid #eeeeee; }
@@ -57,7 +51,10 @@
 #rbqk h3 { font-size: 24px; color: #000000; font-weight: normal; line-height: 100px; float: left; }
 #rbqk { width: 1185px; margin-right: auto; margin-left: auto; }
 #rbqk p { font-size: 24px; color: #cb2d6a; line-height: 100px; }
-#lfbw { width: 1185px; margin-right: auto; min-height:530px; margin-left: auto; background-color: #FFF; }
+/*简化代码，增加相对定位，2015-10-29，李帅举*/
+#lfbw { width: 1185px; margin:0 auto; min-height:530px;background-color: #FFF; position: relative;}
+
+
 #lfbw table { width: 80%; margin-right: auto; margin-left: auto; }
 #lfbw table tr td { color: #424242; font-size: 14px; line-height: 40px; width: 110px}
 #whww { height: 30px; width: 300px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #db284f; }
@@ -116,10 +113,10 @@
 
 #xg{ width: 100%; border-top-width: 1px; border-top-style: solid; border-top-color: #bbb; }
 .wgog1{ font-family: '微软雅黑'; font-size: 14px; width: 165px; height: 35px; cursor: pointer; color: #fff; border: none; background-color: #da274d; margin-bottom: 15px}
-#fiwg{ position: absolute; top: 30px; left: 565px; width: 480px; }
+#fiwg{ position: absolute; top: 30px; left: 565px; width: 530px; }
 #fiwg1{ float: left; width: 120px; padding-left: 40px; border-left-width: 1px; border-left-style: solid; border-left-color: #d7d7d7; }
-#fiwg2 p{ line-height: 20px; float: left; padding-top: 30px; color: #898989; }
-#fiwg2{ float: left; width: 310px; }
+#fiwg2 p{ line-height: 22px; float: left; padding-top: 30px; color: #898989; }
+#fiwg2{ float: left; width: 360px; font-size: 14px;}
 #fiwg3{ position: absolute; top: 18px; left: 565px; float: left; width: 310px; color: #a0a0a0}
 #ghyy{ width: 90%; margin-right: auto; margin-left: auto; }
 #ghyy1 h3{ font-family: '微软雅黑'; font-size: 14px; line-height: 40px; text-align: center; color: #414141; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #d6d6d6; }
@@ -127,7 +124,6 @@
 #ghyy1 .gy{ float: right; margin-top: 5px; }
 #ghyy2{ width: 90%; margin-right: auto; margin-left: auto; }
 #ghyy2{ font-size: 14px; line-height: 30px; color: #333; }
-
 #ghyy1 { width: 100%; }
 #khny { width: 90%; margin-right: auto; margin-left: auto; }
 #khny_Title h3 { font-size: 18px; color: #565555; font-weight: normal; background-image: url(../Images/m28.jpg); background-repeat: no-repeat; line-height: 50px; background-position: left; text-indent: 1em; float: left; }
@@ -141,7 +137,6 @@
 #khny3 h3 { background-color: #b7b6b6; height: 50px; width: 50px; border-radius:30px; color: #FFF; line-height: 50px; text-align: center; font-size: 30px; float: left; }
 #khny3 p { font-size: 18px; color: #6a6a6a; background-color: #b7b6b6; width: 960px; line-height: 40px; float: left; margin-left: 20px; margin-top: 5px; padding-right: 10px; padding-left: 10px; }
 #h100 { float: left; width: 100%; margin-top: 100px; }
-
 /*顶部焦点图*/
 #wrappen{width: 100%;height: 580px;background: #F1F1F1;overflow: hidden;}
 #wrapper { width:1986px; margin:auto; position:relative; }
@@ -158,7 +153,6 @@
 .btn { width:101px; height:25px; margin:auto; position:relative; padding-top:350px; z-index:999; }
 .btn a { width:17px; height:15px; overflow:none; display:block; background:url(../images/btn.jpg) no-repeat; cursor:pointer; float:left; }
 .btn a.active { background-position:-17px 0; }
-
 /*中部焦点图*/
 .focus{ position:relative; width:580px; height:385px; background-color: #000; float: left;}
 .focus img{ width: 580px; height: 385px;}
@@ -185,7 +179,6 @@ filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorst
 .focus .next{top: 50%;margin-top: -37px; right: 0;  background-position:-40px -74px;  cursor:pointer;}
 .focus .prev:hover{  background-position:0 0; }
 .focus .next:hover{  background-position:-40px 0;}
-
 /*底部焦点图*/
 .modeA{ margin:0 auto;zoom:1}
 .list{height:455px}
@@ -217,11 +210,8 @@ _background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enab
 .libtn{width:240px;text-align:center;margin:10px auto 0}
 .libtn li{width:45px;height:11px;border:1px solid #989898;margin:0 4px;float: none;display:inline-block;*display:inline;zoom:1;overflow:hidden;cursor:pointer}
 .libtn li.selected{background:#989898}
-
 .word-count {position: relative;}
 .word-count .wordwrap{ position:absolute; right: 10px; bottom: 26px; color: #ccc; font-size: 14px;} 
 .word-count .word{ padding: 0 4px;}
 .word-count textarea {resize:none;}
-
-
-
+#ddpa1.marginauto{width: 1185px;margin: 0 auto}

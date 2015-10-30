@@ -140,140 +140,6 @@
                                 </li>
                             </ul>
                         </li> 
-
-                       <!--  <li class="dropdown show-on-hover <?php if((strtolower(CONTROLLER_NAME)) == "theater"): ?>active<?php endif; ?>">
-                           
-                            <a href="javascript:;">
-                                <i class="fa fa-video-camera"></i>
-                                <span>影城管理</span>
-                            </a>
-                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('Theater/add');?>">
-                                        <span>添加影城</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Theater/index');?>">
-                                        <span>影城列表</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            
-                        </li>
-                       
-                        <li class="dropdown show-on-hover <?php if((strtolower(CONTROLLER_NAME)) == "movie"): ?>active<?php endif; ?>">
-                           
-                            <a href="javascript:;">
-                                <i class="fa fa-play"></i>
-                                <span>影视管理</span>
-                            </a>
-                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('Movie/add');?>">
-                                        <span>添加电影</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Movie/index');?>">
-                                        <span>电影列表</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown show-on-hover <?php if((strtolower(CONTROLLER_NAME)) == "screening"): ?>active<?php endif; ?>">
-                           
-                            <a href="javascript:;">
-                                <i class="fa fa-eye"></i>
-                                <span>上映管理</span>
-                            </a>
-                             <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('screening/add');?>">
-                                        <span>添加</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('screening/index');?>">
-                                        <span>上映列表</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <li class="dropdown show-on-hover <?php if((strtolower(CONTROLLER_NAME)) == "news"): ?>active<?php endif; ?>">
-                            <a href="javascript:;" data-toggle="dropdown">
-                                <i class="fa fa-dribbble"></i>
-                                <span>新闻管理</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('News/add');?>">
-                                        <span>添加新闻</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('News/index');?>">
-                                        <span>新闻列表</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        
-
-                        
-
-                        <li class="dropdown show-on-hover <?php if((strtolower(CONTROLLER_NAME)) == "integral"): ?>active<?php endif; ?>">
-                            <a href="javascript:;" data-toggle="dropdown">
-                                <i class="fa fa-gift"></i>
-                                <span>积分兑换</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="<?php echo U('Integral/index');?>">
-                                        <span>礼品列表</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Integral/record');?>">
-                                        <span>兑换记录</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li <?php if((strtolower(CONTROLLER_NAME)) == "activity"): ?>class="active"<?php endif; ?>>
-                            <a href="<?php echo U('Activity/index');?>">
-                                <i class="fa fa-file"></i>
-                                <span>活动管理</span>
-                            </a>
-                        </li>
-
-                        <li class="dropdown show-on-hover">
-                            <a href="javascript:;" data-toggle="dropdown">
-                                <i class="fa fa-gears"></i>
-                                <span>设置</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li >
-                                    <a href="<?php echo U('Category/index');?>">
-                                        <span>类别</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('City/index');?>">
-                                        <span>城市</span>
-                                    </a>
-                                </li>
-                                 <li>
-                                    <a href="<?php echo U('Enterprise/index');?>">
-                                        <span>合作企业</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> -->
                     </ul>
                 </nav>
 
@@ -315,9 +181,13 @@
                                                  <!-- content -->
                                                  <section class="panel">
 												    <div class="panel-body  no-padding">
+												    	<form action="<?php echo U('Excel/index');?>">
 												        <table class="table table-bordered table-hover no-margin">
 												            <thead>
 												                <tr>
+												                	<th align="center">
+												                		<input type="checkbox" id="title-table-checkbox"/>
+												                	</th>
 												                    <th>项目编号</th>
 												                    <th>项目名称</th>
 												                    <th>报名时间</th>
@@ -329,6 +199,7 @@
 												            </thead>
 												            <tbody>
 												            	<?php if(!empty($lists)): if(is_array($lists)): foreach($lists as $key=>$v): ?><tr>
+												                    	<td alitn="center"><input name="id[]" value="<?php echo ($v["id"]); ?>" type="checkbox" /></td>
 												                        <td><?php echo ($v["number"]); ?></td>
 												                        <td><?php echo ($v["name"]); ?></td>
 												                        <td><?php echo (date("Y-m-d", $v["create_at"])); ?></td>
@@ -341,16 +212,15 @@
 												                        <td>
 												                        	<a class="detail" href="javascript:;" show-url="<?php echo U('Enroll/detail', array('id' => $v['id']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="查看详细信息"><i class="fa fa-eye"></i></a>
 												                        	&nbsp;
-												                        	<a  href="<?php echo U('Excel/index', array('id' => $v['id'], 'n' => $v['team_nature']));?>"  data-toggle="tooltip" data-placement="top" title="" data-original-title="导出到excel"><i class="fa fa-file"></i></a>
-
-												                        	<!-- <a href="<?php echo U('Enroll/edit', array('id' => $v['id']));?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><i class="fa fa-edit"></i></a>
-												                        	&nbsp; -->
+												                        	<a href="<?php echo U('Excel/index', array('id' => $v['id'], 'n' => $v['team_nature']));?>"  data-toggle="tooltip" data-placement="top" title="" data-original-title="导出到excel"><i class="fa fa-file"></i></a>
 												                        </td>
 												                    </tr><?php endforeach; endif; ?>
 												                <?php else: ?>
-												                	<tr><td colspan="7" align="center" ><br><h4 style="color:#999;">暂时没有内容~</h4></td></tr><?php endif; ?>
+												                	<tr><td colspan="8" align="center" ><br><h4 style="color:#999;">暂时没有内容~</h4></td></tr><?php endif; ?>
 												            </tbody>
 												        </table>
+												       	<input type="hidden" name="n" value="<?php echo ($_GET['n']); ?>">
+												        </form>
 												    </div>
 												    <div class="panel-footer no-border no-padding">
 												    	<div class="page" style="padding-top:5px;">
@@ -358,7 +228,7 @@
 												    	</div>
 												    	<div style="clear:both"></div>
 												    	<?php if(!empty($lists)): ?><div style="text-align:right; margin-top:10px;">
-												            	<a class="btn btn-success btn-sm" href="<?php echo U('Excel/index', ['n' => $_GET['n']]);?>"><i class="fa fa-cloud-download"></i> 导出到EXCEL</a>
+												            	<button id="btn-excel" class="btn btn-success btn-sm"><i class="fa fa-cloud-download"></i> 导出到EXCEL</button>
 													    	</div><?php endif; ?>
 												    </div>
 												</section>
@@ -407,6 +277,26 @@ $('.detail').click(function() {
         content: url
     });
 });
+//全选
+$('#title-table-checkbox').click(function() {
+	var isChecked = $(this).prop("checked");
+	$("table tbody input[type='checkbox']").prop("checked", isChecked);
+});
+$('#btn-excel').click(function() {
+	var lock = 1;
+	$('table tbody input[type=checkbox]').each(function() {
+		if ($(this).prop("checked")) {
+			lock = 0;
+			return;
+		}
+	});
+	if (lock) {
+		layer.msg('请勾选需要导出的数据');
+	} else {
+		$('form').submit();
+	}
+});
+
 </script>
 </body>
 

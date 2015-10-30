@@ -15,6 +15,7 @@
       eval('var data = ' + data);
       if (data.status == 1) {
         $('input[name=business_plan]').val(data.path);
+        $('input[name=business_plan_name]').val(data.filename);
         $('#upload-plan-tip').html('<img style="height:20px;padding:0;margin:5px;" src="/Public/Home/Images/check.gif" alt="" />'+data.filename);
       } else {
         layer.msg('文件上传失败，请重试...');

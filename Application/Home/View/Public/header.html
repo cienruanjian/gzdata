@@ -8,15 +8,24 @@
   <div id="head1">
     <div id="mav">
           <div id="logo"><img src="__PUBLIC__/Home/Images/logo.jpg" width="502" height="124" /></div>
+         
           <div id="neww11">
               <div id="iymm1">
-                <input type="text" placeholder="请输入关键字搜索" / class="udq1">
-                <button type="submit" class="buttons"> </button>
+                <form action="{:U('Article/index')}">
+                  <input name="keyword" type="text" placeholder="请输入关键字搜索" / class="udq1">
+                  <input type="submit" class="buttons" value=" "> 
+                </form> 
               </div>
+              <if condition="!$_SESSION['home'][C('USER_AUTH_KEY')]">
               <div class="iymm">
                 <p><a href="{:U('Regist/index')}">注册</a></p>
                 <p><a href="{:U('Login/index', ['ctl' => CONTROLLER_NAME, 'act' => ACTION_NAME])}">登录</a></p>
               </div>
+              <else/>
+               <div class="iymm" style="background:none">
+                <p style="width:100%; color: #7e7e7e; font-size: 12px;"><a href="{:U('User/index')}">{$_SESSION['home']['phone']}</a><a href="{:U('Login/logout')}"> [退出]</a></p>
+              </div>
+              </if>
           </div>
           <div id="neww">
               <ul>

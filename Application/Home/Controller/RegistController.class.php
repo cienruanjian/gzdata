@@ -38,10 +38,15 @@ class RegistController extends Controller {
     	}
     	$rs = $model->add(['phone' => $phone, 'password' => md5($password), 'createe_at' => time(), 'status' => 1]);
     	if ($rs) {
-    		echo json_encode(['status' => 1, 'msg' => '注册成功,即将跳转到登陆页~', 'jumpUrl' => U('Login/index')]);
+    		echo json_encode(['status' => 1, 'msg' => '注册成功,即将跳转到登陆页~', 'jumpUrl' => U('Regist/sure', ['number' => sprintf("%05d", $rs)])]);
     	} else {
     		echo json_encode(['status' => 0, 'msg' => '系统繁忙，请稍后再试~']);
     	}
+    }
+
+    public function sure(){
+        if (!I('number')) $this->redirect('Index/index');
+        $this->display();
     }
 
      /**

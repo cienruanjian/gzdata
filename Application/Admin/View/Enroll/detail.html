@@ -49,7 +49,13 @@
 		</tr>
 		<tr>
 			<td align="right">商业计划书</td>
-			<td><a href="#">点击下载</a></td>
+			<td>
+				<if condition="$data['business_plan']">
+					<a href="{:U('Download/plan', ['id' => $data['id']])}">{$data.number}_{$data.business_plan_name}</a>
+				<else/>
+					未上传
+				</if>
+			</td>
 		</tr>
 		<tr>
 			<td align="right">项目创意背景</td>
@@ -142,11 +148,14 @@
 		<tr>
 			<td align="right">当前状态</td>
 			<td>
-				<eq name="data['status']" value="1">
-					已审核
+				<if condition="$data['status'] eq 1">
+					审核已通过
+				<elseif condition="$data['status'] eq 2"/>
+					审核未通过
 				<else/>
-					未审核
-				</eq>
+					审核中
+				</if>
+
 			</td>
 		</tr>
 		<tr>

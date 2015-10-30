@@ -3,8 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>云上贵州-登录</title>
-  <link href="css/head.css" rel="stylesheet" type="text/css" />
-  <link href="/Public/Home/css/jianjie.css" rel="stylesheet" type="text/css" />
+  <link href="/Public/Home/Css/jianjie.css" rel="stylesheet" type="text/css" />
 <!-- page common css here -->
 <link href="/Public/Home/Css/base.css" rel="stylesheet" type="text/css" />
 </head>
@@ -15,15 +14,20 @@
   <div id="head1">
     <div id="mav">
           <div id="logo"><img src="/Public/Home/Images/logo.jpg" width="502" height="124" /></div>
+         
           <div id="neww11">
               <div id="iymm1">
                 <input type="text" placeholder="请输入关键字搜索" / class="udq1">
                 <button type="submit" class="buttons"> </button>
               </div>
-              <div class="iymm">
+              <?php if(!$_SESSION['home'][C('USER_AUTH_KEY')]): ?><div class="iymm">
                 <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
                 <p><a href="<?php echo U('Login/index', ['ctl' => CONTROLLER_NAME, 'act' => ACTION_NAME]);?>">登录</a></p>
               </div>
+              <?php else: ?>
+               <div class="iymm" style="background:none">
+                <p style="width:100%; color: #7e7e7e; font-size: 12px;"><?php echo ($_SESSION['home']['phone']); ?><a href="<?php echo U('Login/logout');?>"> [退出]</a></p>
+              </div><?php endif; ?>
           </div>
           <div id="neww">
               <ul>
@@ -39,12 +43,12 @@
   <div class="clear"></div>
 </div>
 </div>
-  <div id="khuj" style="background:url(/Public/Home/images/jj.jpg) center top no-repeat;">
+  <div id="khuj" style="background:url(/Public/Home/Images/jj.jpg) center top no-repeat;">
     <div id="h302"></div>
       <div class="all" style="over-flow:hidden">
         <div class="all_1">
           <div class="all_1_l">
-            <img src="/Public/Home/images/qzy/6.jpg" width="310" height="53" />
+            <img src="/Public/Home/Images/qzy/6.jpg" width="310" height="53" />
           </div>
           <div class="all_1_r">
             <ul>

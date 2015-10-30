@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?php echo ($article["title"]); ?> - 大赛咨询</title>
-<link href="/Public/Home/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Home/Css/index.css" rel="stylesheet" type="text/css" />
 <style>
   .bdsharebuttonbox{
     float:right;
@@ -48,11 +48,11 @@
 </div>
 </div>
 
-<div id="khuj" style="background:url(/Public/Home/images/zu.jpg) center top no-repeat;">
+<div id="khuj" style="background:url(/Public/Home/Images/zu.jpg) center top no-repeat;">
   <div id="h302"></div>
   <div id="rbqk">
        <h3></h3>
-     <p>  NEWS <img src="/Public/Home/images/m20.jpg" width="16" height="22" /></p>
+     <p>  NEWS <img src="/Public/Home/Images/m20.jpg" width="16" height="22" /></p>
     </div>
     
   <div id="lfbw">

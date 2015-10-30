@@ -27,6 +27,7 @@ class AdManageController extends BaseController {
     public function addHandle() {
     	$model = M('Ad');
     	$model->create();
+        $model->number = $model->number ? $model->number : 1;
     	if (!$model->thumb) $this->error('请上传缩略图');
     	if ($model->add()) {
     		$this->redirect('AdManage/index?number='.I('number'));

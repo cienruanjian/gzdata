@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>帮助中心</title>
-<link href="/Public/Home/css/index.css" rel="stylesheet" type="text/css" />
+<link href="/Public/Home/Css/index.css" rel="stylesheet" type="text/css" />
 <!-- page common css here -->
 <link href="/Public/Home/Css/base.css" rel="stylesheet" type="text/css" />
 </head>
@@ -14,15 +14,20 @@
   <div id="head1">
     <div id="mav">
           <div id="logo"><img src="/Public/Home/Images/logo.jpg" width="502" height="124" /></div>
+         
           <div id="neww11">
               <div id="iymm1">
                 <input type="text" placeholder="请输入关键字搜索" / class="udq1">
                 <button type="submit" class="buttons"> </button>
               </div>
-              <div class="iymm">
+              <?php if(!$_SESSION['home'][C('USER_AUTH_KEY')]): ?><div class="iymm">
                 <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
                 <p><a href="<?php echo U('Login/index', ['ctl' => CONTROLLER_NAME, 'act' => ACTION_NAME]);?>">登录</a></p>
               </div>
+              <?php else: ?>
+               <div class="iymm" style="background:none">
+                <p style="width:100%; color: #7e7e7e; font-size: 12px;"><?php echo ($_SESSION['home']['phone']); ?><a href="<?php echo U('Login/logout');?>"> [退出]</a></p>
+              </div><?php endif; ?>
           </div>
           <div id="neww">
               <ul>
@@ -40,11 +45,11 @@
 </div>
 
 
-<div id="khuj" style="background:url(/Public/Home/images/jj.jpg) center top no-repeat;">
+<div id="khuj" style="background:url(/Public/Home/Images/jj.jpg) center top no-repeat;">
   <div id="h302"></div>
   <div id="rbqk">
        <h3>帮助中心</h3>
-     <p>　HELP CENTER<img src="/Public/Home/images/m20.jpg" width="16" height="22" /></p>
+     <p>　HELP CENTER<img src="/Public/Home/Images/m20.jpg" width="16" height="22" /></p>
     </div>
   <div id="lfbw">
   <div class="h20"></div>

@@ -4,7 +4,15 @@ class ArticleController extends BaseController {
     public function index(){
    
     	$model = M('Article');
-        $map   = ['status'  => 1, 'type' => 2];
+        $type  = I('type',0, 'intval') ? I('type',0, 'intval') : 2;
+        $map   = ['status'  => 1];
+        $keyword = trim(I('keyword'));
+        if ($keyword) {
+            $map ['title'] = ['like', '%'.$keyword.'%'];
+            $this->keyword = $keyword;
+        } else {
+            $map['type'] = $type;
+        }
         $count = $model->where($map)->count();
         $Page  = new \Think\Page($count,C('PAGE_SIZE') ? C('PAGE_SIZE') : 15);
         $Page->setConfig('prev','上一页');

@@ -62,4 +62,9 @@ class LoginController extends BaseController
         $jumpUrl = I('back') ? I('back') : U('Index/index');
         echo json_encode(['status' => 1, 'msg' => '登陆成功', 'jumpUrl' => $jumpUrl]);
     }
-}
+    public function logout() {
+        session_unset();
+        session_destroy();
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+} 

@@ -3,19 +3,41 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>大赛咨询 - 云上贵州</title>
-  <link href="__PUBLIC__/Home/css/zixun.css" rel="stylesheet" type="text/css" />
+  <link href="__PUBLIC__/Home/Css/zixun.css" rel="stylesheet" type="text/css" />
+  <style>
+    .sub-title {float:left; line-height:82px; margin-left: 30px;}
+    .sub-title a {color: #575656; font-size: 14px; margin-right: 20px;}
+  </style>
   <include file="Public/header" />
   
-  <div id="khuj" style="background:url(__PUBLIC__/Home/images/zu.jpg) center top no-repeat;">
+  <div id="khuj" style="background:url(__PUBLIC__/Home/Images/zu.jpg) center top no-repeat;">
     <div id="h302"></div>
     <div class="all">
-      <div class="all_1">
-        <img src="__PUBLIC__/Home/images/qzy/3.jpg" width="208" height="52" />
+      
+      <div class="all_1" style="float:left">
+        <img src="__PUBLIC__/Home/Images/qzy/3.jpg" width="208" height="52" />
       </div>
+    
+      <div class="sub-title">
+          <a href="{:U('Article/index', ['type' => 2])}">大赛咨询</a>
+          <a href="{:U('Article/index', ['type' => 3])}">大数据新闻</a>
+      </div>
+      <div class="clear"></div>
       <div class="all_2">
         <div class="all_2_1">
-          <div class="all_2_1_l">大赛资讯</div>
-          <div class="all_2_1_r">您现在的位置：首页>大赛资讯</div>
+          <div class="all_2_1_l" style="width:100%;">
+           <if condition="$keyword">
+            搜索 <span style="color:red">{$keyword}</span> 的结果如下：
+          <elseif condition="$_GET['type'] eq 3"/>
+            大数据新闻
+          <else/>
+            大赛资讯
+          </if>
+        </div>
+          
+          <if condition="!$keyword">
+            <div class="all_2_1_r">您现在的位置：首页>大赛资讯</div>
+          </if>
           <div class="clear"></div>
         </div>
         <foreach name="list" item="v">
@@ -43,8 +65,6 @@
         </foreach>
 
         <div class="all_2_3">
-          <!-- <a href="#">下一页</a>
-          <a href="#">上一页</a> -->
           {$page}
         </div>
       </div>

@@ -22,14 +22,19 @@
                                                  <!-- content -->
                                                  <section class="panel">
 												    <div class="panel-body  no-padding">
+												    	<form action="{:U('Excel/index')}">
 												        <table class="table table-bordered table-hover no-margin">
 												            <thead>
 												                <tr>
+												                	<th align="center">
+												                		<input type="checkbox" id="title-table-checkbox"/>
+												                	</th>
 												                    <th>项目编号</th>
 												                    <th>项目名称</th>
 												                    <th>报名时间</th>
-												                    <th>项目负责人</th>
-												                    <th>负责人电话</th>	
+												                    <th>项目负责人/电话</th>
+												                    <th>修改次数</th>	
+												                    <th>最后修改时间</th>
 												                    <th>状态</th>
 												                    <th>操作</th>
 												                </tr>
@@ -38,34 +43,41 @@
 												            	<notempty name="lists">
 												            	<foreach name="lists" item="v">
 												                    <tr>
+												                    	<td alitn="center"><input name="id[]" value="{$v.id}" type="checkbox" /></td>
 												                        <td>{$v.number}</td>
 												                        <td>{$v.name}</td>
 												                        <td>{$v.create_at|date="Y-m-d", ###}</td>
-												                        <td>{$v.duty_name}</td>
-												                        <td>{$v.duty_phone}</td>
+												                        <td>{$v.duty_name}/{$v.duty_phone}</td>
+												                        <td>{$v.update_number}</td>
 												                        <td>
-												                        	<eq name="v.status" value="0">
-												                        		<a href="{:U('Enroll/check', ['id' => $v['id'], 'set' => 1, 'p' => $_GET['p']])}" class="btn btn-danger btn-xs">未审核</a>
-												                        	</eq>
-																			<eq name="v.status" value="1">
-																				<a href="{:U('Enroll/check', ['id' => $v['id'], 'set' => 0, 'p' => $_GET['p']])}" class="btn btn-success btn-xs">已审核</a>
-																			</eq>
+												                        	<if condition="$data['last_update_at'] neq 0">
+												                        		{$data.last_update_at|date="Y-m-d", ###}
+												                        	</if>
+												                        </td>
+												                        <td>
+																			<if condition="$v['status'] eq 0">
+																				<a href="{:U('Enroll/check', ['id' => $v['id'], 'set' => 1,'n' => $_GET['n'], 'p' => $_GET['p']])}" class="btn btn-success btn-xs">审核通过</a>
+																				<a href="{:U('Enroll/check', ['id' => $v['id'], 'set' => 2,'n' => $_GET['n'], 'p' => $_GET['p']])}" class="btn btn-danger btn-xs">审核不通过</a>
+																			<elseif condition="$v['status'] eq 1"/> 
+																				审核已通过
+																			<elseif condition="$v['status'] eq 2"/> 
+																				审核未通过
+																			</if>
 												                        </td>
 												                        <td>
 												                        	<a class="detail" href="javascript:;" show-url="{:U('Enroll/detail', array('id' => $v['id']))}" data-toggle="tooltip" data-placement="top" title="" data-original-title="查看详细信息"><i class="fa fa-eye"></i></a>
 												                        	&nbsp;
-												                        	<a  href="{:U('Excel/index', array('id' => $v['id'], 'n' => $v['team_nature']))}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="导出到excel"><i class="fa fa-file"></i></a>
-
-												                        	<!-- <a href="{:U('Enroll/edit', array('id' => $v['id']))}" data-toggle="tooltip" data-placement="top" title="" data-original-title="编辑"><i class="fa fa-edit"></i></a>
-												                        	&nbsp; -->
+												                        	<a href="{:U('Excel/index', array('id' => $v['id'], 'n' => $v['team_nature']))}"  data-toggle="tooltip" data-placement="top" title="" data-original-title="导出到excel"><i class="fa fa-file"></i></a>
 												                        </td>
 												                    </tr>
 												                </foreach>
 												                <else/>
-												                	<tr><td colspan="7" align="center" ><br><h4 style="color:#999;">暂时没有内容~</h4></td></tr>
+												                	<tr><td colspan="9" align="center" ><br><h4 style="color:#999;">暂时没有内容~</h4></td></tr>
 												                </notempty>
 												            </tbody>
 												        </table>
+												       	<input type="hidden" name="n" value="{$_GET['n']}">
+												        </form>
 												    </div>
 												    <div class="panel-footer no-border no-padding">
 												    	<div class="page" style="padding-top:5px;">
@@ -74,7 +86,7 @@
 												    	<div style="clear:both"></div>
 												    	<notempty name="lists">
 													    	<div style="text-align:right; margin-top:10px;">
-												            	<a class="btn btn-success btn-sm" href="{:U('Excel/index', ['n' => $_GET['n']])}"><i class="fa fa-cloud-download"></i> 导出到EXCEL</a>
+												            	<button id="btn-excel" class="btn btn-success btn-sm"><i class="fa fa-cloud-download"></i> 导出到EXCEL</button>
 													    	</div>
 												    	</notempty>
 												    </div>
@@ -107,6 +119,26 @@ $('.detail').click(function() {
         content: url
     });
 });
+//全选
+$('#title-table-checkbox').click(function() {
+	var isChecked = $(this).prop("checked");
+	$("table tbody input[type='checkbox']").prop("checked", isChecked);
+});
+$('#btn-excel').click(function() {
+	var lock = 1;
+	$('table tbody input[type=checkbox]').each(function() {
+		if ($(this).prop("checked")) {
+			lock = 0;
+			return;
+		}
+	});
+	if (lock) {
+		layer.msg('请勾选需要导出的数据');
+	} else {
+		$('form').submit();
+	}
+});
+
 </script>
 </body>
 

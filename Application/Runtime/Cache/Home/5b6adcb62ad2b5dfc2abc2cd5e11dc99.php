@@ -14,15 +14,20 @@
   <div id="head1">
     <div id="mav">
           <div id="logo"><img src="/Public/Home/Images/logo.jpg" width="502" height="124" /></div>
+         
           <div id="neww11">
               <div id="iymm1">
                 <input type="text" placeholder="请输入关键字搜索" / class="udq1">
                 <button type="submit" class="buttons"> </button>
               </div>
-              <div class="iymm">
+              <?php if(!$_SESSION['home'][C('USER_AUTH_KEY')]): ?><div class="iymm">
                 <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
                 <p><a href="<?php echo U('Login/index', ['ctl' => CONTROLLER_NAME, 'act' => ACTION_NAME]);?>">登录</a></p>
               </div>
+              <?php else: ?>
+               <div class="iymm" style="background:none">
+                <p style="width:100%; color: #7e7e7e; font-size: 12px;"><?php echo ($_SESSION['home']['phone']); ?><a href="<?php echo U('Login/logout');?>"> [退出]</a></p>
+              </div><?php endif; ?>
           </div>
           <div id="neww">
               <ul>
@@ -39,10 +44,10 @@
 </div>
 </div>
   <!--头部  结束-->
-  <div id="khuj" style="background:url(/Public/Home/images/m19.jpg) center top no-repeat;">
+  <div id="khuj" style="background:url(/Public/Home/Images/m19.jpg) center top no-repeat;">
     <div id="h302"></div>
     <div class="all">
-      <div class="all_1"> <img src="/Public/Home/images/qzy/1.jpg" width="411" height="52" /></div>
+      <div class="all_1"> <img src="/Public/Home/Images/qzy/1.jpg" width="411" height="52" /></div>
       <div class="all_2">
         <form action="<?php echo U('Login/handle');?>">
           <div class="all_2_l">
@@ -80,7 +85,7 @@
 
           组委会电话：0851-8626792
         </div>
-        <div class="all_2_r_2"><img src="/Public/Home/images/qzy/2.jpg" width="350" height="291" /></div>
+        <div class="all_2_r_2"><img src="/Public/Home/Images/qzy/2.jpg" width="350" height="291" /></div>
         </div>
         <div class="clear"></div>
       </div>

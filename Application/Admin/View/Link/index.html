@@ -9,14 +9,26 @@
             <section class="main-content">
                 <header class="header navbar bg-default">
                     <ul class="nav navbar-nav">
-                        <li <if condition="$_GET['type'] eq 1 || !$_GET['type']">class="active"</if>>
-                            <a href="{:U('Link/index', array('type' => 1))}">大赛组织</a>
-                        </li>
                         <li <if condition="$_GET['type'] eq 2">class="active"</if>>
                             <a href="{:U('Link/index', array('type' => 2))}">媒体支持</a>
                         </li>
                         <li <if condition="$_GET['type'] eq 3">class="active"</if>>
                             <a href="{:U('Link/index', array('type' => 3))}">友情连接</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 4 || !$_GET['type']">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 4))}">指导单位</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 5 || !$_GET['type']">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 5))}">主办单位</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 6 || !$_GET['type']">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 6))}">联合主办</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 7 || !$_GET['type']">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 7))}">协办单位</a>
+                        </li>
+                        <li <if condition="$_GET['type'] eq 8 || !$_GET['type']">class="active"</if>>
+                            <a href="{:U('Link/index', array('type' => 8))}">执行承办</a>
                         </li>
                     </ul>
                 </header>

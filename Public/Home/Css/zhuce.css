@@ -20,3 +20,8 @@ body{ background:#f1f1f1; }
 .all_2_r_1 a{ color:#cb2d6a; text-decoration:none; }
 .all_2_r_1_g{ color:#7d7d7d; border:none; font-size:22px; margin-top:30px; }
 .all_2_r_2{ margin-left:10px; }	
+
+.mybottom{width: 92%;border-bottom: 1px solid #ddd;margin: 0 auto;color: #787878;font-size:18px;text-align: center;line-height: 77px;height: 77px}
+.bianhao{width: 90%;font-size: 18px;color: #bd3168;margin: 0 auto;line-height: 180px;}
+a.button{width: 240px;height: 35px; display:block;background-color: #dcdcdc;border: 0;margin: 0 auto;color: #5c5c5c;font-size: 18px;border-radius: 2px; outline: none;}
+.yonghuxinx{width: 360px; height: 350px;text-align: center; border: 1px solid #e7e7e7;margin:40px auto 0;border-radius: 2px}

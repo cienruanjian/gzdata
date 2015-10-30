@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `cns_admin` (
   `login` VARCHAR(32) NOT NULL  DEFAULT '' COMMENT '登陆名',
   `password` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '密码',
   `last_login_time` INT(11) NULL COMMENT '上次登陆时间',
-  `last_login_ip` BIGINT NOT NULL COMMENT '上次登陆ip',
+  `last_login_ip` BIGINT NULL COMMENT '上次登陆ip',
   `status` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '用户状态：0=锁定，1=正常',
   PRIMARY KEY (`id`),
   UNIQUE INDEX `login` (`login`) COMMENT '管理员表'
@@ -94,21 +94,23 @@ CREATE TABLE `cns_question` (
 -- -----------------------------------------------------
 CREATE TABLE `cns_match` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键，自增',
+  `uid` INT(11) NOT NULL DEFAULT 0 COMMENT '用户id', 
   `number` char(7) NOT NULL DEFAULT '' COMMENT '参赛编号',
   `team_nature` tinyint(1) NOT NULL default 1 comment '团队性质1=企业，2=个人/团体',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT '项目名称',
   `type` TINYINT(1) unsigned NOT NULL DEFAULT 0 comment '项目类型',
   `desc` varchar(350) NOT NULL DEFAULT '' comment '项目简介',
   `business_plan` varchar(255) NOT NULL default '' comment '商业计划书',
+  `business_plan_name` varchar(255) NOT NULL default '' comment '商业计划书名称',
   `background` varchar(150) NOT NULL DEFAULT '' COMMENT '项目创意背景',
   `progress` varchar(150) NOT NULL DEFAULT '' COMMENT '项目当前进展',
   `profit_model` VARCHAR(150) NOT NULL default '' COMMENT '项目盈利模式',
   `advantage` VARCHAR(150) NOT NULL default '' COMMENT '项目竞争优势',
   `enterprise_name` VARCHAR(150) NOT NULL default '' COMMENT '企业名称, 个人存贮近期是否成立公司',
   `scale` VARCHAR(20) NOT NULL default 0 comment '规模(人数)',
-  `income` decimal(10, 1) NOT NULL DEFAULT 0.0 COMMENT '年均盈利',
+  `income` decimal(10, 2) NOT NULL DEFAULT 0.0 COMMENT '年均盈利',
   `business_license_number` CHAR(15) NOT NULL DEFAULT '' COMMENT '营业执照编号',
-  `address` CHAR(15) NOT NULL DEFAULT '' COMMENT '企业：营业执照注册地址；个人：项目所在地',
+  `address` VARCHAR(200) NOT NULL DEFAULT '' COMMENT '企业：营业执照注册地址；个人：项目所在地',
   `business_license_scan` VARCHAR(255) NOT NULL DEFAULT '' COMMENT '营业执照扫描件',
   `duty_name` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '责任人',
   `duty_phone` VARCHAR(11) NOT NULL DEFAULT '' COMMENT '责任人电话',
@@ -121,6 +123,8 @@ CREATE TABLE `cns_match` (
   `emergency_contact` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '紧急联系人', 
   `emergency_contact_phone` VARCHAR(20) NOT NULL DEFAULT '' COMMENT '紧急联系人电话', 
   `create_at` INT(11) NOT NULL DEFAULT 0 COMMENT '发布时间',
+  `last_update_at` INT(11) NOT NULL DEFAULT 0 COMMENT '最后一次修改时间',
+  `update_number` INT(11) NOT NULL DEFAULT 0 COMMENT '修改次数',
   `status` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '1=审核通过，0=待审核',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8

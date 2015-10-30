@@ -28,6 +28,9 @@ class ArticleController extends BaseController
             case '2':
                 $titleL2 = "大赛咨询";
                 break;
+            case '3':
+                $titleL2 = "大数据新闻";
+                break;
             default:
                $this->error('参数错误');
                 break;
@@ -54,7 +57,6 @@ class ArticleController extends BaseController
         $type  = I('type') ? I('type') : 1;
         $sizeArr = C('THUMB_SIZE');
         $this->size = $sizeArr[$type + 100];
-        if ($type != 1 && $type != 2) $this->error('参数错误');
         $this->type = $type;
         $this->titleL2 = "添加文章";
         $this->display();

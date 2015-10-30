@@ -220,7 +220,7 @@ class ExcelController extends BaseController
 		],
 		[
 			"thead" =>	"创建时间",
-			"tname" =>	"creat_at"
+			"tname" =>	"create_at"
 		],
 		[
 			"thead" =>	"当前状态",
@@ -240,21 +240,26 @@ class ExcelController extends BaseController
     {
 
     	$map = [];
-    	$id  = I('id', 0, 'intval');
+    	$id  = I('id');
     	$n   = I('n', 0, 'intval');
     	$n   = $n ? $n : 1;
-    	if ($id) {
-    		$map['id'] = $id;
-    	} else {
-    		$map['team_nature'] = $n;
-    	}
+    	if (!$id) $this->error('参数错误');
+		$map['id'] = is_array($id) ? array('in', $id) :  $id;
     	$data = M('Match')->where($map)->select();
 		$typeModel = M('Type');
 		foreach ($data as $key => $value) {
 			$data[$key]['type'] = $typeModel->where(['id' => $value['type']])->getField('name');
 			$data[$key]['team_nature'] = ($data[$key]['team_nature'] == 1) ? "企业"   : "个人/团体";
-			$data[$key]['business_plan'] = ($data[$key]['business_plan'] != '')  ? "已上传" : "未上传";
-			$data[$key]['status'] = ($data[$key]['status'] == 1)  ? "已审核" : "未审核";
+			$data[$key]['business_plan'] = $data[$key]['number'].'_'.$data[$key]['business_plan_name'];
+			if ($value['status'] == 1) {
+				$status = "审核已通过";
+			} elseif ($value['status'] == 2) {
+				$status = "审核未通过";
+			} else {
+				$status = "审核中";
+			}
+			$data[$key]['status'] = $status;
+			$data[$key]['create_at'] = date('Y-m-d h:i:s', $value['create_at']);
 			$data[$key]['number'] = '第' . $data[$key]['number'] . '号';
 		}
 		$this->_excel($data, $n);

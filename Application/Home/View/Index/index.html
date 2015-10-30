@@ -51,8 +51,8 @@
       <div id="right_1">
         <foreach name="art" item="v">
           <div class="Tile1">
-            <h3>{$v.title}</h3>
-            <p>{$v.desc|mb_substr=###, 0, 180, 'utf-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">[详细]</a></span></p>
+            <h3><a href="{:U('Article/detail', array('id' => $v['id']))}">{$v.title|mb_substr=###, 0, 30, 'utf-8'}</a></h3>
+            <p>{$v.desc|mb_substr=###, 0, 140, 'utf-8'}...<span><a href="{:U('Article/detail', array('id' => $v['id']))}">[详细]</a></span></p>
           </div>
         </foreach>
       </div>
@@ -62,7 +62,7 @@
     <div id="Middle1">
       <div class="ddpa">
         
-        <div class="ddpa1"><img src="__PUBLIC__/Home/images/m2.jpg" width="1185" height="96" /></div>
+        <div class="ddpa1"><img src="__PUBLIC__/Home/Images/m2.jpg" width="1185" height="96" /></div>
         
         <foreach name="intro" item="v">
           <div <if condition="$key % 2 eq 0">class="ddpa2"<else/>class="ddpa22"</if>>
@@ -77,14 +77,14 @@
     </div>
     <div class="h50"></div>
     <div id="Middle2">
-    <p><a href="#"><img src="__PUBLIC__/Home/images/m9.jpg" width="373" height="228" /></a></p>
-    <p><a href="baomingtongdao.html"><img src="__PUBLIC__/Home/images/m7.jpg" width="371" height="228" /></a></p>
-    <p><a href="#"><img src="__PUBLIC__/Home/images/m8.jpg" width="373" height="230" /></a></p>
+    <p><a href="javascript:;"><img src="__PUBLIC__/Home/Images/m9.jpg" width="373" height="228" /></a></p>
+    <p><a href="{:U('Enroll/index')}"><img src="__PUBLIC__/Home/Images/m7.jpg" width="371" height="228" /></a></p>
+    <p><a href="javascript:;"><img src="__PUBLIC__/Home/Images/m8.jpg" width="373" height="230" /></a></p>
     </div>
     <div class="h50"></div>
     <div id="Middle1" style="height:630px;">
     <div id="ddp1a">
-    <div id="ddpa1"><img src="__PUBLIC__/Home/images/m10.jpg" width="1185" height="122" /></div>
+    <div id="ddpa1" class="marginauto"><img src="__PUBLIC__/Home/Images/m10.jpg" width="1185" height="122" /></div>
     <div class="modeA">
       <!--代码开始-->
       <div class="slide_screen">
@@ -93,7 +93,7 @@
             <div class="window">
               <foreach name="ad_3" item="v">
                 <div class="piece">
-                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                  <a <if condition="$v['url']"> target="_blank" href="{$v.url}" </if>>
                     <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
                   </a>
                   <if condition="$v['desc']">
@@ -110,7 +110,7 @@
             <div class="window">
               <foreach name="ad_4" item="v">
                 <div class="piece">
-                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                  <a <if condition="$v['url']"> target="_blank" href="{$v.url}" </if>>
                     <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
                   </a>
                   <if condition="$v['desc']">
@@ -127,7 +127,7 @@
             <div class="window">
               <foreach name="ad_5" item="v">
                 <div class="piece">
-                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                  <a <if condition="$v['url']"> target="_blank" href="{$v.url}" </if>>
                     <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
                   </a>
                   <if condition="$v['desc']">
@@ -144,7 +144,7 @@
             <div class="window">
               <foreach name="ad_6" item="v">
                 <div class="piece">
-                  <a <if condition="$v['url']"> target="_blank" href="{$.url}" </if>>
+                  <a <if condition="$v['url']"> target="_blank" href="{$v.url}" </if>>
                     <img alt="{$v.desc}" src="__ROOT__/{$v.thumb}">
                   </a>
                   <if condition="$v['desc']">
@@ -165,12 +165,37 @@
     </div>
     <div id="Middle3">
       <div id="xexk">
-        <img src="__PUBLIC__/Home/images/m14.jpg" width="1185" height="94" />
+        <img src="__PUBLIC__/Home/Images/m14.jpg" width="1185" height="94" />
         
-        <div id="xexk1">
-          <foreach name="link_organization" item="v">
-            <p>{$v.name}</p>
-          </foreach>
+        <div class="xexk1 xexk2">
+            <h3>指导单位</h3>
+            <foreach name="link_4" item="v">
+              <p>{$v.name}</p>
+            </foreach>
+        </div>
+        <div class="xexk1 xexk3">
+            <h3>主办单位</h3>
+            <foreach name="link_5" item="v">
+              <p>{$v.name}</p>
+            </foreach>
+        </div>
+        <div class="xexk1">
+            <h3>联合主办</h3>
+            <foreach name="link_6" item="v">
+              <p>{$v.name}</p>
+            </foreach>
+        </div>
+        <div class="xexk1">
+            <h3>协办单位</h3>
+            <foreach name="link_7" item="v">
+              <p>{$v.name}</p>
+            </foreach>
+        </div>
+        <div class="xexk1 xexk4">
+            <h3>执行承办</h3>
+            <foreach name="link_8" item="v">
+              <p>{$v.name}</p>
+            </foreach>
         </div>
       </div>
 
@@ -179,7 +204,7 @@
     <div class="h50"></div>
     <div id="Middle4">
       <div id="fcrf">
-        <img src="__PUBLIC__/Home/images/m15.jpg" width="1185" height="121" />
+        <img src="__PUBLIC__/Home/Images/m15.jpg" width="1185" height="121" />
       </div>
       <foreach name="link_support" item="v">
         <div class="fcrf1">

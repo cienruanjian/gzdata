@@ -14,15 +14,20 @@
   <div id="head1">
     <div id="mav">
           <div id="logo"><img src="/Public/Home/Images/logo.jpg" width="502" height="124" /></div>
+         
           <div id="neww11">
               <div id="iymm1">
                 <input type="text" placeholder="请输入关键字搜索" / class="udq1">
                 <button type="submit" class="buttons"> </button>
               </div>
-              <div class="iymm">
+              <?php if(!$_SESSION['home'][C('USER_AUTH_KEY')]): ?><div class="iymm">
                 <p><a href="<?php echo U('Regist/index');?>">注册</a></p>
                 <p><a href="<?php echo U('Login/index', ['ctl' => CONTROLLER_NAME, 'act' => ACTION_NAME]);?>">登录</a></p>
               </div>
+              <?php else: ?>
+               <div class="iymm" style="background:none">
+                <p style="width:100%; color: #7e7e7e; font-size: 12px;"><?php echo ($_SESSION['home']['phone']); ?><a href="<?php echo U('Login/logout');?>"> [退出]</a></p>
+              </div><?php endif; ?>
           </div>
           <div id="neww">
               <ul>
@@ -75,8 +80,8 @@
       </div>
       <div id="right_1">
         <?php if(is_array($art)): foreach($art as $key=>$v): ?><div class="Tile1">
-            <h3><?php echo ($v["title"]); ?></h3>
-            <p><?php echo (mb_substr($v["desc"], 0, 180, 'utf-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">[详细]</a></span></p>
+            <h3><?php echo (mb_substr($v["title"], 0, 30, 'utf-8')); ?></h3>
+            <p><?php echo (mb_substr($v["desc"], 0, 140, 'utf-8')); ?>...<span><a href="<?php echo U('Article/detail', array('id' => $v['id']));?>">[详细]</a></span></p>
           </div><?php endforeach; endif; ?>
       </div>
       <div class="clear"></div>
@@ -85,7 +90,7 @@
     <div id="Middle1">
       <div class="ddpa">
         
-        <div class="ddpa1"><img src="/Public/Home/images/m2.jpg" width="1185" height="96" /></div>
+        <div class="ddpa1"><img src="/Public/Home/Images/m2.jpg" width="1185" height="96" /></div>
         
         <?php if(is_array($intro)): foreach($intro as $key=>$v): ?><div <?php if($key % 2 == 0): ?>class="ddpa2"<?php else: ?>class="ddpa22"<?php endif; ?>>
            <div class="ddpa2_img"><img src="/<?php echo ($v["thumb"]); ?>" width="140" height="130" /></div>  
@@ -98,14 +103,14 @@
     </div>
     <div class="h50"></div>
     <div id="Middle2">
-    <p><a href="#"><img src="/Public/Home/images/m9.jpg" width="373" height="228" /></a></p>
-    <p><a href="baomingtongdao.html"><img src="/Public/Home/images/m7.jpg" width="371" height="228" /></a></p>
-    <p><a href="#"><img src="/Public/Home/images/m8.jpg" width="373" height="230" /></a></p>
+    <p><a href="#"><img src="/Public/Home/Images/m9.jpg" width="373" height="228" /></a></p>
+    <p><a href="<?php echo U('Enroll/index');?>"><img src="/Public/Home/Images/m7.jpg" width="371" height="228" /></a></p>
+    <p><a href="#"><img src="/Public/Home/Images/m8.jpg" width="373" height="230" /></a></p>
     </div>
     <div class="h50"></div>
     <div id="Middle1" style="height:630px;">
     <div id="ddp1a">
-    <div id="ddpa1"><img src="/Public/Home/images/m10.jpg" width="1185" height="122" /></div>
+    <div id="ddpa1"><img src="/Public/Home/Images/m10.jpg" width="1185" height="122" /></div>
     <div class="modeA">
       <!--代码开始-->
       <div class="slide_screen">
@@ -113,7 +118,7 @@
           <li class="liA">
             <div class="window">
               <?php if(is_array($ad_3)): foreach($ad_3 as $key=>$v): ?><div class="piece">
-                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                  <a <?php if($v['url']): ?>target="_blank" href="<?php echo ($v["url"]); ?>"<?php endif; ?>>
                     <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
                   </a>
                   <?php if($v['desc']): ?><div class="bar">
@@ -126,7 +131,7 @@
           <li class="liB">
             <div class="window">
               <?php if(is_array($ad_4)): foreach($ad_4 as $key=>$v): ?><div class="piece">
-                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                  <a <?php if($v['url']): ?>target="_blank" href="<?php echo ($v["url"]); ?>"<?php endif; ?>>
                     <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
                   </a>
                   <?php if($v['desc']): ?><div class="bar">
@@ -139,7 +144,7 @@
           <li class="liC">
             <div class="window">
               <?php if(is_array($ad_5)): foreach($ad_5 as $key=>$v): ?><div class="piece">
-                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                  <a <?php if($v['url']): ?>target="_blank" href="<?php echo ($v["url"]); ?>"<?php endif; ?>>
                     <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
                   </a>
                   <?php if($v['desc']): ?><div class="bar">
@@ -152,7 +157,7 @@
           <li class="liD">
             <div class="window">
               <?php if(is_array($ad_6)): foreach($ad_6 as $key=>$v): ?><div class="piece">
-                  <a <?php if($v['url']): ?>target="_blank" href="{$.url}"<?php endif; ?>>
+                  <a <?php if($v['url']): ?>target="_blank" href="<?php echo ($v["url"]); ?>"<?php endif; ?>>
                     <img alt="<?php echo ($v["desc"]); ?>" src="/<?php echo ($v["thumb"]); ?>">
                   </a>
                   <?php if($v['desc']): ?><div class="bar">
@@ -170,10 +175,27 @@
     </div>
     <div id="Middle3">
       <div id="xexk">
-        <img src="/Public/Home/images/m14.jpg" width="1185" height="94" />
+        <img src="/Public/Home/Images/m14.jpg" width="1185" height="94" />
         
-        <div id="xexk1">
-          <?php if(is_array($link_organization)): foreach($link_organization as $key=>$v): ?><p><?php echo ($v["name"]); ?></p><?php endforeach; endif; ?>
+        <div class="xexk1 xexk2">
+            <h3>指导单位</h3>
+            <?php if(is_array($link_4)): foreach($link_4 as $key=>$v): ?><p><?php echo ($v["name"]); ?></p><?php endforeach; endif; ?>
+        </div>
+        <div class="xexk1 xexk3">
+            <h3>主办单位</h3>
+            <?php if(is_array($link_5)): foreach($link_5 as $key=>$v): ?><p><?php echo ($v["name"]); ?></p><?php endforeach; endif; ?>
+        </div>
+        <div class="xexk1">
+            <h3>联合主办</h3>
+            <?php if(is_array($link_6)): foreach($link_6 as $key=>$v): ?><p><?php echo ($v["name"]); ?></p><?php endforeach; endif; ?>
+        </div>
+        <div class="xexk1">
+            <h3>协办单位</h3>
+            <?php if(is_array($link_7)): foreach($link_7 as $key=>$v): ?><p><?php echo ($v["name"]); ?></p><?php endforeach; endif; ?>
+        </div>
+        <div class="xexk1 xexk4">
+            <h3>执行承办</h3>
+            <?php if(is_array($link_8)): foreach($link_8 as $key=>$v): ?><p><?php echo ($v["name"]); ?></p><?php endforeach; endif; ?>
         </div>
       </div>
 
@@ -182,7 +204,7 @@
     <div class="h50"></div>
     <div id="Middle4">
       <div id="fcrf">
-        <img src="/Public/Home/images/m15.jpg" width="1185" height="121" />
+        <img src="/Public/Home/Images/m15.jpg" width="1185" height="121" />
       </div>
       <?php if(is_array($link_support)): foreach($link_support as $key=>$v): ?><div class="fcrf1">
           <p><a href="<?php echo ((isset($v["url"]) && ($v["url"] !== ""))?($v["url"]):'javascript:;'); ?>"><img src="/<?php echo ($v["thumb"]); ?>" width="272" height="79" /></a></p>

@@ -6,12 +6,12 @@
 <link href="__PUBLIC__/Home/Css/zhuce.css" rel="stylesheet" type="text/css" />
 <include file="Public/header" />
   <!--头部  结束-->
-  <div id="khuj" style="background:url(__PUBLIC__/Home/images/m19.jpg) center top no-repeat;">
+  <div id="khuj" style="background:url(__PUBLIC__/Home/Images/m19.jpg) center top no-repeat;">
     <div id="h302"></div>
     <div class="all">
-      <div class="all_1"> <img src="__PUBLIC__/Home/images/qzy/1.jpg" width="411" height="52" /></div>
+      <div class="all_1"> <img src="__PUBLIC__/Home/Images/qzy/1.jpg" width="411" height="52" /></div>
       <div class="all_2">
-        <form action="{:U('Login/handle')}">
+        <form id="form" action="{:U('Login/handle')}">
           <div class="all_2_l">
             <div class="all_2_l_1">
               <div class="all_2_l_1_l">手机：</div>
@@ -24,7 +24,7 @@
               <div class="all_2_l_1_l">密码：</div>
               <div class="all_2_l_1_r">
                 <input name="password" type="password" />
-                <a href="#" style="float:right;color:#8c8c8c;font-size:16px">忘记密码？</a>
+                <!-- <a href="#" style="float:right;color:#8c8c8c;font-size:16px">忘记密码？</a> -->
               </div>
 
               <div class="clear"></div>
@@ -47,7 +47,7 @@
 
           组委会电话：0851-8626792
         </div>
-        <div class="all_2_r_2"><img src="__PUBLIC__/Home/images/qzy/2.jpg" width="350" height="291" /></div>
+        <div class="all_2_r_2"><img src="__PUBLIC__/Home/Images/qzy/2.jpg" width="350" height="291" /></div>
         </div>
         <div class="clear"></div>
       </div>
@@ -57,7 +57,7 @@
   <script src="__PUBLIC__/Plugin/layer/layer.js"></script>
   <script>
     //登陆
-    $('form').submit(function() {
+    $('#form').submit(function() {
       var _this = $(this);
       if (!$.trim($('input[name=phone]').val())) {
         layer.msg('请输入电话号码');

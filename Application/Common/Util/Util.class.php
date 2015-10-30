@@ -8,7 +8,7 @@ class Util {
 	 * @param unknown_type $content        	
 	 */
 	static public function sendSMS($mobile, $content) {
-		import ( "Home.Util.Nusoap" );
+		import ( "Common.Util.Nusoap" );
 		
 		$client = new \nusoap_client ( 'http://106.ihuyi.com/webservice/sms.php?WSDL', 'wsdl' );
 		

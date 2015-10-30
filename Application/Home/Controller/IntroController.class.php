@@ -9,7 +9,6 @@ class IntroController extends Controller {
         $id = I('id') ? I('id') : 2;
         $this->article = $model->where(['id' => $id])->find();
         $this->list = $list;
-        $this->display();
     	$this->display();
     }
 }
