@@ -214,7 +214,7 @@
                                 <input class="file required" type="file" id="upload_business_license_scan"/> 
                                 <input type="hidden" class="required" value="{$data.business_license_scan}" name="business_license_scan" error="请上传营业执照扫描件" />
                               <div id="fileImg">
-                                <img src="__ROOT__/{data.business_license_scan}" alt="" class="fileImg" />
+                                <img src="__ROOT__/{$data.business_license_scan}" alt="" class="fileImg" />
                               </div>
                             </div>
                           </div>
@@ -505,6 +505,12 @@
           });
 
           if (lock) return false;
+
+          if ($('input[name=duty_phone]').val() == $('input[name=emergency_contact_phone]').val()) {
+            layer.msg('项目负责人电话和紧急联系人电话不能相同', {icon : 5});
+            lock = 1;
+            return false;
+          }
 
           $.ajax({
             url        :    "{:U('Enroll/editHandle')}",

@@ -171,11 +171,11 @@
                             <label class="lab"><span class="xinghao">*&nbsp;</span>企业规模</label>
                             <div class="ipt iptlef">
                               <div class="win150"> 
-                                <input checked type="radio" value="1~20人" name="scale" id="number1" checked />
+                                <input type="radio" value="1~20人" name="scale" id="number1" />
                                 <label for="number1">1~20人</label>
                               </div>
-                              <div class="win150" value="20~200人" style="width: 120px;">
-                                <input type="radio" name="scale" id="number2" />
+                              <div class="win150" style="width: 120px;">
+                                <input type="radio" value="20~200人" name="scale" id="number2" checked="checked" />
                                 <label for="number2">20~200人</label>
                               </div>
                               <div class="win150">
@@ -216,15 +216,15 @@
                             <label class="lab"><span class="xinghao">*&nbsp;</span>项目团队人数</label>
                             <div class="ipt iptlef">
                               <div class="win150 wid100">
-                                <input type="radio" name="scale" value="1~5人" id="xianmutdrs1" checked disabled="disabled" />
+                                <input type="radio" name="scale_personal" value="1~5人" id="xianmutdrs1" checked disabled="disabled" />
                                 <label for="xianmutdrs1">1~5人</label>
                               </div>
                               <div class="win150">
-                                <input type="radio" name="scale" value="6~10人" id="xianmutdrs2" disabled="disabled" />
+                                <input type="radio" name="scale_personal" value="6~10人" id="xianmutdrs2" disabled="disabled" />
                                 <label for="xianmutdrs2">6~10人</label>
                               </div>
                               <div class="win150">
-                                <input type="radio" name="scale" value="10人以上" id="xianmutdrs3" disabled="disabled" />
+                                <input type="radio" name="scale_personal" value="10人以上" id="xianmutdrs3" disabled="disabled" />
                                 <label for="xianmutdrs3">10人以上</label>
                               </div>
                             </div>
@@ -486,6 +486,12 @@
 
           if (lock) return false;
 
+          if ($('input[name=duty_phone]').val() == $('input[name=emergency_contact_phone]').val()) {
+            layer.msg('项目负责人电话和紧急联系人电话不能相同', {icon : 5});
+            lock = 1;
+            return false;
+          }
+
           $.ajax({
             url        :    "{:U('Enroll/handle')}",
             type       :    "post",
@@ -500,7 +506,7 @@
                   window.location.href = data.jumpUrl;
                 });
               } else {
-                layer.msg(data.msg, {icon : 1});
+                layer.msg(data.msg, {icon : 5});
               }
             } 
           });

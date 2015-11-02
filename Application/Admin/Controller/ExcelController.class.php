@@ -112,7 +112,7 @@ class ExcelController extends BaseController
 		],
 		[
 			"thead" =>	"创建时间",
-			"tname" =>	"creat_at"
+			"tname" =>	"create_at"
 		],
 		[
 			"thead" =>	"当前状态",
